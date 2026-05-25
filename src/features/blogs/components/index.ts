@@ -5,3 +5,6 @@ export * from "./BlogHero";
 export * from "./BlogPostCard";
 export * from "./BlogSearchBox";
 export * from "./BlogArticleInteractions";
+export * from "./FloatingActions";
+export * from "./BackToTopButton";
+export * from "./WhatsAppButton";

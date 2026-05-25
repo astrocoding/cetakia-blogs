@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 import type { NavLink, SiteData } from "@/features/blogs/types/blog.type";
@@ -28,17 +28,6 @@ export function SiteHeader({
   const logoDark = site.brand.logoDark ?? site.brand.logo;
   const lightThemeIcon = site.headerActions.themeToggleIcons.light;
   const darkThemeIcon = site.headerActions.themeToggleIcons.dark;
-  const drawerLinks = useMemo(
-    () => primaryLinks.map((link) => ({ ...link, icon: link.icon ?? "bi-chevron-right" })),
-    [primaryLinks],
-  );
-
-  useEffect(() => {
-    document.body.classList.toggle("blog-nav-open", drawerOpen);
-    return () => {
-      document.body.classList.remove("blog-nav-open");
-    };
-  }, [drawerOpen]);
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
@@ -77,7 +66,7 @@ export function SiteHeader({
     <>
       <header className="blog-site-nav sticky top-0 z-50 border-b border-[var(--ui-border-subtle)]">
         <div className="blog-container">
-          <div className="blog-site-nav__inner grid w-full grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center gap-4">
+          <div className="blog-site-nav__inner grid w-full items-center gap-4">
             <Link href="/" className="blog-site-nav__brand inline-flex items-center justify-self-start" aria-label="Cetakia home">
               <ThemeLogo
                 lightSrc={logoLight}
@@ -133,8 +122,8 @@ export function SiteHeader({
 
               <button
                 type="button"
-                className="blog-site-nav__hamburger inline-flex h-10 w-10 items-center justify-center rounded-md border transition-colors lg:hidden"
-                aria-label="Open navigation menu"
+                className={`blog-site-nav__hamburger inline-flex h-10 w-10 items-center justify-center rounded-md border transition-colors lg:hidden${drawerOpen ? " is-open" : ""}`}
+                aria-label={drawerOpen ? "Close navigation menu" : "Open navigation menu"}
                 aria-controls={drawerId}
                 aria-expanded={drawerOpen}
                 onClick={() => setDrawerOpen((open) => !open)}
@@ -150,52 +139,40 @@ export function SiteHeader({
         </div>
       </header>
 
-      <div className={`blog-nav-drawer lg:hidden${drawerOpen ? " is-open" : ""}`} id={drawerId} aria-hidden={!drawerOpen}>
-        <button type="button" className="blog-nav-drawer__backdrop" aria-label="Close navigation menu" onClick={() => setDrawerOpen(false)} />
-        <aside className="blog-nav-drawer__panel" role="dialog" aria-modal="true" aria-label="Navigation menu">
-          <div className="blog-nav-drawer__head">
-            <ThemeLogo
-              lightSrc={logoLight}
-              darkSrc={logoDark}
-              alt={site.brand.logoAlt}
-              className="blog-nav-drawer__logo h-9 w-auto object-contain"
-              width={150}
-              height={36}
-            />
-            <button type="button" className="blog-nav-drawer__close" aria-label="Close navigation menu" onClick={() => setDrawerOpen(false)}>
-              <span aria-hidden="true">x</span>
-            </button>
-          </div>
+      <div className={`blog-nav-mobile lg:hidden${drawerOpen ? " is-open" : ""}`} id={drawerId} aria-hidden={!drawerOpen}>
+        <div className="blog-container">
+          <div className="blog-nav-mobile__inner">
+            <nav className="blog-nav-mobile__menu" aria-label="Mobile and tablet navigation">
+              {primaryLinks.map((link) => (
+                <a
+                  key={`mobile-${link.label}-${link.href}`}
+                  href={link.href}
+                  className="blog-nav-mobile__link"
+                  onClick={() => setDrawerOpen(false)}
+                >
+                  {link.label}
+                </a>
+              ))}
+            </nav>
 
-          <nav className="blog-nav-drawer__menu" aria-label="Mobile and tablet navigation">
-            {drawerLinks.map((link) => (
+            <div className="blog-nav-mobile__actions">
               <a
-                key={`drawer-${link.label}-${link.href}`}
-                href={link.href}
-                className="blog-nav-drawer__link"
+                href={site.headerActions.login.href}
+                className="blog-site-nav__cta blog-site-nav__cta--ghost inline-flex items-center justify-center"
                 onClick={() => setDrawerOpen(false)}
               >
-                {link.label}
-                <span aria-hidden="true">
-                  <i className={`bi ${link.icon ?? "bi-chevron-right"}`} />
-                </span>
+                {site.headerActions.login.label}
               </a>
-            ))}
-          </nav>
-
-          <div className="blog-nav-drawer__actions">
-            <a href={site.headerActions.login.href} className="blog-nav-drawer__btn blog-nav-drawer__btn--ghost" onClick={() => setDrawerOpen(false)}>
-              {site.headerActions.login.label}
-            </a>
-            <a
-              href={startNowHref ?? site.headerActions.startNow.href}
-              className="blog-nav-drawer__btn blog-nav-drawer__btn--solid"
-              onClick={() => setDrawerOpen(false)}
-            >
-              {site.headerActions.startNow.label}
-            </a>
+              <a
+                href={startNowHref ?? site.headerActions.startNow.href}
+                className="blog-site-nav__cta blog-site-nav__cta--solid inline-flex items-center justify-center"
+                onClick={() => setDrawerOpen(false)}
+              >
+                {site.headerActions.startNow.label}
+              </a>
+            </div>
           </div>
-        </aside>
+        </div>
       </div>
     </>
   );

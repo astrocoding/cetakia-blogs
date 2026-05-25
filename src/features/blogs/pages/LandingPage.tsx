@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { SiteFooter } from "@/features/blogs/components/SiteFooter";
 import { SiteHeader } from "@/features/blogs/components/SiteHeader";
@@ -111,9 +111,31 @@ const sectionLinks = [
   { label: "FAQ", href: "#faq" },
 ];
 
+const QUOTE_INTERVAL_MS = 5000;
+const QUOTE_FADE_MS = 260;
+
 export function LandingPage({ site }: LandingPageProps) {
   const [billing, setBilling] = useState<BillingCycle>("annual");
-  const quote = testimonials[0];
+  const [activeQuoteIndex, setActiveQuoteIndex] = useState(0);
+  const [isQuoteVisible, setIsQuoteVisible] = useState(true);
+  const quote = testimonials[activeQuoteIndex];
+
+  useEffect(() => {
+    let timeoutId = 0;
+    const intervalId = window.setInterval(() => {
+      setIsQuoteVisible(false);
+
+      timeoutId = window.setTimeout(() => {
+        setActiveQuoteIndex((prev) => (prev + 1) % testimonials.length);
+        setIsQuoteVisible(true);
+      }, QUOTE_FADE_MS);
+    }, QUOTE_INTERVAL_MS);
+
+    return () => {
+      window.clearInterval(intervalId);
+      if (timeoutId) window.clearTimeout(timeoutId);
+    };
+  }, []);
 
   return (
     <div className="lp-page bg-[var(--ui-surface-page)] text-[var(--ui-text-primary)] antialiased">
@@ -267,7 +289,7 @@ export function LandingPage({ site }: LandingPageProps) {
 
             <article className="lp-quote-card text-center">
               <i className="bi bi-quote lp-quote-icon" aria-hidden="true" />
-              <div className="lp-quote-body is-visible" data-quote-body>
+              <div className={`lp-quote-body${isQuoteVisible ? " is-visible" : ""}`} data-quote-body>
                 <p>“{quote.quote}”</p>
                 <div className="grid gap-1">
                   <strong>{quote.name}</strong>
@@ -413,19 +435,6 @@ export function LandingPage({ site }: LandingPageProps) {
       </main>
 
       <SiteFooter site={site} sectionLinksOverride={sectionLinks} />
-
-      <a href="#top" className="lp-float lp-float--top" aria-label="Back to top">
-        <i className="bi bi-arrow-up" />
-      </a>
-      <a
-        href="https://wa.me/6281200000000?text=Halo%20tim%20Cetakia,%20saya%20ingin%20konsultasi%20paket%20langganan%20atau%20demo."
-        className="lp-float lp-float--wa"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Chat on WhatsApp"
-      >
-        <i className="bi bi-whatsapp" />
-      </a>
     </div>
   );
 }

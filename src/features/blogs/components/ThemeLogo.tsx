@@ -20,18 +20,29 @@ export function ThemeLogo({ lightSrc, darkSrc, alt, width, height, className, pr
   const [theme, setTheme] = useState<"light" | "dark">("light");
 
   useEffect(() => {
-    const readTheme = () => {
-      const rootTheme = document.documentElement.getAttribute("data-theme");
-      if (rootTheme === "dark" || rootTheme === "light") {
-        setTheme(rootTheme);
-        return;
+    const resolveTheme = (): "light" | "dark" => {
+      try {
+        const stored = localStorage.getItem(THEME_STORAGE_KEY);
+        if (stored === "dark" || stored === "light") {
+          return stored;
+        }
+      } catch {
+        // no-op: localStorage may be unavailable in private contexts
       }
 
-      const stored = localStorage.getItem(THEME_STORAGE_KEY);
-      setTheme(stored === "dark" ? "dark" : "light");
+      const rootTheme = document.documentElement.getAttribute("data-theme");
+      if (rootTheme === "dark" || rootTheme === "light") {
+        return rootTheme;
+      }
+
+      return "light";
     };
 
-    readTheme();
+    const syncTheme = () => {
+      setTheme(resolveTheme());
+    };
+
+    syncTheme();
 
     const onThemeChange = (event: Event) => {
       const customEvent = event as CustomEvent<{ theme?: "light" | "dark" }>;
@@ -39,7 +50,7 @@ export function ThemeLogo({ lightSrc, darkSrc, alt, width, height, className, pr
       if (nextTheme === "light" || nextTheme === "dark") {
         setTheme(nextTheme);
       } else {
-        readTheme();
+        syncTheme();
       }
     };
 
@@ -48,10 +59,18 @@ export function ThemeLogo({ lightSrc, darkSrc, alt, width, height, className, pr
       setTheme(event.newValue === "dark" ? "dark" : "light");
     };
 
+    const observer = new MutationObserver((mutations) => {
+      if (mutations.some((mutation) => mutation.type === "attributes" && mutation.attributeName === "data-theme")) {
+        syncTheme();
+      }
+    });
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+
     window.addEventListener(THEME_EVENT_NAME, onThemeChange as EventListener);
     window.addEventListener("storage", onStorage);
 
     return () => {
+      observer.disconnect();
       window.removeEventListener(THEME_EVENT_NAME, onThemeChange as EventListener);
       window.removeEventListener("storage", onStorage);
     };
@@ -59,4 +78,3 @@ export function ThemeLogo({ lightSrc, darkSrc, alt, width, height, className, pr
 
   return <Image src={theme === "dark" ? darkSrc : lightSrc} alt={alt} width={width} height={height} className={className} priority={priority} />;
 }
-

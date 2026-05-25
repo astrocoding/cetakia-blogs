@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import cetakiaFavicon from "./cetakia.webp";
+import { FloatingActions } from "@/features/blogs/components/FloatingActions";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -30,6 +31,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
         {children}
+        <FloatingActions />
       </body>
     </html>
   );
