@@ -90,15 +90,6 @@
   color: #ffffff;
 }
 
-.lp-tag {
-  background: color-mix(in srgb, var(--ui-surface-card) 78%, transparent);
-  border: 1px solid color-mix(in srgb, var(--ui-border-subtle) 74%, transparent);
-  border-radius: 999px;
-  color: var(--ui-text-muted);
-  font-size: 0.78rem;
-  padding: 0.34rem 0.68rem;
-}
-
 .lp-hero-card {
   background: color-mix(in srgb, var(--ui-surface-card) 90%, transparent);
   border: 1px solid color-mix(in srgb, var(--ui-border-subtle) 80%, transparent);
@@ -532,40 +523,6 @@
   gap: 1.1rem;
   grid-template-columns: 1fr;
   padding: clamp(1.2rem, 3.5vw, 2rem);
-}
-
-.lp-faq {
-  background: color-mix(in srgb, var(--ui-surface-card) 88%, transparent);
-  border: 1px solid color-mix(in srgb, var(--ui-border-subtle) 80%, transparent);
-  border-radius: 0.95rem;
-  padding: 0.2rem 0.95rem;
-}
-
-.lp-faq summary {
-  align-items: center;
-  color: var(--ui-text-primary);
-  cursor: pointer;
-  display: flex;
-  font-size: 0.95rem;
-  font-weight: 600;
-  gap: 0.55rem;
-  list-style: none;
-  min-height: 2.95rem;
-}
-
-.lp-faq summary::-webkit-details-marker {
-  display: none;
-}
-
-.lp-faq summary i {
-  color: var(--ui-color-primary);
-}
-
-.lp-faq p {
-  color: var(--ui-text-muted);
-  line-height: 1.7;
-  margin: 0 0 0.9rem;
-  padding-left: 1.75rem;
 }
 
 @media (min-width: 992px) {

@@ -129,9 +129,9 @@
   --blog-card-border: #cfd8e3;
   --blog-card-title-color: #102a52;
   --blog-toc-link-color: #4d6486;
-  --blog-badge-bg: #e8f2ff;
-  --blog-badge-border: #c6dcff;
-  --blog-badge-text: #2155a1;
+  --blog-badge-bg: #ddf2ff;
+  --blog-badge-border: color-mix(in srgb, var(--ui-color-accent) 46%, transparent);
+  --blog-badge-text: color-mix(in srgb, var(--ui-color-accent-active) 78%, #0f2f5e 22%);
   --blog-content-title-color: #1b355c;
   --blog-content-text-color: #566784;
   --blog-figure-border: #cdd8e5;
