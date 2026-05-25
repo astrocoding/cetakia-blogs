@@ -1,0 +1,629 @@
+{
+  "site": {
+    "brand": {
+      "name": "Cetakia",
+      "logo": "../../public/cetakia_text_light.webp",
+      "logoLight": "../../public/cetakia_text_light.webp",
+      "logoDark": "../../public/cetakia_text_dark.webp",
+      "logoAlt": "Cetakia logo"
+    },
+    "primaryNavigation": [
+      { "label": "Features", "href": "#" },
+      { "label": "Workflow", "href": "#" },
+      { "label": "Outcomes", "href": "#" },
+      { "label": "Pricing", "href": "#" },
+      { "label": "Contact", "href": "#" },
+      { "label": "FAQ", "href": "#" }
+    ],
+    "mobileDrawerNavigation": [
+      { "label": "Features", "href": "#", "icon": "bi-chevron-right" },
+      { "label": "Workflow", "href": "#", "icon": "bi-chevron-right" },
+      { "label": "Outcomes", "href": "#", "icon": "bi-chevron-right" },
+      { "label": "Pricing", "href": "#", "icon": "bi-chevron-right" },
+      { "label": "Contact", "href": "#", "icon": "bi-chevron-right" },
+      { "label": "FAQ", "href": "#", "icon": "bi-chevron-right" }
+    ],
+    "headerActions": {
+      "login": { "label": "Log In", "href": "#" },
+      "startNow": { "label": "Start Now", "href": "#" },
+      "themeToggleIcons": {
+        "light": "bi-moon-stars",
+        "dark": "bi-sun"
+      }
+    },
+    "footer": {
+      "description": "A professional ERP platform for printing businesses that need clarity, speed, and scalable control.",
+      "columns": [
+        {
+          "title": "Product",
+          "links": [
+            { "label": "Features", "href": "#" },
+            { "label": "Workflow", "href": "#" },
+            { "label": "Outcomes", "href": "#" },
+            { "label": "Pricing", "href": "#" }
+          ]
+        },
+        {
+          "title": "Platform Areas",
+          "items": [
+            "Sales and Delivery",
+            "Production Jobs",
+            "Purchasing and Vendors",
+            "Accounting and Reports"
+          ]
+        },
+        {
+          "title": "Get Started",
+          "links": [
+            { "label": "sales@cetakia.com", "href": "mailto:sales@cetakia.com" },
+            { "label": "+62 812 0000 0000", "href": "tel:+6281200000000" }
+          ]
+        }
+      ],
+      "bottom": {
+        "copyright": "© 2026 Cetakia. All rights reserved.",
+        "links": [
+          { "label": "Privacy", "href": "#" },
+          { "label": "Terms", "href": "#" },
+          { "label": "Support", "href": "#" }
+        ]
+      }
+    },
+    "newsletter": {
+      "title": "Subscribe to Our Newsletter",
+      "description": "Get curated weekly updates about product releases, educational guides, and community stories.",
+      "fieldLabel": "Email address",
+      "placeholder": "you@company.com",
+      "submitLabel": "Subscribe"
+    }
+  },
+  "pages": {
+    "blogPage": {
+      "seo": {
+        "title": "The Cetakia Blog | Product, Education, and Community Insights",
+        "description": "Discover all Cetakia blog posts across product updates, education content, and community stories in one place.",
+        "robots": "index, follow",
+        "author": "Cetakia",
+        "themeColor": "#239ae8",
+        "og": {
+          "type": "website",
+          "siteName": "Cetakia Blog",
+          "title": "The Cetakia Blog",
+          "description": "Explore all articles from Cetakia: product updates, educational guides, and community stories."
+        }
+      },
+      "hero": {
+        "title": "The Cetakia Blog",
+        "subtitle": "Product updates, educational insights, and community stories to help your printing business scale faster."
+      },
+      "search": {
+        "label": "Search article",
+        "placeholder": "Search by title, topic, or keyword",
+        "modalTitle": "Search Results",
+        "emptyMessage": "No articles found. Try another keyword.",
+        "suggestions": [
+          {
+            "title": "Request-Based Autoscaling Is Now Generally Available on App Platform",
+            "keywords": ["autoscaling", "app", "platform", "products", "infrastructure"]
+          },
+          {
+            "title": "Powering the Inference Era: Inside the AI-Native Cloud",
+            "keywords": ["ai", "native", "cloud", "products", "inference", "digitalocean"]
+          },
+          {
+            "title": "ERP Implementation Blueprint for Printing Teams",
+            "keywords": ["education", "erp", "implementation", "workflow"]
+          },
+          {
+            "title": "Community Webinar: Building KPI Dashboard for Production Leaders",
+            "keywords": ["community", "event", "webinar", "cetakia"]
+          },
+          {
+            "title": "How to Reduce Operational Cost with Smarter ERP Workflow",
+            "keywords": ["education", "cost", "optimization", "financial"]
+          }
+        ]
+      },
+      "filters": {
+        "categories": ["All", "Products", "Education", "Community"],
+        "tags": ["ERP", "Automation", "Workflow", "Cloud", "Analytics", "Case Study"]
+      },
+      "sections": [
+        {
+          "id": "latest-post",
+          "title": "Latest Post",
+          "centerTitle": true,
+          "showViewAll": false,
+          "articles": [
+            {
+              "category": "Education",
+              "title": "How to Build a Reliable Production Timeline with ERP Workflow Templates",
+              "author": "Zaenal Alfian",
+              "postedByPrefix": "Posted by",
+              "date": "May 24, 2026",
+              "readTime": "5 min read",
+              "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80",
+              "alt": "Latest post article cover one"
+            },
+            {
+              "category": "Products",
+              "title": "Release Note: New Dashboard Widgets for Sales, Purchase, and Delivery Monitoring",
+              "author": "Zaenal Alfian",
+              "postedByPrefix": "Posted by",
+              "date": "May 23, 2026",
+              "readTime": "4 min read",
+              "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+              "alt": "Latest post article cover two"
+            },
+            {
+              "category": "Community",
+              "title": "What We Learned from This Month’s Community Session on Print Operation KPI",
+              "author": "Zaenal Alfian",
+              "postedByPrefix": "Posted by",
+              "date": "May 21, 2026",
+              "readTime": "6 min read",
+              "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80",
+              "alt": "Latest post article cover three"
+            },
+            {
+              "category": "Products",
+              "title": "Introducing Smarter Approval Routing for Faster Quotation-to-Production Handover",
+              "author": "Zaenal Alfian",
+              "postedByPrefix": "Posted by",
+              "date": "May 20, 2026",
+              "readTime": "5 min read",
+              "image": "https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=1200&q=80",
+              "alt": "Latest post article cover four"
+            }
+          ]
+        },
+        {
+          "id": "product-updates",
+          "title": "Product Updates",
+          "showViewAll": true,
+          "articles": [
+            {
+              "category": "Products",
+              "title": "Request-Based Autoscaling Is Now Generally Available on App Platform",
+              "author": "Zaenal Alfian",
+              "postedByPrefix": "Posted by",
+              "date": "May 22, 2026",
+              "readTime": "4 min read",
+              "image": "https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=1200&q=80",
+              "alt": "Product update article cover"
+            },
+            {
+              "category": "Products",
+              "title": "Powering the Inference Era: Inside the AI-Native Cloud",
+              "author": "Zaenal Alfian",
+              "postedByPrefix": "Posted by",
+              "date": "May 4, 2026",
+              "readTime": "7 min read",
+              "image": "https://images.unsplash.com/photo-1580894908361-967195033215?auto=format&fit=crop&w=1200&q=80",
+              "alt": "AI cloud article cover"
+            }
+          ]
+        },
+        {
+          "id": "education",
+          "title": "Education",
+          "showViewAll": true,
+          "articles": [
+            {
+              "category": "Education",
+              "title": "ERP Implementation Blueprint for High-Volume Printing Teams",
+              "author": "Zaenal Alfian",
+              "postedByPrefix": "Posted by",
+              "date": "Apr 29, 2026",
+              "readTime": "6 min read",
+              "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+              "alt": "ERP update article cover"
+            }
+          ]
+        },
+        {
+          "id": "community",
+          "title": "Community",
+          "showViewAll": true,
+          "articles": [
+            {
+              "category": "Community",
+              "title": "Community Roundup: Workflow Experiments from Cetakia Partners",
+              "author": "Zaenal Alfian",
+              "postedByPrefix": "Posted by",
+              "date": "Apr 20, 2026",
+              "readTime": "5 min read",
+              "image": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80",
+              "alt": "Community update article cover"
+            }
+          ]
+        }
+      ]
+    },
+    "blogCategoryPage": {
+      "seo": {
+        "title": "Product Updates | Cetakia Blog Category",
+        "description": "Browse all Product Updates articles from Cetakia Blog, including ERP releases, workflow improvements, and platform enhancements.",
+        "robots": "index, follow",
+        "author": "Cetakia",
+        "themeColor": "#239ae8",
+        "og": {
+          "type": "website",
+          "siteName": "Cetakia Blog",
+          "title": "Product Updates | Cetakia Blog",
+          "description": "Explore Product Updates category articles from Cetakia Blog with the latest ERP and printing operations updates."
+        }
+      },
+      "hero": {
+        "breadcrumbs": [
+          { "label": "Blogs", "href": "./BlogPage.html" },
+          { "label": "Product Updates", "current": true }
+        ],
+        "breadcrumbSeparatorIcon": "bi-chevron-right",
+        "title": "Product Updates",
+        "subtitle": "Discover the newest product releases, feature improvements, and platform enhancements from Cetakia."
+      },
+      "sectionHeader": {
+        "title": "All Product Updates",
+        "meta": "Showing 12 articles in this category"
+      },
+      "articles": [
+        {
+          "category": "Products",
+          "title": "Request-Based Autoscaling Is Now Generally Available on App Platform",
+          "author": "Zaenal Alfian",
+          "postedByPrefix": "Posted by",
+          "date": "May 22, 2026",
+          "readTime": "4 min read",
+          "image": "https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=1200&q=80",
+          "alt": "Product update article cover one"
+        },
+        {
+          "category": "Products",
+          "title": "Powering the Inference Era: Inside the AI-Native Cloud for Print Operations",
+          "author": "Zaenal Alfian",
+          "postedByPrefix": "Posted by",
+          "date": "May 20, 2026",
+          "readTime": "7 min read",
+          "image": "https://images.unsplash.com/photo-1580894908361-967195033215?auto=format&fit=crop&w=1200&q=80",
+          "alt": "Product update article cover two"
+        },
+        {
+          "category": "Products",
+          "title": "Release Note: New Dashboard Widgets for Sales, Purchase, and Delivery Monitoring",
+          "author": "Zaenal Alfian",
+          "postedByPrefix": "Posted by",
+          "date": "May 18, 2026",
+          "readTime": "5 min read",
+          "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80",
+          "alt": "Product update article cover three"
+        },
+        {
+          "category": "Products",
+          "title": "Introducing Smarter Approval Routing for Quotation-to-Production Handover",
+          "author": "Zaenal Alfian",
+          "postedByPrefix": "Posted by",
+          "date": "May 17, 2026",
+          "readTime": "6 min read",
+          "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+          "alt": "Product update article cover four"
+        },
+        {
+          "category": "Products",
+          "title": "New Purchasing Automation Rules for Vendor SLA and Priority Management",
+          "author": "Zaenal Alfian",
+          "postedByPrefix": "Posted by",
+          "date": "May 15, 2026",
+          "readTime": "5 min read",
+          "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=80",
+          "alt": "Product update article cover five"
+        },
+        {
+          "category": "Products",
+          "title": "Accounting Module Upgrade: Faster Reconciliation and Period Lock Controls",
+          "author": "Zaenal Alfian",
+          "postedByPrefix": "Posted by",
+          "date": "May 13, 2026",
+          "readTime": "4 min read",
+          "image": "https://images.unsplash.com/photo-1518773553398-650c184e0bb3?auto=format&fit=crop&w=1200&q=80",
+          "alt": "Product update article cover six"
+        },
+        {
+          "category": "Products",
+          "title": "Production Timeline Enhancements: Critical Path Alerts and Milestone Locking",
+          "author": "Zaenal Alfian",
+          "postedByPrefix": "Posted by",
+          "date": "May 10, 2026",
+          "readTime": "6 min read",
+          "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80",
+          "alt": "Product update article cover seven"
+        },
+        {
+          "category": "Products",
+          "title": "CRM Integration Toolkit for Real-Time Opportunity and Job Cost Synchronization",
+          "author": "Zaenal Alfian",
+          "postedByPrefix": "Posted by",
+          "date": "May 8, 2026",
+          "readTime": "7 min read",
+          "image": "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1200&q=80",
+          "alt": "Product update article cover eight"
+        },
+        {
+          "category": "Products",
+          "title": "Security Update: Granular Access Policy and Approval Logs for Enterprise Teams",
+          "author": "Zaenal Alfian",
+          "postedByPrefix": "Posted by",
+          "date": "May 6, 2026",
+          "readTime": "5 min read",
+          "image": "https://images.unsplash.com/photo-1526378722484-bd91ca387e72?auto=format&fit=crop&w=1200&q=80",
+          "alt": "Product update article cover nine"
+        },
+        {
+          "category": "Products",
+          "title": "Insights 2.0: Unified KPI Boards for Sales, Finance, Production, and Delivery Teams",
+          "author": "Zaenal Alfian",
+          "postedByPrefix": "Posted by",
+          "date": "May 3, 2026",
+          "readTime": "6 min read",
+          "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80",
+          "alt": "Product update article cover ten"
+        },
+        {
+          "category": "Products",
+          "title": "Improved Job Cost Forecasting with Scenario-Based Estimation and Variance Tracking",
+          "author": "Zaenal Alfian",
+          "postedByPrefix": "Posted by",
+          "date": "Apr 30, 2026",
+          "readTime": "4 min read",
+          "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80",
+          "alt": "Product update article cover eleven"
+        },
+        {
+          "category": "Products",
+          "title": "Deployment Toolkit: Faster Multi-Branch Rollout for Printing Enterprise Teams",
+          "author": "Zaenal Alfian",
+          "postedByPrefix": "Posted by",
+          "date": "Apr 27, 2026",
+          "readTime": "5 min read",
+          "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80",
+          "alt": "Product update article cover twelve"
+        }
+      ],
+      "pagination": {
+        "currentPage": 1,
+        "totalPages": 8,
+        "items": [
+          { "type": "prev", "icon": "bi-chevron-left" },
+          { "type": "page", "value": 1, "active": true },
+          { "type": "page", "value": 2 },
+          { "type": "page", "value": 3 },
+          { "type": "ellipsis", "label": "..." },
+          { "type": "page", "value": 8 },
+          { "type": "next", "icon": "bi-chevron-right" }
+        ]
+      }
+    },
+    "blogDetailPage": {
+      "seo": {
+        "title": "Agentic Cloud: Reinventing the Cloud with AI Agents | Cetakia Blogs",
+        "description": "Explore how AI agents are transforming cloud education and cloud strategy in modern organizations.",
+        "robots": "index, follow",
+        "author": "Zaenal Alfian",
+        "themeColor": "#239ae8",
+        "canonical": "https://example.com/blogs/agentic-cloud-reinventing-the-cloud-with-ai-agents",
+        "og": {
+          "type": "article",
+          "siteName": "Cetakia Blogs",
+          "title": "Agentic Cloud: Reinventing the Cloud with AI Agents",
+          "description": "Explore how AI agents are transforming cloud education and cloud strategy in modern organizations.",
+          "url": "https://example.com/blogs/agentic-cloud-reinventing-the-cloud-with-ai-agents",
+          "locale": "en_US"
+        },
+        "twitter": {
+          "card": "summary_large_image",
+          "title": "Agentic Cloud: Reinventing the Cloud with AI Agents",
+          "description": "Explore how AI agents are transforming cloud education and cloud strategy in modern organizations."
+        }
+      },
+      "hero": {
+        "title": "ERP: pengertian, fungsi, dan manfaatnya dalam bisnis percetakan",
+        "author": "Zaenal Alfian",
+        "postedByPrefix": "Posted by",
+        "publishedLabel": "Published at",
+        "publishedAt": "12:00, 19 May 2026",
+        "publishedAtISO": "2026-05-19T12:00:00+07:00"
+      },
+      "tableOfContents": [
+        {
+          "title": "Apa Itu ERP?",
+          "href": "#apa-itu-erp"
+        },
+        {
+          "title": "Fungsi ERP untuk Bisnis Modern",
+          "href": "#fungsi-erp",
+          "children": [
+            {
+              "title": "Otomasi Proses yang Lebih Cepat",
+              "href": "#otomasi-proses"
+            },
+            {
+              "title": "Integrasi Data Antar Departemen",
+              "href": "#integrasi-data"
+            }
+          ]
+        },
+        {
+          "title": "Manfaat ERP untuk Pertumbuhan",
+          "href": "#manfaat-erp",
+          "children": [
+            {
+              "title": "Efisiensi Operasional",
+              "href": "#efisiensi-operasional"
+            },
+            {
+              "title": "Pengambilan Keputusan Berbasis Data",
+              "href": "#pengambilan-keputusan"
+            }
+          ]
+        },
+        {
+          "title": "Strategi Implementasi ERP",
+          "href": "#implementasi-erp"
+        }
+      ],
+      "categoryBadges": ["Business", "ERP", "Productivity"],
+      "content": [
+        {
+          "type": "intro",
+          "text": "Enterprise Resource Planning (ERP) menjadi fondasi penting bagi bisnis yang ingin tumbuh secara terukur. Dengan ERP, perusahaan dapat menyatukan data operasional, keuangan, hingga inventori dalam satu sistem yang saling terhubung."
+        },
+        {
+          "type": "h2",
+          "id": "apa-itu-erp",
+          "text": "Apa Itu ERP?"
+        },
+        {
+          "type": "p",
+          "text": "ERP adalah sistem terintegrasi yang membantu perusahaan mengelola proses bisnis utama dalam satu platform. Mulai dari pengadaan barang, manajemen gudang, penjualan, hingga pelaporan keuangan dapat dijalankan dalam alur yang konsisten dan akurat."
+        },
+        {
+          "type": "h2",
+          "id": "fungsi-erp",
+          "text": "Fungsi ERP untuk Bisnis Modern"
+        },
+        {
+          "type": "p",
+          "text": "Salah satu kekuatan ERP adalah menyederhanakan proses yang sebelumnya berjalan terpisah-pisah. Integrasi ini mengurangi duplikasi input data dan meminimalkan risiko human error pada operasional harian."
+        },
+        {
+          "type": "h3",
+          "id": "otomasi-proses",
+          "text": "Otomasi Proses yang Lebih Cepat"
+        },
+        {
+          "type": "p",
+          "text": "ERP mampu mengotomatiskan alur approval, pembelian, dan rekonsiliasi stok. Tim dapat bekerja lebih cepat karena alur kerja sudah terdokumentasi dengan jelas dan tidak lagi bergantung pada proses manual."
+        },
+        {
+          "type": "h3",
+          "id": "integrasi-data",
+          "text": "Integrasi Data Antar Departemen"
+        },
+        {
+          "type": "p",
+          "text": "Ketika data penjualan, inventory, dan keuangan terhubung, setiap divisi memiliki satu sumber data yang sama. Hal ini mempermudah kolaborasi lintas tim dan membuat pelaporan menjadi lebih transparan."
+        },
+        {
+          "type": "figure",
+          "image": "https://ciptagrafika.com/wp-content/uploads/2026/05/kertas-cetak-foto-980x639.webp",
+          "alt": "Dashboard analytics ERP untuk memantau performa operasional bisnis",
+          "caption": "Contoh dashboard ERP yang menampilkan insight operasional secara real-time."
+        },
+        {
+          "type": "readAlso",
+          "label": "Baca juga:",
+          "title": "7 indikator penting saat memilih software ERP untuk UMKM dan enterprise",
+          "href": "#manfaat-erp"
+        },
+        {
+          "type": "h2",
+          "id": "manfaat-erp",
+          "text": "Manfaat ERP untuk Pertumbuhan"
+        },
+        {
+          "type": "p",
+          "text": "Penggunaan ERP memberikan manfaat jangka panjang karena perusahaan memiliki kontrol penuh terhadap data dan performa setiap unit bisnis. Sistem ini juga membantu perusahaan merencanakan skala operasional dengan lebih percaya diri."
+        },
+        {
+          "type": "h3",
+          "id": "efisiensi-operasional",
+          "text": "Efisiensi Operasional"
+        },
+        {
+          "type": "p",
+          "text": "Dengan proses yang lebih otomatis, biaya operasional dapat ditekan tanpa mengorbankan kualitas output. Tim bisa fokus pada aktivitas strategis yang berdampak langsung pada pertumbuhan bisnis."
+        },
+        {
+          "type": "h3",
+          "id": "pengambilan-keputusan",
+          "text": "Pengambilan Keputusan Berbasis Data"
+        },
+        {
+          "type": "p",
+          "text": "ERP menyajikan data dalam format yang mudah dipahami oleh manajemen. Keputusan bisnis dapat diambil berdasarkan tren aktual, bukan asumsi, sehingga risiko keputusan menjadi lebih rendah."
+        },
+        {
+          "type": "h2",
+          "id": "implementasi-erp",
+          "text": "Strategi Implementasi ERP"
+        },
+        {
+          "type": "p",
+          "text": "Implementasi ERP sebaiknya dimulai dari pemetaan proses yang paling kritikal, kemudian dilanjutkan dengan pelatihan pengguna secara bertahap. Pendekatan ini membantu transisi berjalan lebih mulus dan meningkatkan tingkat adopsi di seluruh tim."
+        }
+      ],
+      "keyTakeaway": {
+        "label": "Key takeaway:",
+        "items": [
+          "ERP menyatukan data lintas divisi agar proses operasional lebih efisien.",
+          "Otomasi workflow membantu tim bekerja lebih cepat dengan risiko error lebih rendah.",
+          "Implementasi bertahap dengan pelatihan pengguna meningkatkan tingkat adopsi sistem."
+        ]
+      },
+      "rightSidebar": {
+        "relatedArticles": [
+          {
+            "title": "Cara memilih ERP berdasarkan skala bisnis",
+            "readTime": "8 min read",
+            "image": "https://placehold.co/400x400/png",
+            "alt": "Thumbnail artikel cara memilih ERP berdasarkan skala bisnis"
+          },
+          {
+            "title": "Integrasi ERP dan CRM untuk tim sales",
+            "readTime": "6 min read",
+            "image": "https://placehold.co/400x400/png",
+            "alt": "Thumbnail artikel integrasi ERP dan CRM untuk tim sales"
+          },
+          {
+            "title": "Checklist migrasi data sebelum go-live ERP",
+            "readTime": "10 min read",
+            "image": "https://placehold.co/400x400/png",
+            "alt": "Thumbnail artikel checklist migrasi data sebelum go-live ERP"
+          }
+        ],
+        "popularArticles": [
+          {
+            "title": "10 workflow ERP yang paling sering dipakai",
+            "readTime": "12 min read",
+            "image": "https://placehold.co/400x400/png",
+            "alt": "Thumbnail artikel 10 workflow ERP yang paling sering dipakai"
+          },
+          {
+            "title": "Metrik ROI implementasi ERP dalam 90 hari",
+            "readTime": "7 min read",
+            "image": "https://placehold.co/400x400/png",
+            "alt": "Thumbnail artikel metrik ROI implementasi ERP dalam 90 hari"
+          },
+          {
+            "title": "Cara memilih modul ERP sesuai kebutuhan tim",
+            "readTime": "9 min read",
+            "image": "https://placehold.co/400x400/png",
+            "alt": "Thumbnail artikel cara memilih modul ERP sesuai kebutuhan tim"
+          },
+          {
+            "title": "Strategi onboarding ERP tanpa mengganggu operasional",
+            "readTime": "11 min read",
+            "image": "https://placehold.co/400x400/png",
+            "alt": "Thumbnail artikel strategi onboarding ERP tanpa mengganggu operasional"
+          },
+          {
+            "title": "Kesalahan umum saat implementasi ERP pertama kali",
+            "readTime": "8 min read",
+            "image": "https://placehold.co/400x400/png",
+            "alt": "Thumbnail artikel kesalahan umum saat implementasi ERP pertama kali"
+          }
+        ]
+      }
+    }
+  }
+}
