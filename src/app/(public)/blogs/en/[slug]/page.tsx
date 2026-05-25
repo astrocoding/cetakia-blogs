@@ -9,29 +9,27 @@ type PageProps = {
 };
 
 export function generateStaticParams() {
-  return getBlogDetailStaticParams().defaultLocale;
+  return getBlogDetailStaticParams().enLocale;
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const page = getBlogDetailPageBySlug({ slug, locale: "id" });
+  const page = getBlogDetailPageBySlug({ slug, locale: "en" });
 
   if (!page) {
-    return {
-      title: "Blog Not Found",
-    };
+    return { title: "Blog Not Found" };
   }
 
   return {
-    title: page.seo.title,
+    title: page.seo.og?.title ?? page.seo.title,
     description: page.seo.description,
   };
 }
 
-export default async function BlogDetailDefaultPage({ params }: PageProps) {
+export default async function BlogDetailEnglishPage({ params }: PageProps) {
   const { slug } = await params;
   const site = getSiteData();
-  const page = getBlogDetailPageBySlug({ slug, locale: "id" });
+  const page = getBlogDetailPageBySlug({ slug, locale: "en" });
 
   if (!page) notFound();
 
