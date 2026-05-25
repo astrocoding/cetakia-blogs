@@ -9,7 +9,7 @@ type PageProps = {
 };
 
 export function generateStaticParams() {
-  return getBlogDetailStaticParams().defaultLocale;
+  return getBlogDetailStaticParams().idLocale;
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
@@ -17,9 +17,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const page = getBlogDetailPageBySlug({ slug, locale: "id" });
 
   if (!page) {
-    return {
-      title: "Blog Not Found",
-    };
+    return { title: "Blog Not Found" };
   }
 
   return {
@@ -28,7 +26,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default async function BlogDetailDefaultPage({ params }: PageProps) {
+export default async function BlogDetailIndonesianPage({ params }: PageProps) {
   const { slug } = await params;
   const site = getSiteData();
   const page = getBlogDetailPageBySlug({ slug, locale: "id" });
