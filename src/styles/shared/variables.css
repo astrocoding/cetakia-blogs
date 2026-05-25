@@ -111,7 +111,7 @@
   --blog-grid-line-color: #d9e2ec;
   --blog-wave-top: rgb(35 154 232 / 0.22);
   --blog-wave-bottom: rgb(35 154 232 / 0.16);
-  --blog-pixel-color: rgb(255 255 255 / 0.64);
+  --blog-pixel-color: rgb(35 154 232 / 0.28);
   --blog-title-color: #06173f;
   --blog-category-bg: color-mix(in srgb, var(--ui-color-accent) 78%, white 22%);
   --blog-category-border: transparent;
