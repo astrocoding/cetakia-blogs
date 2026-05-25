@@ -120,9 +120,6 @@
   --blog-author-strong-color: #102a52;
   --blog-meta-color: #556886;
   --blog-meta-strong-color: #29446b;
-  --blog-avatar-bg: linear-gradient(145deg, #ffffff 0%, #e7eff8 100%);
-  --blog-avatar-ring: var(--ui-color-accent);
-  --blog-avatar-text: #0a2857;
   --blog-link-color: #1d6fda;
   --blog-link-hover-color: #1459b6;
   --blog-card-bg: #ffffff;
@@ -218,9 +215,6 @@
   --blog-author-strong-color: #d7e9ff;
   --blog-meta-color: #94adc8;
   --blog-meta-strong-color: #cfe7ff;
-  --blog-avatar-bg: linear-gradient(145deg, #122b43 0%, #1b3a59 100%);
-  --blog-avatar-ring: var(--ui-color-accent-hover);
-  --blog-avatar-text: #e8f4ff;
   --blog-link-color: #74c1ff;
   --blog-link-hover-color: #99d3ff;
   --blog-card-bg: #111e31;
@@ -312,9 +306,6 @@
     --blog-author-strong-color: #d7e9ff;
     --blog-meta-color: #94adc8;
     --blog-meta-strong-color: #cfe7ff;
-    --blog-avatar-bg: linear-gradient(145deg, #122b43 0%, #1b3a59 100%);
-    --blog-avatar-ring: var(--ui-color-accent-hover);
-    --blog-avatar-text: #e8f4ff;
     --blog-link-color: #74c1ff;
     --blog-link-hover-color: #99d3ff;
     --blog-card-bg: #111e31;
