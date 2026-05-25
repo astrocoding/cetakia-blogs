@@ -2,8 +2,8 @@
 @import "../styles/index.css";
 
 :root {
-  --background: var(--ui-surface-page, #0a1734);
-  --foreground: var(--ui-text-primary, #dcecff);
+  --background: var(--ui-surface-page, #f8fafc);
+  --foreground: var(--ui-text-primary, #1e293b);
 }
 
 @theme inline {

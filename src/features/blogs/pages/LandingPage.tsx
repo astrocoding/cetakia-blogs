@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useState } from "react";
 
 import { SiteFooter } from "@/features/blogs/components/SiteFooter";
 import { SiteHeader } from "@/features/blogs/components/SiteHeader";
@@ -102,31 +102,18 @@ const pricingPlans: PricingPlan[] = [
   },
 ];
 
+const sectionLinks = [
+  { label: "Features", href: "#features" },
+  { label: "Workflow", href: "#workflow" },
+  { label: "Outcomes", href: "#outcomes" },
+  { label: "Pricing", href: "#pricing" },
+  { label: "Contact", href: "#contact" },
+  { label: "FAQ", href: "#faq" },
+];
+
 export function LandingPage({ site }: LandingPageProps) {
   const [billing, setBilling] = useState<BillingCycle>("annual");
-  const [testimonialIndex, setTestimonialIndex] = useState(0);
-
-  const sectionLinks = useMemo(
-    () => [
-      { label: "Features", href: "#features" },
-      { label: "Workflow", href: "#workflow" },
-      { label: "Outcomes", href: "#outcomes" },
-      { label: "Pricing", href: "#pricing" },
-      { label: "Contact", href: "#contact" },
-      { label: "FAQ", href: "#faq" },
-    ],
-    [],
-  );
-
-  useEffect(() => {
-    const timer = window.setInterval(() => {
-      setTestimonialIndex((index) => (index + 1) % testimonials.length);
-    }, 5600);
-
-    return () => window.clearInterval(timer);
-  }, []);
-
-  const quote = testimonials[testimonialIndex];
+  const quote = testimonials[0];
 
   return (
     <div className="lp-page bg-[var(--ui-surface-page)] text-[var(--ui-text-primary)] antialiased">

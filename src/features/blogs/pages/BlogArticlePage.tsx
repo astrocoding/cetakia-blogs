@@ -78,14 +78,15 @@ export function BlogArticlePage({ site, data }: BlogArticlePageProps) {
         <article className="blog-article-main" data-article-scroll aria-label="Article content">
           <div className="blog-article-content">
             {data.content.map((block, index) => {
-              if (block.type === "intro") return <p key={`intro-${index}`} className="blog-article-intro">{block.text}</p>;
-              if (block.type === "p") return <p key={`p-${index}`}>{block.text}</p>;
+              const textSeed = "text" in block ? block.text.slice(0, 24) : "";
+              if (block.type === "intro") return <p key={`intro-${index}-${textSeed}`} className="blog-article-intro">{block.text}</p>;
+              if (block.type === "p") return <p key={`p-${index}-${textSeed}`}>{block.text}</p>;
               if (block.type === "h2") return <h2 key={block.id} id={block.id}>{block.text}</h2>;
               if (block.type === "h3") return <h3 key={block.id} id={block.id}>{block.text}</h3>;
 
               if (block.type === "figure") {
                 return (
-                  <figure key={`figure-${index}`} className="blog-article-figure">
+                  <figure key={`figure-${index}-${block.image}`} className="blog-article-figure">
                     <Image src={block.image} alt={block.alt} width={980} height={639} />
                     <figcaption>{block.caption}</figcaption>
                   </figure>
@@ -94,7 +95,7 @@ export function BlogArticlePage({ site, data }: BlogArticlePageProps) {
 
               if (block.type === "readAlso") {
                 return (
-                  <section key={`readalso-${index}`} className="blog-read-also" aria-label="Related reading">
+                  <section key={`readalso-${index}-${block.href}`} className="blog-read-also" aria-label="Related reading">
                     <p>
                       <strong>{block.label}</strong>
                     </p>

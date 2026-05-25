@@ -1,4 +1,6 @@
 :root {
+  color-scheme: light;
+
   /* Brand */
   --ui-color-accent: #239ae8;
   --ui-color-accent-hover: #33b4f4;
@@ -141,7 +143,12 @@
   --blog-mini-card-meta-color: #5f7597;
 }
 
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
 :root[data-theme="dark"] {
+  color-scheme: dark;
   --ui-color-accent: #239ae8;
   --ui-color-accent-hover: #33b4f4;
   --ui-color-accent-active: #1c87d3;

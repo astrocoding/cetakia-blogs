@@ -21,7 +21,7 @@ export function BlogCategoryPage({ site, data, cards }: BlogCategoryPageProps) {
         childrenTop={(
           <nav className="bc-breadcrumb" aria-label="Breadcrumb">
             {data.hero.breadcrumbs.map((crumb, index) => (
-              <span key={`${crumb.label}-${index}`} className="inline-flex items-center gap-2">
+              <span key={`${crumb.label}-${crumb.href ?? "current"}`} className="inline-flex items-center gap-2">
                 {crumb.current ? (
                   <span aria-current="page">{crumb.label}</span>
                 ) : (
