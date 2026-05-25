@@ -1,5 +1,5 @@
 import type { SiteData } from "@/features/blogs/types/blog.type";
-import Image from "next/image";
+import { ThemeLogo } from "@/features/blogs/components/ThemeLogo";
 
 type SiteFooterProps = {
   site: SiteData;
@@ -9,14 +9,17 @@ type SiteFooterProps = {
 export function SiteFooter({ site, sectionLinksOverride }: SiteFooterProps) {
   const [productColumn, platformColumn, getStartedColumn] = site.footer.columns;
   const productLinks = sectionLinksOverride ?? productColumn.links ?? [];
+  const logoLight = site.brand.logoLight ?? site.brand.logo;
+  const logoDark = site.brand.logoDark ?? site.brand.logo;
 
   return (
     <footer className="blog-site-footer mt-10 border-t border-[var(--ui-border-subtle)] bg-[var(--ui-surface-card)]">
       <div className="blog-container">
         <div className="blog-site-footer__inner grid w-full gap-10 py-10 md:grid-cols-2 lg:grid-cols-[1.35fr_0.9fr_1fr_0.85fr] lg:gap-12">
           <section className="space-y-3 lg:pr-6">
-            <Image
-              src={site.brand.logo}
+            <ThemeLogo
+              lightSrc={logoLight}
+              darkSrc={logoDark}
               alt={site.brand.logoAlt}
               className="blog-site-footer__logo h-9 w-auto object-contain md:h-20"
               width={220}

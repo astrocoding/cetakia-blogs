@@ -33,6 +33,8 @@ export type SiteData = {
   brand: {
     name: string;
     logo: string;
+    logoLight?: string;
+    logoDark?: string;
     logoAlt: string;
   };
   primaryNavigation: NavLink[];

@@ -2,9 +2,9 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 
 import type { NavLink, SiteData } from "@/features/blogs/types/blog.type";
+import { ThemeLogo } from "@/features/blogs/components/ThemeLogo";
 
 type SiteHeaderProps = {
   site: SiteData;
@@ -24,6 +24,10 @@ export function SiteHeader({
   const [theme, setTheme] = useState<"light" | "dark">("light");
 
   const primaryLinks = navLinks ?? site.primaryNavigation;
+  const logoLight = site.brand.logoLight ?? site.brand.logo;
+  const logoDark = site.brand.logoDark ?? site.brand.logo;
+  const lightThemeIcon = site.headerActions.themeToggleIcons.light;
+  const darkThemeIcon = site.headerActions.themeToggleIcons.dark;
   const drawerLinks = useMemo(
     () => primaryLinks.map((link) => ({ ...link, icon: link.icon ?? "bi-chevron-right" })),
     [primaryLinks],
@@ -42,15 +46,14 @@ export function SiteHeader({
 
   useEffect(() => {
     const stored = localStorage.getItem(themeStorageKey);
-    const nextTheme = stored === "dark" ? "dark" : "light";
-    if (nextTheme === theme) return;
+    if (stored !== "dark") return;
 
     const rafId = window.requestAnimationFrame(() => {
-      setTheme(nextTheme);
+      setTheme("dark");
     });
 
     return () => window.cancelAnimationFrame(rafId);
-  }, [theme]);
+  }, []);
 
   useEffect(() => {
     const onEscape = (event: KeyboardEvent) => {
@@ -64,9 +67,11 @@ export function SiteHeader({
     const next = theme === "dark" ? "light" : "dark";
     setTheme(next);
     localStorage.setItem(themeStorageKey, next);
+    window.dispatchEvent(new CustomEvent("bp-theme-change", { detail: { theme: next } }));
   };
 
-  const themeIcon = theme === "dark" ? "bi bi-sun" : "bi bi-moon-stars";
+  const themeIconRaw = theme === "dark" ? darkThemeIcon : lightThemeIcon;
+  const themeIcon = themeIconRaw.startsWith("bi ") ? themeIconRaw : `bi ${themeIconRaw}`;
 
   return (
     <>
@@ -74,8 +79,9 @@ export function SiteHeader({
         <div className="blog-container">
           <div className="blog-site-nav__inner grid w-full grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center gap-4">
             <Link href="/" className="blog-site-nav__brand inline-flex items-center justify-self-start" aria-label="Cetakia home">
-              <Image
-                src={site.brand.logo}
+              <ThemeLogo
+                lightSrc={logoLight}
+                darkSrc={logoDark}
                 alt={site.brand.logoAlt}
                 className="blog-site-nav__logo h-auto w-[150px] object-contain"
                 width={150}
@@ -148,8 +154,9 @@ export function SiteHeader({
         <button type="button" className="blog-nav-drawer__backdrop" aria-label="Close navigation menu" onClick={() => setDrawerOpen(false)} />
         <aside className="blog-nav-drawer__panel" role="dialog" aria-modal="true" aria-label="Navigation menu">
           <div className="blog-nav-drawer__head">
-            <Image
-              src={site.brand.logo}
+            <ThemeLogo
+              lightSrc={logoLight}
+              darkSrc={logoDark}
               alt={site.brand.logoAlt}
               className="blog-nav-drawer__logo h-9 w-auto object-contain"
               width={150}

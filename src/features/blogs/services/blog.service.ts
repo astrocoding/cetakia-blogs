@@ -29,11 +29,14 @@ function normalizeLogoPath(path: string): string {
 }
 
 export function getSiteData(): SiteData {
+  const brand = blogsData.site.brand;
   return {
     ...blogsData.site,
     brand: {
-      ...blogsData.site.brand,
-      logo: normalizeLogoPath(blogsData.site.brand.logo),
+      ...brand,
+      logo: normalizeLogoPath(brand.logo),
+      logoLight: brand.logoLight ? normalizeLogoPath(brand.logoLight) : undefined,
+      logoDark: brand.logoDark ? normalizeLogoPath(brand.logoDark) : undefined,
     },
   };
 }
