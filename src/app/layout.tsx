@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import cetakiaFavicon from "./cetakia.webp";
-import { FloatingActions } from "@/features/blogs/components/FloatingActions";
+import { FloatingActions } from "@/features/global/components/FloatingActions";
 
 export const metadata: Metadata = {
   title: "Create Next App",

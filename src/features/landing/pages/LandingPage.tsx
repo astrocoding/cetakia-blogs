@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 
-import { SiteFooter } from "@/features/blogs/components/SiteFooter";
-import { SiteHeader } from "@/features/blogs/components/SiteHeader";
+import { SiteFooter } from "@/features/global/components/SiteFooter";
+import { SiteHeader } from "@/features/global/components/SiteHeader";
 import type { SiteData } from "@/features/blogs/types/blog.type";
 
 type LandingPageProps = {

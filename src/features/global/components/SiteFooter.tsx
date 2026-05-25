@@ -1,5 +1,5 @@
 import type { SiteData } from "@/features/blogs/types/blog.type";
-import { ThemeLogo } from "@/features/blogs/components/ThemeLogo";
+import { ThemeLogo } from "@/features/global/components/ThemeLogo";
 
 type SiteFooterProps = {
   site: SiteData;

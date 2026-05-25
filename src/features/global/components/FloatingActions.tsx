@@ -1,5 +1,5 @@
-import { BackToTopButton } from "@/features/blogs/components/BackToTopButton";
-import { WhatsAppButton } from "@/features/blogs/components/WhatsAppButton";
+import { BackToTopButton } from "@/features/global/components/BackToTopButton";
+import { WhatsAppButton } from "@/features/global/components/WhatsAppButton";
 
 export function FloatingActions() {
   return (
