@@ -62,7 +62,6 @@
   line-height: 1.15;
   position: relative;
   text-decoration: none;
-  transition: color 160ms ease;
 }
 
 .blog-info-bar__link::after {
@@ -74,7 +73,6 @@
   position: absolute;
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 180ms ease;
   width: 100%;
 }
 
@@ -125,7 +123,6 @@
   letter-spacing: -0.005em;
   padding: 0.46rem 0.75rem;
   text-decoration: none;
-  transition: color 160ms ease, background-color 160ms ease;
 }
 
 .blog-site-nav__link:hover {
@@ -155,7 +152,6 @@
   padding: 0.26rem 0.9rem;
   text-decoration: none;
   white-space: nowrap;
-  transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease;
 }
 
 .blog-site-nav__cta--ghost {
@@ -194,7 +190,6 @@
   min-height: 1.9rem;
   min-width: 1.9rem;
   padding: 0.14rem;
-  transition: color 160ms ease;
 }
 
 .blog-site-nav__theme:hover {
@@ -224,7 +219,6 @@
   min-height: 1.9rem;
   min-width: 1.9rem;
   padding: 0.14rem;
-  transition: color 160ms ease;
 }
 
 .blog-site-nav__hamburger:hover {
@@ -241,7 +235,6 @@
   border-radius: 999px;
   display: block;
   height: 2px;
-  transition: transform 200ms ease, opacity 160ms ease;
   width: 1.12rem;
 }
 
@@ -267,7 +260,6 @@
   pointer-events: none;
   position: fixed;
   transform: translateY(-0.5rem);
-  transition: max-height 220ms ease, opacity 200ms ease;
   visibility: hidden;
   width: 100%;
   z-index: 49;
@@ -299,7 +291,6 @@
   min-height: 2.85rem;
   padding: 0.6rem 0.75rem;
   text-decoration: none;
-  transition: color 160ms ease, background-color 160ms ease;
 }
 
 .blog-nav-mobile__link:hover {

@@ -61,11 +61,6 @@
     justify-content: center;
     line-height: var(--ui-btn-line-height);
     text-decoration: none;
-    transition:
-      background-color var(--ui-btn-transition-duration) var(--ui-btn-transition-easing),
-      border-color var(--ui-btn-transition-duration) var(--ui-btn-transition-easing),
-      color var(--ui-btn-transition-duration) var(--ui-btn-transition-easing),
-      transform var(--ui-btn-transition-duration) var(--ui-btn-transition-easing);
     white-space: nowrap;
   }
 

@@ -5,10 +5,6 @@
   padding: 1rem;
 }
 
-.gc-card--interactive {
-  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
-}
-
 .gc-card--interactive:hover {
   border-color: color-mix(in srgb, var(--ui-color-primary) 42%, var(--ui-border-subtle));
   box-shadow: 0 24px 38px -34px rgb(15 23 42 / 0.45);

@@ -42,7 +42,6 @@
   color: var(--blog-content-text-color);
   font-size: 0.9rem;
   text-decoration: none;
-  transition: color 160ms ease;
 }
 
 .blog-site-footer__link:hover {
@@ -71,7 +70,6 @@
   height: 2rem;
   justify-content: center;
   text-decoration: none;
-  transition: color 160ms ease, border-color 160ms ease, background-color 160ms ease;
   width: 2rem;
 }
 
@@ -85,7 +83,6 @@
   display: inline;
   font-weight: inherit;
   text-decoration: none;
-  transition: color 160ms ease;
 }
 
 .blog-site-footer__brand-link:hover {

@@ -21,7 +21,6 @@
   justify-content: space-between;
   list-style: none;
   min-height: 2.95rem;
-  transition: color 180ms ease;
 }
 
 .c-accordion__summary::-webkit-details-marker {
@@ -41,7 +40,6 @@
 .c-accordion__chevron {
   color: var(--ui-text-muted);
   font-size: 0.88rem;
-  transition: transform 220ms ease, color 180ms ease;
 }
 
 .c-accordion__item[open] .c-accordion__chevron {
@@ -58,12 +56,5 @@
 
 .c-accordion__content p {
   margin: 0;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .c-accordion__summary,
-  .c-accordion__chevron {
-    transition: none;
-  }
 }
 
