@@ -49,6 +49,7 @@ export function SiteHeader({
 
   const lightThemeIconClass = lightThemeIcon.startsWith("bi ") ? lightThemeIcon : `bi ${lightThemeIcon}`;
   const darkThemeIconClass = darkThemeIcon.startsWith("bi ") ? darkThemeIcon : `bi ${darkThemeIcon}`;
+  const normalizeHeaderHref = (href: string) => (href.startsWith("#") ? `/${href}` : href);
 
   return (
     <>
@@ -70,7 +71,7 @@ export function SiteHeader({
 
             <nav className="blog-site-nav__menu hidden items-center justify-center justify-self-center lg:flex" aria-label="Primary navigation">
               {primaryLinks.map((link) => (
-                <a key={`${link.label}-${link.href}`} href={link.href} className="blog-site-nav__link">
+                <a key={`${link.label}-${link.href}`} href={normalizeHeaderHref(link.href)} className="blog-site-nav__link">
                   {link.label}
                 </a>
               ))}
@@ -82,7 +83,7 @@ export function SiteHeader({
                   {site.headerActions.login.label}
                 </a>
                 <a
-                  href={startNowHref ?? site.headerActions.startNow.href}
+                  href={normalizeHeaderHref(startNowHref ?? site.headerActions.startNow.href)}
                   className="blog-site-nav__cta blog-site-nav__cta--solid inline-flex items-center justify-center"
                 >
                   {site.headerActions.startNow.label}
@@ -135,7 +136,7 @@ export function SiteHeader({
               {primaryLinks.map((link) => (
                 <a
                   key={`mobile-${link.label}-${link.href}`}
-                  href={link.href}
+                  href={normalizeHeaderHref(link.href)}
                   className="blog-nav-mobile__link"
                   onClick={() => setDrawerOpen(false)}
                 >
@@ -153,7 +154,7 @@ export function SiteHeader({
                 {site.headerActions.login.label}
               </a>
               <a
-                href={startNowHref ?? site.headerActions.startNow.href}
+                href={normalizeHeaderHref(startNowHref ?? site.headerActions.startNow.href)}
                 className="blog-site-nav__cta blog-site-nav__cta--solid inline-flex items-center justify-center"
                 onClick={() => setDrawerOpen(false)}
               >

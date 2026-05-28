@@ -103,12 +103,12 @@ const pricingPlans: PricingPlan[] = [
 ];
 
 const sectionLinks = [
-  { label: "Features", href: "#features" },
-  { label: "Workflow", href: "#workflow" },
-  { label: "Outcomes", href: "#outcomes" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "Contact", href: "#contact" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Features", href: "/#features" },
+  { label: "Workflow", href: "/#workflow" },
+  { label: "Outcomes", href: "/#outcomes" },
+  { label: "Pricing", href: "/#pricing" },
+  { label: "Contact", href: "/#contact" },
+  { label: "FAQ", href: "/#faq" },
 ];
 
 const faqItems = [
@@ -167,7 +167,7 @@ export function LandingPage({ site }: LandingPageProps) {
 
   return (
     <div className="lp-page bg-[var(--ui-surface-page)] text-[var(--ui-text-primary)] antialiased">
-      <SiteHeader site={site} navLinks={sectionLinks} startNowHref="#pricing" drawerId="landing-nav-drawer" />
+      <SiteHeader site={site} navLinks={sectionLinks} startNowHref="/#pricing" drawerId="landing-nav-drawer" />
 
       <main id="top">
         <section className="lp-hero">
@@ -184,10 +184,10 @@ export function LandingPage({ site }: LandingPageProps) {
                 </p>
 
                 <div className="mt-7 flex flex-wrap gap-3">
-                  <a href="#pricing" className="lp-btn lp-btn--solid">
+                  <a href="/#pricing" className="lp-btn lp-btn--solid">
                     Start with Cetakia <i className="bi bi-arrow-up-right" />
                   </a>
-                  <a href="#features" className="lp-btn lp-btn--outline">
+                  <a href="/#features" className="lp-btn lp-btn--outline">
                     Explore Platform
                   </a>
                 </div>
