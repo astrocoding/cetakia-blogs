@@ -200,7 +200,7 @@
   margin: 0;
 }
 
-.ct-map__overlay p i {
+.ct-map__overlay p .ui-icon {
   color: var(--ui-color-primary);
   font-size: 1rem;
   margin-top: 0.16rem;

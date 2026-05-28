@@ -56,10 +56,6 @@ export default async function RootLayout({
         <style dangerouslySetInnerHTML={{ __html: EARLY_THEME_BOOT_STYLE }} />
         <Script id="early-theme-boot" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: EARLY_THEME_BOOT_SCRIPT }} />
         <Script src="/scripts/ui-scripts.js" strategy="beforeInteractive" />
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-        />
       </head>
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
         {children}

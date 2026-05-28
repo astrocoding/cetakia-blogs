@@ -3,6 +3,7 @@ import { BlogPostCard } from "@/features/blogs/components/BlogPostCard";
 import { NewsletterSection } from "@/features/blogs/components/NewsletterSection";
 import { SiteFooter } from "@/features/global/components/SiteFooter";
 import { SiteHeader } from "@/features/global/components/SiteHeader";
+import { UiIcon } from "@/features/global/components/UiIcon";
 import type { BlogArticleCard, CategoryPageData, SiteData } from "@/features/blogs/types/blog.type";
 
 type BlogCategoryPageProps = {
@@ -28,7 +29,7 @@ export function BlogCategoryPage({ site, data, cards }: BlogCategoryPageProps) {
                   <a href={crumb.href ?? "#"}>{crumb.label}</a>
                 )}
                 {index < data.hero.breadcrumbs.length - 1 ? (
-                  <i className={`bi ${data.hero.breadcrumbSeparatorIcon}`} aria-hidden="true" />
+                  <UiIcon name={data.hero.breadcrumbSeparatorIcon} />
                 ) : null}
               </span>
             ))}
@@ -61,7 +62,7 @@ export function BlogCategoryPage({ site, data, cards }: BlogCategoryPageProps) {
                 );
               }
 
-              const icon = item.icon ? <i className={`bi ${item.icon}`} aria-hidden="true" /> : null;
+              const icon = item.icon ? <UiIcon name={item.icon} /> : null;
               const className = [
                 "bc-page-btn",
                 item.active ? "is-active" : "",

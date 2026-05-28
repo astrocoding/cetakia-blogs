@@ -58,7 +58,7 @@
   padding: 0.66rem 0.74rem;
 }
 
-.bp-search-box > i {
+.bp-search-box > .ui-icon {
   color: var(--blog-meta-color);
   font-size: 0.92rem;
 }

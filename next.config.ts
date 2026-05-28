@@ -1,8 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  experimental: {
-    browserDebugInfoInTerminal: false,
+  logging: {
+    browserToTerminal: false,
   },
   images: {
     remotePatterns: [

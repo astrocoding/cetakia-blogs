@@ -21,6 +21,16 @@ html {
   scroll-behavior: smooth;
 }
 
+.ui-icon {
+  display: inline-block;
+  fill: currentColor;
+  flex-shrink: 0;
+  height: 1em;
+  stroke: none;
+  vertical-align: -0.125em;
+  width: 1em;
+}
+
 .theme-logo {
   display: inline-grid;
 }
