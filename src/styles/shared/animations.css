@@ -198,6 +198,19 @@
   transition: color 180ms ease;
 }
 
+.c-accordion__content {
+  transition: max-height 260ms ease;
+}
+
+.c-accordion__content-inner {
+  opacity: 0;
+  transition: opacity 190ms ease, padding-bottom 220ms ease;
+}
+
+.c-accordion__item.is-open .c-accordion__content-inner {
+  opacity: 1;
+}
+
 .c-accordion__chevron {
   transition: transform 220ms ease, color 180ms ease;
 }
@@ -235,6 +248,8 @@
   .ct-layout__cards,
   .ct-map,
   .c-accordion__summary,
+  .c-accordion__content,
+  .c-accordion__content-inner,
   .c-accordion__chevron,
   .blog-float,
   .blog-article-header,

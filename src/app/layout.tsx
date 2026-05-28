@@ -47,6 +47,7 @@ export default async function RootLayout({
     <html
       lang="en"
       data-theme={initialTheme}
+      data-scroll-behavior="smooth"
       className={`${inter.variable} h-full antialiased`}
       style={{ colorScheme: initialTheme, backgroundColor: initialBackground }}
       suppressHydrationWarning
