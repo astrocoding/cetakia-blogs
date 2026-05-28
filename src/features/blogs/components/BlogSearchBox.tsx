@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 
 import type { BlogPageData } from "@/features/blogs/types/blog.type";
+import { UiIcon } from "@/features/global/components/UiIcon";
 
 type BlogSearchBoxProps = {
   search: BlogPageData["search"];
@@ -28,7 +29,7 @@ export function BlogSearchBox({ search }: BlogSearchBoxProps) {
         {search.label}
       </label>
       <div className="bp-search-box">
-        <i className="bi bi-search" aria-hidden="true" />
+        <UiIcon name="bi-search" />
         <input
           id="bp-search"
           type="search"
@@ -50,7 +51,7 @@ export function BlogSearchBox({ search }: BlogSearchBoxProps) {
             setOpen(true);
           }}
         >
-          <i className="bi bi-x-lg" aria-hidden="true" />
+          <UiIcon name="bi-x-lg" />
         </button>
       </div>
 
@@ -59,7 +60,7 @@ export function BlogSearchBox({ search }: BlogSearchBoxProps) {
           <div className="bp-search-modal__head">
             <h2>{search.modalTitle}</h2>
             <button type="button" className="bp-search-modal__close" aria-label="Close search results" onClick={() => setOpen(false)}>
-              <i className="bi bi-x-lg" aria-hidden="true" />
+              <UiIcon name="bi-x-lg" />
             </button>
           </div>
 

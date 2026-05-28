@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { UiIcon } from "@/features/global/components/UiIcon";
 
 export type AccordionItem = {
   id: string;
@@ -34,10 +35,10 @@ export function Accordion({ items, className }: AccordionProps) {
               data-accordion-trigger
             >
               <span className="c-accordion__summary-text">
-                {item.iconClassName ? <i className={`bi ${item.iconClassName}`} aria-hidden="true" /> : null}
+                {item.iconClassName ? <UiIcon name={item.iconClassName} /> : null}
                 {item.title}
               </span>
-              <i className="bi bi-chevron-down c-accordion__chevron" aria-hidden="true" />
+              <UiIcon name="bi-chevron-down" className="c-accordion__chevron" />
             </button>
 
             <div

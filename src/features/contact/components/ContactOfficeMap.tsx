@@ -1,3 +1,5 @@
+import { UiIcon } from "@/features/global/components/UiIcon";
+
 type ContactOfficeMapProps = {
   address: string;
   directionsUrl: string;
@@ -23,11 +25,11 @@ export function ContactOfficeMap({
         <article className="ct-map__overlay">
           <h2>Our Office</h2>
           <p>
-            <i className="bi bi-geo-alt" aria-hidden="true" />
+            <UiIcon name="bi-geo-alt" />
             <span>{address}</span>
           </p>
           <a href={directionsUrl} target="_blank" rel="noreferrer noopener">
-            Get a Direction <i className="bi bi-arrow-right" aria-hidden="true" />
+            Get a Direction <UiIcon name="bi-arrow-right" />
           </a>
         </article>
       </div>

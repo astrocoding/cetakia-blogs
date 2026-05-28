@@ -40,7 +40,7 @@
   gap: 0.28rem;
 }
 
-.blog-info-bar__announcement-cta i {
+.blog-info-bar__announcement-cta .ui-icon {
   font-size: 0.95em;
   line-height: 1;
 }

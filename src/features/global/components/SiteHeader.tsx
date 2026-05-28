@@ -6,6 +6,7 @@ import Link from "next/link";
 import type { NavLink, SiteData } from "@/features/blogs/types/blog.type";
 import { InformationBar } from "@/features/global/components/InformationBar";
 import { ThemeLogo } from "@/features/global/components/ThemeLogo";
+import { UiIcon } from "@/features/global/components/UiIcon";
 
 type SiteHeaderProps = {
   site: SiteData;
@@ -36,8 +37,9 @@ export function SiteHeader({
     return () => window.removeEventListener("keydown", onEscape);
   }, []);
 
-  const lightThemeIconClass = lightThemeIcon.startsWith("bi ") ? lightThemeIcon : `bi ${lightThemeIcon}`;
-  const darkThemeIconClass = darkThemeIcon.startsWith("bi ") ? darkThemeIcon : `bi ${darkThemeIcon}`;
+  const toIconName = (icon: string) => (icon.startsWith("bi ") ? icon.slice(3) : icon);
+  const lightThemeIconName = toIconName(lightThemeIcon);
+  const darkThemeIconName = toIconName(darkThemeIcon);
   const normalizeHeaderHref = (href: string) => (href.startsWith("#") ? `/${href}` : href);
 
   return (
@@ -85,8 +87,8 @@ export function SiteHeader({
                 aria-label="Toggle theme"
                 data-theme-toggle
               >
-                <i className={`${lightThemeIconClass} blog-site-nav__theme-icon blog-site-nav__theme-icon--light`} />
-                <i className={`${darkThemeIconClass} blog-site-nav__theme-icon blog-site-nav__theme-icon--dark`} />
+                <UiIcon name={lightThemeIconName} className="blog-site-nav__theme-icon blog-site-nav__theme-icon--light" />
+                <UiIcon name={darkThemeIconName} className="blog-site-nav__theme-icon blog-site-nav__theme-icon--dark" />
               </button>
 
               <button
@@ -95,8 +97,8 @@ export function SiteHeader({
                 aria-label="Toggle theme"
                 data-theme-toggle
               >
-                <i className={`${lightThemeIconClass} blog-site-nav__theme-icon blog-site-nav__theme-icon--light`} />
-                <i className={`${darkThemeIconClass} blog-site-nav__theme-icon blog-site-nav__theme-icon--dark`} />
+                <UiIcon name={lightThemeIconName} className="blog-site-nav__theme-icon blog-site-nav__theme-icon--light" />
+                <UiIcon name={darkThemeIconName} className="blog-site-nav__theme-icon blog-site-nav__theme-icon--dark" />
               </button>
 
               <button

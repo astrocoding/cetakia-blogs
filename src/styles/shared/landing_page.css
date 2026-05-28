@@ -149,7 +149,7 @@
   margin: 0;
 }
 
-.lp-flow-item i {
+.lp-flow-item .ui-icon {
   color: var(--ui-color-primary);
 }
 
@@ -210,13 +210,17 @@
   align-items: center;
   background: color-mix(in srgb, var(--ui-color-primary) 16%, transparent);
   border-radius: 0.72rem;
-  color: var(--ui-color-primary);
   display: inline-flex;
-  font-size: 1rem;
-  height: 2.45rem;
+  height: 2.5rem;
   justify-content: center;
   margin-bottom: 0.82rem;
-  width: 2.45rem;
+  width: 2.5rem;
+}
+
+.lp-feature-icon__glyph {
+  color: var(--ui-color-primary);
+  height: 1.48rem;
+  width: 1.48rem;
 }
 
 .lp-feature-card h3 {

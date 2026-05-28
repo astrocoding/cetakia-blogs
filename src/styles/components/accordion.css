@@ -38,7 +38,7 @@
   min-width: 0;
 }
 
-.c-accordion__summary-text i {
+.c-accordion__summary-text .ui-icon {
   color: var(--ui-color-primary);
 }
 

@@ -1,5 +1,6 @@
 import type { SiteData } from "@/features/blogs/types/blog.type";
 import { ThemeLogo } from "@/features/global/components/ThemeLogo";
+import { UiIcon } from "@/features/global/components/UiIcon";
 
 type SiteFooterProps = {
   site: SiteData;
@@ -44,7 +45,7 @@ export function SiteFooter({ site }: SiteFooterProps) {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <i className={`bi ${link.icon ?? "bi-link-45deg"}`} aria-hidden="true" />
+                    <UiIcon name={link.icon ?? "bi-link-45deg"} />
                   </a>
                 ))}
               </div>
