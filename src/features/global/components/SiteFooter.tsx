@@ -25,7 +25,7 @@ export function SiteFooter({ site, sectionLinksOverride }: SiteFooterProps) {
               width={220}
               height={80}
             />
-            <p className="blog-site-footer__text max-w-[34ch] lg:max-w-[40ch]">{site.footer.description}</p>
+            <p className="blog-site-footer__text blog-site-footer__text--full">{site.footer.description}</p>
           </section>
 
           <section className="blog-site-footer__col blog-site-footer__col--product">
