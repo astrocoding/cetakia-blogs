@@ -1,5 +1,6 @@
 import { BlogHero } from "@/features/blogs/components/BlogHero";
 import { BlogPostCard } from "@/features/blogs/components/BlogPostCard";
+import { BlogPostScroller } from "@/features/blogs/components/BlogPostScroller";
 import { BlogSearchBox } from "@/features/blogs/components/BlogSearchBox";
 import { NewsletterSection } from "@/features/blogs/components/NewsletterSection";
 import { SiteFooter } from "@/features/global/components/SiteFooter";
@@ -57,11 +58,15 @@ export function BlogExplorerPage({ site, data }: BlogExplorerPageProps) {
                 ) : null}
               </div>
 
-              <div className="bp-post-grid">
+              <BlogPostScroller>
                 {section.articles.map((article) => (
-                  <BlogPostCard key={`${section.id}-${article.title}`} article={article} href="/blogs/erp-pengertian-fungsi-dan-manfaatnya-dalam-bisnis-percetakan" />
+                  <BlogPostCard
+                    key={`${section.id}-${article.title}`}
+                    article={article}
+                    href="/blogs/erp-pengertian-fungsi-dan-manfaatnya-dalam-bisnis-percetakan"
+                  />
                 ))}
-              </div>
+              </BlogPostScroller>
             </section>
           ))}
 

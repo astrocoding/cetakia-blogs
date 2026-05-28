@@ -205,17 +205,17 @@
 
 .bp-post-section {
   display: grid;
-  gap: 0.9rem;
+  gap: 1rem;
 }
 
 .bp-post-section + .bp-post-section {
-  margin-top: 1.25rem;
+  margin-top: clamp(1.85rem, 4vw, 2.6rem);
 }
 
 .bp-section-head {
   align-items: center;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 0.75rem;
   justify-content: space-between;
 }
@@ -228,9 +228,13 @@
 
 .bp-section-head h2 {
   color: var(--blog-content-title-color);
+  flex: 1;
   font-size: clamp(1.4rem, 2.4vw, 2.2rem);
+  font-weight: 800;
+  line-height: 1.15;
   letter-spacing: -0.02em;
   margin: 0;
+  min-width: 0;
 }
 
 .bp-section-head--center {
@@ -244,6 +248,7 @@
   border-radius: 999px;
   color: var(--blog-content-title-color);
   display: inline-flex;
+  flex-shrink: 0;
   font-size: 0.95rem;
   font-weight: 700;
   min-height: 2.9rem;
@@ -260,6 +265,10 @@
   display: grid;
   gap: 0.95rem;
   grid-template-columns: 1fr;
+}
+
+.bp-post-grid-wrap {
+  position: relative;
 }
 
 .bp-post-card {
@@ -460,13 +469,18 @@
 
 .bp-newsletter__field input {
   background: var(--ui-surface-card);
-  border: 1px solid color-mix(in srgb, var(--ui-border-subtle) 88%, transparent);
+  border: 1px solid color-mix(in srgb, var(--ui-color-primary) 88%, transparent);
   border-radius: 0.72rem;
   color: var(--ui-text-primary);
   font-size: 0.92rem;
   min-height: 2.65rem;
   outline: none;
   padding: 0.56rem 0.74rem;
+}
+
+.bp-newsletter__field input:focus,
+.bp-newsletter__field input:focus-visible {
+  box-shadow: 0 0 0 2px var(--ui-color-primary-ring);
 }
 
 .bp-newsletter__field input::placeholder {
@@ -539,8 +553,86 @@
 
 @media (max-width: 767px) {
   .bp-section-head {
-    align-items: flex-start;
-    flex-direction: column;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  .bp-post-grid {
+    display: grid;
+    gap: 0.8rem;
+    grid-auto-columns: minmax(82%, 1fr);
+    grid-auto-flow: column;
+    grid-template-columns: none;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    padding-bottom: 0.4rem;
+    scroll-padding-left: 0;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .bp-post-grid-wrap::after {
+    opacity: 1;
+    transition: opacity 180ms ease;
+  }
+
+  .bp-post-grid-wrap::before,
+  .bp-post-grid-wrap::after {
+    background:
+      radial-gradient(
+        120% 100% at 100% 50%,
+        color-mix(in srgb, var(--ui-surface-page) 22%, transparent) 0%,
+        color-mix(in srgb, var(--ui-surface-page) 8%, transparent) 60%,
+        transparent 100%
+      ),
+      linear-gradient(
+        to left,
+        color-mix(in srgb, var(--ui-surface-page) 96%, transparent) 0%,
+        color-mix(in srgb, var(--ui-surface-page) 74%, transparent) 28%,
+        color-mix(in srgb, var(--ui-surface-page) 32%, transparent) 62%,
+        color-mix(in srgb, var(--ui-surface-page) 10%, transparent) 88%,
+        transparent 100%
+      );
+    backdrop-filter: blur(6px) saturate(108%);
+    -webkit-backdrop-filter: blur(6px) saturate(108%);
+    content: "";
+    inset: -1px -1px -1px auto;
+    pointer-events: none;
+    position: absolute;
+    width: 3.1rem;
+    z-index: 2;
+  }
+
+  .bp-post-grid-wrap::before {
+    background:
+      radial-gradient(
+        120% 100% at 0% 50%,
+        color-mix(in srgb, var(--ui-surface-page) 22%, transparent) 0%,
+        color-mix(in srgb, var(--ui-surface-page) 8%, transparent) 60%,
+        transparent 100%
+      ),
+      linear-gradient(
+        to right,
+        color-mix(in srgb, var(--ui-surface-page) 96%, transparent) 0%,
+        color-mix(in srgb, var(--ui-surface-page) 74%, transparent) 28%,
+        color-mix(in srgb, var(--ui-surface-page) 32%, transparent) 62%,
+        color-mix(in srgb, var(--ui-surface-page) 10%, transparent) 88%,
+        transparent 100%
+      );
+    inset: -1px auto -1px -1px;
+  }
+
+  .bp-post-grid-wrap.is-at-start::before,
+  .bp-post-grid-wrap.is-at-end::after,
+  .bp-post-grid-wrap.is-not-scrollable::before,
+  .bp-post-grid-wrap.is-not-scrollable::after {
+    opacity: 0;
+  }
+
+  .bp-post-card {
+    scroll-snap-align: start;
+    width: 100%;
   }
 
   .bp-search-box {
