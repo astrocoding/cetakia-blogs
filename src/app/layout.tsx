@@ -4,6 +4,58 @@ import "./globals.css";
 import cetakiaFavicon from "./cetakia.webp";
 import { FloatingActions } from "@/features/global/components/FloatingActions";
 
+const THEME_STORAGE_KEY = "bp_theme_v2";
+const themeBootScript = `
+(() => {
+  try {
+    const root = document.documentElement;
+    const stored = localStorage.getItem("${THEME_STORAGE_KEY}");
+    const preferredDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const nextTheme = stored === "dark" || stored === "light" ? stored : (preferredDark ? "dark" : "light");
+    root.setAttribute("data-theme", nextTheme);
+    root.style.colorScheme = nextTheme;
+  } catch {
+    document.documentElement.setAttribute("data-theme", "light");
+    document.documentElement.style.colorScheme = "light";
+  }
+})();
+`;
+
+const hardRefreshResetScript = `
+(() => {
+  try {
+    const root = document.documentElement;
+    const nav = performance.getEntriesByType?.("navigation")?.[0];
+    const navType = nav && "type" in nav ? nav.type : (performance.navigation?.type === 1 ? "reload" : "navigate");
+    if (navType !== "reload") return;
+
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
+
+    if (window.location.hash) {
+      history.replaceState(history.state ?? null, "", window.location.pathname + window.location.search);
+    }
+
+    root.classList.add("ui-hard-refresh");
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+
+    window.addEventListener("load", () => {
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+      requestAnimationFrame(() => {
+        root.classList.remove("ui-hard-refresh");
+        root.classList.add("ui-hard-refresh-complete");
+        window.setTimeout(() => {
+          root.classList.remove("ui-hard-refresh-complete");
+        }, 320);
+      });
+    }, { once: true });
+  } catch {
+    // no-op
+  }
+})();
+`;
+
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -29,8 +81,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-theme="light" className={`${inter.variable} h-full antialiased`}>
+    <html lang="en" data-theme="light" className={`${inter.variable} h-full antialiased`} suppressHydrationWarning>
       <head>
+        <script dangerouslySetInnerHTML={{ __html: themeBootScript }} />
+        <script dangerouslySetInnerHTML={{ __html: hardRefreshResetScript }} />
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"

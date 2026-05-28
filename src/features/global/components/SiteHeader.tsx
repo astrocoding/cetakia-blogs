@@ -22,28 +22,12 @@ export function SiteHeader({
 }: SiteHeaderProps) {
   const themeStorageKey = "bp_theme_v2";
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [theme, setTheme] = useState<"light" | "dark">("light");
 
   const primaryLinks = navLinks ?? site.primaryNavigation;
   const logoLight = site.brand.logoLight ?? site.brand.logo;
   const logoDark = site.brand.logoDark ?? site.brand.logo;
   const lightThemeIcon = site.headerActions.themeToggleIcons.light;
   const darkThemeIcon = site.headerActions.themeToggleIcons.dark;
-
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme);
-  }, [theme]);
-
-  useEffect(() => {
-    const stored = localStorage.getItem(themeStorageKey);
-    if (stored !== "dark") return;
-
-    const rafId = window.requestAnimationFrame(() => {
-      setTheme("dark");
-    });
-
-    return () => window.cancelAnimationFrame(rafId);
-  }, []);
 
   useEffect(() => {
     const onEscape = (event: KeyboardEvent) => {
@@ -54,14 +38,16 @@ export function SiteHeader({
   }, []);
 
   const toggleTheme = () => {
-    const next = theme === "dark" ? "light" : "dark";
-    setTheme(next);
+    const rootTheme = document.documentElement.getAttribute("data-theme");
+    const next = rootTheme === "dark" ? "light" : "dark";
+    document.documentElement.style.colorScheme = next;
+    document.documentElement.setAttribute("data-theme", next);
     localStorage.setItem(themeStorageKey, next);
     window.dispatchEvent(new CustomEvent("bp-theme-change", { detail: { theme: next } }));
   };
 
-  const themeIconRaw = theme === "dark" ? darkThemeIcon : lightThemeIcon;
-  const themeIcon = themeIconRaw.startsWith("bi ") ? themeIconRaw : `bi ${themeIconRaw}`;
+  const lightThemeIconClass = lightThemeIcon.startsWith("bi ") ? lightThemeIcon : `bi ${lightThemeIcon}`;
+  const darkThemeIconClass = darkThemeIcon.startsWith("bi ") ? darkThemeIcon : `bi ${darkThemeIcon}`;
 
   return (
     <>
@@ -106,20 +92,20 @@ export function SiteHeader({
                 type="button"
                 className="blog-site-nav__theme hidden lg:inline-flex"
                 aria-label="Toggle theme"
-                aria-pressed={theme === "dark"}
                 onClick={toggleTheme}
               >
-                <i className={themeIcon} />
+                <i className={`${lightThemeIconClass} blog-site-nav__theme-icon blog-site-nav__theme-icon--light`} />
+                <i className={`${darkThemeIconClass} blog-site-nav__theme-icon blog-site-nav__theme-icon--dark`} />
               </button>
 
               <button
                 type="button"
                 className="blog-site-nav__theme inline-flex lg:hidden"
                 aria-label="Toggle theme"
-                aria-pressed={theme === "dark"}
                 onClick={toggleTheme}
               >
-                <i className={themeIcon} />
+                <i className={`${lightThemeIconClass} blog-site-nav__theme-icon blog-site-nav__theme-icon--light`} />
+                <i className={`${darkThemeIconClass} blog-site-nav__theme-icon blog-site-nav__theme-icon--dark`} />
               </button>
 
               <button

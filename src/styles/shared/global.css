@@ -21,6 +21,40 @@ html {
   scroll-behavior: smooth;
 }
 
+.theme-logo {
+  display: inline-grid;
+}
+
+.theme-logo__asset {
+  display: block;
+  grid-area: 1 / 1;
+}
+
+.theme-logo__slot {
+  display: inline-flex;
+  grid-area: 1 / 1;
+}
+
+.theme-logo .theme-logo__slot--light {
+  opacity: 1;
+  visibility: visible;
+}
+
+.theme-logo .theme-logo__slot--dark {
+  opacity: 0;
+  visibility: hidden;
+}
+
+:root[data-theme="dark"] .theme-logo .theme-logo__slot--light {
+  opacity: 0;
+  visibility: hidden;
+}
+
+:root[data-theme="dark"] .theme-logo .theme-logo__slot--dark {
+  opacity: 1;
+  visibility: visible;
+}
+
 .blog-container {
   margin-left: auto;
   margin-right: auto;

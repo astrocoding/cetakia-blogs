@@ -198,6 +198,18 @@
   color: var(--blog-link-color);
 }
 
+.blog-site-nav__theme-icon--dark {
+  display: none;
+}
+
+:root[data-theme="dark"] .blog-site-nav__theme-icon--light {
+  display: none;
+}
+
+:root[data-theme="dark"] .blog-site-nav__theme-icon--dark {
+  display: inline-block;
+}
+
 .blog-site-nav__hamburger {
   align-items: center;
   background: transparent;
