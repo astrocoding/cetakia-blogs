@@ -111,9 +111,21 @@
 }
 
 .blog-site-nav__hamburger {
+  align-items: center;
   background: transparent;
-  border-color: var(--ui-border-subtle);
+  border: 0;
   color: var(--blog-content-title-color);
+  cursor: pointer;
+  justify-content: center;
+  line-height: 1;
+  min-height: 1.9rem;
+  min-width: 1.9rem;
+  padding: 0.14rem;
+  transition: color 160ms ease;
+}
+
+.blog-site-nav__hamburger:hover {
+  color: var(--blog-link-color);
 }
 
 .blog-site-nav__hamburger-lines {

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-
+import { Accordion } from "@/features/global/components/Accordion";
 import { SiteFooter } from "@/features/global/components/SiteFooter";
 import { SiteHeader } from "@/features/global/components/SiteHeader";
 import type { SiteData } from "@/features/blogs/types/blog.type";
@@ -111,7 +111,35 @@ const sectionLinks = [
   { label: "FAQ", href: "#faq" },
 ];
 
-const QUOTE_INTERVAL_MS = 5000;
+const faqItems = [
+  {
+    id: "faq-free-trial",
+    iconClassName: "bi-emoji-smile",
+    title: "Is there a free trial available?",
+    content: "Yes. You can start from the Free Starter plan, then upgrade when your team needs more users and deeper reporting.",
+    defaultOpen: true,
+  },
+  {
+    id: "faq-change-plan",
+    iconClassName: "bi-sliders",
+    title: "Can I change my plan later?",
+    content: "Absolutely. You can move between plans as your production volume grows, while keeping data continuity intact.",
+  },
+  {
+    id: "faq-billing",
+    iconClassName: "bi-receipt",
+    title: "How does billing and cancellation work?",
+    content: "Billing can be monthly or annual based on your selected cycle. You can request cancellation before the next cycle starts.",
+  },
+  {
+    id: "faq-onboarding",
+    iconClassName: "bi-person-gear",
+    title: "Do you provide onboarding and implementation support?",
+    content: "Yes. Our team can assist setup, process mapping, and onboarding for sales, production, warehouse, and finance workflows.",
+  },
+];
+
+const QUOTE_INTERVAL_MS = 10000;
 const QUOTE_FADE_MS = 260;
 
 export function LandingPage({ site }: LandingPageProps) {
@@ -146,7 +174,7 @@ export function LandingPage({ site }: LandingPageProps) {
           <div className="blog-container">
             <div className="grid items-center gap-8 lg:grid-cols-2">
               <div>
-                <span className="lp-chip">ERP for Printing</span>
+                <span className="bp-pill bp-pill--tag">ERP for Printing</span>
                 <h1 className="mt-4 text-4xl font-bold leading-[1.08] tracking-[-0.03em] text-[var(--ui-text-primary)] sm:text-5xl lg:text-6xl">
                   One Stop <span className="text-[var(--ui-color-primary)]">Printing System</span> Solution.
                 </h1>
@@ -166,12 +194,12 @@ export function LandingPage({ site }: LandingPageProps) {
 
                 <div className="mt-8">
                   <p className="text-sm text-[var(--ui-text-muted)]">Trusted by teams managing:</p>
-                  <div className="mt-3 flex flex-wrap gap-2">
-                    <span className="lp-tag">Sales</span>
-                    <span className="lp-tag">Purchases</span>
-                    <span className="lp-tag">Production</span>
-                    <span className="lp-tag">Inventory</span>
-                    <span className="lp-tag">Financial Reports</span>
+                  <div className="bp-pill-group mt-3">
+                    <span className="bp-pill bp-pill--tag">Sales</span>
+                    <span className="bp-pill bp-pill--tag">Purchases</span>
+                    <span className="bp-pill bp-pill--tag">Production</span>
+                    <span className="bp-pill bp-pill--tag">Inventory</span>
+                    <span className="bp-pill bp-pill--tag">Financial Reports</span>
                   </div>
                 </div>
               </div>
@@ -221,7 +249,7 @@ export function LandingPage({ site }: LandingPageProps) {
         <section id="features" className="lp-section">
           <div className="blog-container">
             <header className="lp-head text-center">
-              <span className="lp-chip">Core Features</span>
+              <span className="bp-pill bp-pill--tag">Core Features</span>
               <h2>Built for end-to-end print business</h2>
               <p>Every team works on the same data foundation, from commercial planning to production output and finance.</p>
             </header>
@@ -251,7 +279,7 @@ export function LandingPage({ site }: LandingPageProps) {
           <div className="blog-container">
             <div className="grid gap-6 lg:grid-cols-[0.92fr_1.08fr]">
               <div>
-                <span className="lp-chip">Operational Flow</span>
+                <span className="bp-pill bp-pill--tag">Operational Flow</span>
                 <h2 className="mt-4 text-3xl font-bold leading-tight tracking-[-0.02em] text-[var(--ui-text-primary)] sm:text-4xl">
                   Keep every stage connected without operational silos
                 </h2>
@@ -282,7 +310,7 @@ export function LandingPage({ site }: LandingPageProps) {
         <section id="outcomes" className="lp-section">
           <div className="blog-container">
             <header className="lp-head text-center">
-              <span className="lp-chip">Testimonials</span>
+              <span className="bp-pill bp-pill--tag">Testimonials</span>
               <h2>Proven results from teams running Cetakia every day</h2>
               <p>Hear how sales, production, delivery, and finance teams gain faster coordination with one connected platform.</p>
             </header>
@@ -317,7 +345,7 @@ export function LandingPage({ site }: LandingPageProps) {
         <section id="pricing" className="lp-section lp-section--grid">
           <div className="blog-container">
             <header className="lp-head text-center">
-              <span className="lp-chip">Pricing Tiers</span>
+              <span className="bp-pill bp-pill--tag">Pricing Tiers</span>
               <h2>Flexible plans to match every stage of your business</h2>
               <p>Start with essential workflows, then scale into deeper automation and governance as complexity grows.</p>
             </header>
@@ -393,7 +421,7 @@ export function LandingPage({ site }: LandingPageProps) {
         <section id="faq" className="lp-section">
           <div className="blog-container">
             <header className="lp-head text-center">
-              <span className="lp-chip">FAQ</span>
+              <span className="bp-pill bp-pill--tag">FAQ</span>
               <h2>Frequently asked questions</h2>
               <p>
                 Need a tailored explanation?{" "}
@@ -404,32 +432,7 @@ export function LandingPage({ site }: LandingPageProps) {
               </p>
             </header>
 
-            <div className="mx-auto grid max-w-4xl gap-3">
-              <details className="lp-faq" open>
-                <summary>
-                  <i className="bi bi-emoji-smile" /> Is there a free trial available?
-                </summary>
-                <p>Yes. You can start from the Free Starter plan, then upgrade when your team needs more users and deeper reporting.</p>
-              </details>
-              <details className="lp-faq">
-                <summary>
-                  <i className="bi bi-sliders" /> Can I change my plan later?
-                </summary>
-                <p>Absolutely. You can move between plans as your production volume grows, while keeping data continuity intact.</p>
-              </details>
-              <details className="lp-faq">
-                <summary>
-                  <i className="bi bi-receipt" /> How does billing and cancellation work?
-                </summary>
-                <p>Billing can be monthly or annual based on your selected cycle. You can request cancellation before the next cycle starts.</p>
-              </details>
-              <details className="lp-faq">
-                <summary>
-                  <i className="bi bi-person-gear" /> Do you provide onboarding and implementation support?
-                </summary>
-                <p>Yes. Our team can assist setup, process mapping, and onboarding for sales, production, warehouse, and finance workflows.</p>
-              </details>
-            </div>
+            <Accordion items={faqItems} className="mx-auto max-w-4xl" />
           </div>
         </section>
       </main>

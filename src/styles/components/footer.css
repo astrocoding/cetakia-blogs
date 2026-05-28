@@ -18,6 +18,11 @@
   line-height: 1.6;
 }
 
+.blog-site-footer__text--full {
+  width: 100%;
+  max-width: none;
+}
+
 .blog-site-footer__title {
   color: var(--blog-content-title-color);
   font-size: 1rem;
@@ -47,10 +52,4 @@
 .blog-site-footer__bottom {
   padding-left: 0;
   padding-right: 0;
-}
-
-@media (min-width: 768px) {
-  .blog-site-footer__text {
-    max-width: 36ch;
-  }
 }
