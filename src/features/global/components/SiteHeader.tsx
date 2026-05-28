@@ -6,7 +6,6 @@ import Link from "next/link";
 import type { NavLink, SiteData } from "@/features/blogs/types/blog.type";
 import { InformationBar } from "@/features/global/components/InformationBar";
 import { ThemeLogo } from "@/features/global/components/ThemeLogo";
-import { THEME_COOKIE_KEY, THEME_STORAGE_KEY } from "@/features/global/constants/uiBootstrap";
 
 type SiteHeaderProps = {
   site: SiteData;
@@ -36,16 +35,6 @@ export function SiteHeader({
     window.addEventListener("keydown", onEscape);
     return () => window.removeEventListener("keydown", onEscape);
   }, []);
-
-  const toggleTheme = () => {
-    const rootTheme = document.documentElement.getAttribute("data-theme");
-    const next = rootTheme === "dark" ? "light" : "dark";
-    document.documentElement.style.colorScheme = next;
-    document.documentElement.setAttribute("data-theme", next);
-    localStorage.setItem(THEME_STORAGE_KEY, next);
-    document.cookie = `${THEME_COOKIE_KEY}=${next}; path=/; max-age=31536000; samesite=lax`;
-    window.dispatchEvent(new CustomEvent("bp-theme-change", { detail: { theme: next } }));
-  };
 
   const lightThemeIconClass = lightThemeIcon.startsWith("bi ") ? lightThemeIcon : `bi ${lightThemeIcon}`;
   const darkThemeIconClass = darkThemeIcon.startsWith("bi ") ? darkThemeIcon : `bi ${darkThemeIcon}`;
@@ -94,7 +83,7 @@ export function SiteHeader({
                 type="button"
                 className="blog-site-nav__theme hidden lg:inline-flex"
                 aria-label="Toggle theme"
-                onClick={toggleTheme}
+                data-theme-toggle
               >
                 <i className={`${lightThemeIconClass} blog-site-nav__theme-icon blog-site-nav__theme-icon--light`} />
                 <i className={`${darkThemeIconClass} blog-site-nav__theme-icon blog-site-nav__theme-icon--dark`} />
@@ -104,7 +93,7 @@ export function SiteHeader({
                 type="button"
                 className="blog-site-nav__theme inline-flex lg:hidden"
                 aria-label="Toggle theme"
-                onClick={toggleTheme}
+                data-theme-toggle
               >
                 <i className={`${lightThemeIconClass} blog-site-nav__theme-icon blog-site-nav__theme-icon--light`} />
                 <i className={`${darkThemeIconClass} blog-site-nav__theme-icon blog-site-nav__theme-icon--dark`} />
