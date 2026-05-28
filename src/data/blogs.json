@@ -8,20 +8,20 @@
       "logoAlt": "Cetakia logo"
     },
     "primaryNavigation": [
-      { "label": "Features", "href": "#" },
-      { "label": "Workflow", "href": "#" },
-      { "label": "Outcomes", "href": "#" },
-      { "label": "Pricing", "href": "#" },
-      { "label": "Contact", "href": "#" },
-      { "label": "FAQ", "href": "#" }
+      { "label": "Features", "href": "/#features" },
+      { "label": "Workflow", "href": "/#workflow" },
+      { "label": "Outcomes", "href": "/#outcomes" },
+      { "label": "Pricing", "href": "/#pricing" },
+      { "label": "Contact", "href": "/#contact" },
+      { "label": "FAQ", "href": "/#faq" }
     ],
     "mobileDrawerNavigation": [
-      { "label": "Features", "href": "#", "icon": "bi-chevron-right" },
-      { "label": "Workflow", "href": "#", "icon": "bi-chevron-right" },
-      { "label": "Outcomes", "href": "#", "icon": "bi-chevron-right" },
-      { "label": "Pricing", "href": "#", "icon": "bi-chevron-right" },
-      { "label": "Contact", "href": "#", "icon": "bi-chevron-right" },
-      { "label": "FAQ", "href": "#", "icon": "bi-chevron-right" }
+      { "label": "Features", "href": "/#features", "icon": "bi-chevron-right" },
+      { "label": "Workflow", "href": "/#workflow", "icon": "bi-chevron-right" },
+      { "label": "Outcomes", "href": "/#outcomes", "icon": "bi-chevron-right" },
+      { "label": "Pricing", "href": "/#pricing", "icon": "bi-chevron-right" },
+      { "label": "Contact", "href": "/#contact", "icon": "bi-chevron-right" },
+      { "label": "FAQ", "href": "/#faq", "icon": "bi-chevron-right" }
     ],
     "informationBar": {
       "announcement": {
@@ -37,7 +37,7 @@
     },
     "headerActions": {
       "login": { "label": "Log In", "href": "#" },
-      "startNow": { "label": "Start Now", "href": "#" },
+      "startNow": { "label": "Start Now", "href": "/#pricing" },
       "themeToggleIcons": {
         "light": "bi-moon-stars",
         "dark": "bi-sun"
