@@ -23,6 +23,18 @@
       { "label": "Contact", "href": "#", "icon": "bi-chevron-right" },
       { "label": "FAQ", "href": "#", "icon": "bi-chevron-right" }
     ],
+    "informationBar": {
+      "announcement": {
+        "text": "Inside Cetakia: New AI-assisted estimation workflow for printing teams",
+        "href": "#"
+      },
+      "links": [
+        { "label": "Blog", "href": "/blogs" },
+        { "label": "Docs", "href": "#" },
+        { "label": "Support", "href": "#" },
+        { "label": "Contact Us", "href": "#" }
+      ]
+    },
     "headerActions": {
       "login": { "label": "Log In", "href": "#" },
       "startNow": { "label": "Start Now", "href": "#" },

@@ -173,7 +173,7 @@ export function LandingPage({ site }: LandingPageProps) {
         <section className="lp-hero">
           <div className="blog-container">
             <div className="grid items-center gap-8 lg:grid-cols-2">
-              <div>
+              <div className="lp-hero-intro">
                 <span className="bp-pill bp-pill--tag">ERP for Printing</span>
                 <h1 className="mt-4 text-4xl font-bold leading-[1.08] tracking-[-0.03em] text-[var(--ui-text-primary)] sm:text-5xl lg:text-6xl">
                   One Stop <span className="text-[var(--ui-color-primary)]">Printing System</span> Solution.
@@ -205,7 +205,7 @@ export function LandingPage({ site }: LandingPageProps) {
               </div>
 
               <div className="relative">
-                <div className="lp-hero-card">
+                <div className="lp-hero-card lp-hero-card--floating">
                   <div className="mb-4 flex items-center justify-between gap-3">
                     <span className="text-sm font-semibold text-[var(--ui-text-primary)]">Daily Operations Snapshot</span>
                     <span className="lp-status">Live</span>
@@ -367,9 +367,9 @@ export function LandingPage({ site }: LandingPageProps) {
               </button>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-5">
+            <div className={`lp-pricing-grid grid gap-4 sm:grid-cols-2 xl:grid-cols-5 lp-pricing-grid--${billing}`}>
               {pricingPlans.map((plan) => (
-                <article key={plan.name} className={`lp-price-card${plan.recommended ? " lp-price-card--recommended" : ""}`}>
+                <article key={plan.name} className={`lp-price-card lp-price-card--reveal${plan.recommended ? " lp-price-card--recommended" : ""}`}>
                   {plan.recommended ? <span className="lp-recommend">Recommend</span> : null}
                   <h3>{plan.name}</h3>
                   <p>{plan.description}</p>
