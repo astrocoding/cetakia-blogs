@@ -122,7 +122,7 @@ export function SiteHeader({
 
               <button
                 type="button"
-                className={`blog-site-nav__hamburger inline-flex h-10 w-10 items-center justify-center rounded-md border transition-colors lg:hidden${drawerOpen ? " is-open" : ""}`}
+                className={`blog-site-nav__hamburger inline-flex lg:hidden${drawerOpen ? " is-open" : ""}`}
                 aria-label={drawerOpen ? "Close navigation menu" : "Open navigation menu"}
                 aria-controls={drawerId}
                 aria-expanded={drawerOpen}
