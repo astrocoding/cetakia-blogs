@@ -1,5 +1,10 @@
 .ct-page {
+  background:
+    radial-gradient(circle at 0% 0%, rgb(35 154 232 / 0.12), transparent 30%),
+    radial-gradient(circle at 100% 10%, rgb(16 185 129 / 0.1), transparent 28%),
+    var(--ui-surface-page);
   min-height: 100vh;
+  overflow-x: clip;
 }
 
 .ct-main {
