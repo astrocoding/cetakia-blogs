@@ -17,8 +17,12 @@
   scroll-margin-top: var(--lp-nav-offset);
 }
 
-#workflow, #outcomes {
-  scroll-margin-top: calc(var(--lp-nav-offset) - 1.5rem);
+#features, #outcomes {
+  scroll-margin-top: calc(var(--lp-nav-offset) - 2rem);
+}
+
+#workflow {
+  scroll-margin-top: calc(var(--lp-nav-offset) - 1rem);
 }
 
 .lp-hero {
@@ -534,6 +538,12 @@
 @media (max-width: 1023px) {
   .lp-page {
     --lp-nav-offset: calc(var(--blog-nav-sticky-height) + 0.5rem);
+  }
+
+  #features,
+  #outcomes,
+  #workflow {
+    scroll-margin-top: var(--lp-nav-offset);
   }
 }
 

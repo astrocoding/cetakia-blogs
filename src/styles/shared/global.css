@@ -1,9 +1,11 @@
 :root {
   color-scheme: light;
+  --blog-info-bar-sticky-height: 38px;
   --blog-nav-sticky-height: 78px;
   --blog-sidebar-top-gap: 0.85rem;
-  --blog-sidebar-sticky-top: calc(var(--blog-nav-sticky-height) + var(--blog-sidebar-top-gap));
-  --blog-anchor-scroll-offset: calc(var(--blog-nav-sticky-height) + 0.95rem);
+  --blog-sticky-stack-height: calc(var(--blog-info-bar-sticky-height) + var(--blog-nav-sticky-height));
+  --blog-sidebar-sticky-top: calc(var(--blog-sticky-stack-height) + var(--blog-sidebar-top-gap));
+  --blog-anchor-scroll-offset: calc(var(--blog-sticky-stack-height) + 0.95rem);
 }
 
 * {
@@ -298,7 +300,17 @@ html {
   color: var(--blog-content-title-color);
   line-height: 1.2;
   margin: 1.25rem 0 0.65rem;
-  scroll-margin-top: var(--blog-anchor-scroll-offset);
+  position: relative;
+}
+
+.blog-article-content h2[id]::before,
+.blog-article-content h3[id]::before {
+  content: "";
+  display: block;
+  height: var(--blog-anchor-scroll-offset);
+  margin-top: calc(var(--blog-anchor-scroll-offset) * -1);
+  pointer-events: none;
+  visibility: hidden;
 }
 
 .blog-article-content h2 {
@@ -452,9 +464,11 @@ html {
 
 @media (max-width: 1279px) {
   :root {
+    --blog-info-bar-sticky-height: 36px;
     --blog-nav-sticky-height: 78px;
     --blog-sidebar-top-gap: 0.75rem;
-    --blog-anchor-scroll-offset: calc(var(--blog-nav-sticky-height) + 0.88rem);
+    --blog-sticky-stack-height: calc(var(--blog-info-bar-sticky-height) + var(--blog-nav-sticky-height));
+    --blog-anchor-scroll-offset: calc(var(--blog-sticky-stack-height) + 0.88rem);
   }
 
   .blog-layout {
@@ -464,8 +478,10 @@ html {
 
 @media (max-width: 1023px) {
   :root {
+    --blog-info-bar-sticky-height: 35px;
     --blog-nav-sticky-height: 70px;
-    --blog-anchor-scroll-offset: calc(var(--blog-nav-sticky-height) + 0.72rem);
+    --blog-sticky-stack-height: calc(var(--blog-info-bar-sticky-height) + var(--blog-nav-sticky-height));
+    --blog-anchor-scroll-offset: calc(var(--blog-sticky-stack-height) + 0.72rem);
   }
 
   .blog-article-header::after {
@@ -510,8 +526,10 @@ html {
 
 @media (max-width: 767px) {
   :root {
+    --blog-info-bar-sticky-height: 35px;
     --blog-nav-sticky-height: 70px;
-    --blog-anchor-scroll-offset: calc(var(--blog-nav-sticky-height) + 0.62rem);
+    --blog-sticky-stack-height: calc(var(--blog-info-bar-sticky-height) + var(--blog-nav-sticky-height));
+    --blog-anchor-scroll-offset: calc(var(--blog-sticky-stack-height) + 0.62rem);
   }
 
   .blog-article-header::after {

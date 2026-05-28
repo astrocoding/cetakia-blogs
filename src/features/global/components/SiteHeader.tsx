@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 
 import type { NavLink, SiteData } from "@/features/blogs/types/blog.type";
+import { InformationBar } from "@/features/global/components/InformationBar";
 import { ThemeLogo } from "@/features/global/components/ThemeLogo";
 
 type SiteHeaderProps = {
@@ -64,6 +65,7 @@ export function SiteHeader({
 
   return (
     <>
+      <InformationBar informationBar={site.informationBar} />
       <header className="blog-site-nav sticky top-0 z-50 border-b border-[var(--ui-border-subtle)]">
         <div className="blog-container">
           <div className="blog-site-nav__inner grid w-full items-center gap-4">
