@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import type { BlogArticleCard } from "@/features/blogs/types/blog.type";
+import { UiIcon } from "@/features/global/components/UiIcon";
 
 type BlogPostCardProps = {
   article: BlogArticleCard;
@@ -26,7 +27,7 @@ export function BlogPostCard({ article, href = "#" }: BlogPostCardProps) {
           {article.date} &bull; {article.readTime}
         </p>
         <Link href={href} className="bp-read-more">
-          Read more <i className="bi bi-arrow-right" />
+          Read more <UiIcon name="bi-arrow-right" />
         </Link>
       </div>
     </article>

@@ -1,3 +1,5 @@
+import { UiIcon } from "@/features/global/components/UiIcon";
+
 type ContactInfoCardProps = {
   iconClassName: string;
   title: string;
@@ -19,7 +21,7 @@ export function ContactInfoCard({
     <article className={`gc-card gc-card--interactive ct-contact-card ${className}`.trim()}>
       <div className="ct-contact-card__inner">
         <span className={`gc-card__icon gc-card__icon--${iconTone}`} aria-hidden="true">
-          <i className={`bi ${iconClassName}`} />
+          <UiIcon name={iconClassName} />
         </span>
 
         <div className="ct-contact-card__body">
