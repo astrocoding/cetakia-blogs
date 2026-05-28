@@ -93,7 +93,7 @@
 }
 
 .lp-btn--outline {
-  background: var(--ui-btn-outline-surface);
+  background: transparent;
   border: 1px solid var(--ui-color-primary);
   color: var(--ui-color-primary);
 }
