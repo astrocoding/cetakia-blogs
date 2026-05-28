@@ -205,9 +205,11 @@
 
     bindAccordionHandler();
 
-    window.addEventListener("pageshow", () => {
+    window.addEventListener("pageshow", (event) => {
       bindAccordionHandler();
-      syncAccordionHeights();
+      if (event.persisted) {
+        syncAccordionHeights();
+      }
     });
   } catch {
     // no-op

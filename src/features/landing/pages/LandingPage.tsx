@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Accordion } from "@/features/global/components/Accordion";
 import { SiteFooter } from "@/features/global/components/SiteFooter";
 import { SiteHeader } from "@/features/global/components/SiteHeader";
+import { UiIcon } from "@/features/global/components/UiIcon";
 import type { SiteData } from "@/features/blogs/types/blog.type";
 
 type LandingPageProps = {
@@ -186,7 +187,7 @@ export function LandingPage({ site }: LandingPageProps) {
 
                 <div className="mt-7 flex flex-wrap gap-3">
                   <Link href="/#pricing" className="lp-btn lp-btn--solid">
-                    Start with Cetakia <i className="bi bi-arrow-up-right" />
+                    Start with Cetakia <UiIcon name="bi-arrow-up-right" />
                   </Link>
                   <Link href="/#features" className="lp-btn lp-btn--outline">
                     Explore Platform
@@ -231,13 +232,13 @@ export function LandingPage({ site }: LandingPageProps) {
                   </div>
                   <div className="mt-4 grid gap-2 rounded-xl border border-dashed border-[var(--ui-border-subtle)] p-3">
                     <p className="lp-flow-item">
-                      <i className="bi bi-check-circle-fill" /> Quotation Approved
+                      <UiIcon name="bi-check-circle-fill" /> Quotation Approved
                     </p>
                     <p className="lp-flow-item">
-                      <i className="bi bi-arrow-repeat" /> Production Running
+                      <UiIcon name="bi-arrow-repeat" /> Production Running
                     </p>
                     <p className="lp-flow-item">
-                      <i className="bi bi-truck" /> Delivery Scheduled
+                      <UiIcon name="bi-truck" /> Delivery Scheduled
                     </p>
                   </div>
                 </div>
@@ -267,7 +268,9 @@ export function LandingPage({ site }: LandingPageProps) {
                 ["bi-cpu", "Intelligence Layer", "Leverage Expert System and Business Intelligence for smarter planning and performance growth."],
               ].map(([icon, title, description]) => (
                 <article key={title} className="lp-feature-card">
-                  <i className={`bi ${icon} lp-feature-icon`} />
+                  <span className="lp-feature-icon" aria-hidden="true">
+                    <UiIcon name={icon} className="lp-feature-icon__glyph" />
+                  </span>
                   <h3>{title}</h3>
                   <p>{description}</p>
                 </article>
@@ -317,7 +320,7 @@ export function LandingPage({ site }: LandingPageProps) {
             </header>
 
             <article className="lp-quote-card text-center">
-              <i className="bi bi-quote lp-quote-icon" aria-hidden="true" />
+              <UiIcon name="bi-quote" className="lp-quote-icon" />
               <div className={`lp-quote-body${isQuoteVisible ? " is-visible" : ""}`} data-quote-body>
                 <p>“{quote.quote}”</p>
                 <div className="grid gap-1">
