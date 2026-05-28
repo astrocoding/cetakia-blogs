@@ -21,6 +21,14 @@ export type FooterData = {
   };
 };
 
+export type InformationBarData = {
+  announcement: {
+    text: string;
+    href: string;
+  };
+  links: NavLink[];
+};
+
 export type NewsletterData = {
   title: string;
   description: string;
@@ -39,6 +47,7 @@ export type SiteData = {
   };
   primaryNavigation: NavLink[];
   mobileDrawerNavigation: NavLink[];
+  informationBar?: InformationBarData;
   headerActions: {
     login: NavLink;
     startNow: NavLink;

@@ -5,3 +5,4 @@ export * from "./BackToTopButton";
 export * from "./WhatsAppButton";
 export * from "./FloatingActions";
 export * from "./Accordion";
+export * from "./InformationBar";

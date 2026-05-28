@@ -1,8 +1,18 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { cookies } from "next/headers";
+import Script from "next/script";
 import "./globals.css";
 import cetakiaFavicon from "./cetakia.webp";
 import { FloatingActions } from "@/features/global/components/FloatingActions";
+import {
+  DARK_THEME_BACKGROUND,
+  EARLY_THEME_BOOT_SCRIPT,
+  EARLY_THEME_BOOT_STYLE,
+  LIGHT_THEME_BACKGROUND,
+  THEME_COOKIE_KEY,
+  type UiTheme,
+} from "@/features/global/constants/uiBootstrap";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -23,14 +33,28 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const cookieStore = await cookies();
+  const cookieTheme = cookieStore.get(THEME_COOKIE_KEY)?.value;
+  const initialTheme: UiTheme = cookieTheme === "dark" ? "dark" : "light";
+  const initialBackground = initialTheme === "dark" ? DARK_THEME_BACKGROUND : LIGHT_THEME_BACKGROUND;
+
   return (
-    <html lang="en" data-theme="light" className={`${inter.variable} h-full antialiased`}>
+    <html
+      lang="en"
+      data-theme={initialTheme}
+      className={`${inter.variable} h-full antialiased`}
+      style={{ colorScheme: initialTheme, backgroundColor: initialBackground }}
+      suppressHydrationWarning
+    >
       <head>
+        <style dangerouslySetInnerHTML={{ __html: EARLY_THEME_BOOT_STYLE }} />
+        <Script id="early-theme-boot" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: EARLY_THEME_BOOT_SCRIPT }} />
+        <Script src="/scripts/ui-bootstrap.js" strategy="beforeInteractive" />
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
