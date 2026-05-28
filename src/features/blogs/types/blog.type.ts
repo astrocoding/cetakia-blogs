@@ -14,6 +14,7 @@ export type FooterColumn = {
 
 export type FooterData = {
   description: string;
+  socialLinks?: NavLink[];
   columns: FooterColumn[];
   bottom: {
     copyright: string;
