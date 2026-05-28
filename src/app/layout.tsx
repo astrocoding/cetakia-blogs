@@ -1,60 +1,18 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { cookies } from "next/headers";
+import Script from "next/script";
 import "./globals.css";
 import cetakiaFavicon from "./cetakia.webp";
 import { FloatingActions } from "@/features/global/components/FloatingActions";
-
-const THEME_STORAGE_KEY = "bp_theme_v2";
-const themeBootScript = `
-(() => {
-  try {
-    const root = document.documentElement;
-    const stored = localStorage.getItem("${THEME_STORAGE_KEY}");
-    const preferredDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const nextTheme = stored === "dark" || stored === "light" ? stored : (preferredDark ? "dark" : "light");
-    root.setAttribute("data-theme", nextTheme);
-    root.style.colorScheme = nextTheme;
-  } catch {
-    document.documentElement.setAttribute("data-theme", "light");
-    document.documentElement.style.colorScheme = "light";
-  }
-})();
-`;
-
-const hardRefreshResetScript = `
-(() => {
-  try {
-    const root = document.documentElement;
-    const nav = performance.getEntriesByType?.("navigation")?.[0];
-    const navType = nav && "type" in nav ? nav.type : (performance.navigation?.type === 1 ? "reload" : "navigate");
-    if (navType !== "reload") return;
-
-    if ("scrollRestoration" in history) {
-      history.scrollRestoration = "manual";
-    }
-
-    if (window.location.hash) {
-      history.replaceState(history.state ?? null, "", window.location.pathname + window.location.search);
-    }
-
-    root.classList.add("ui-hard-refresh");
-    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-
-    window.addEventListener("load", () => {
-      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-      requestAnimationFrame(() => {
-        root.classList.remove("ui-hard-refresh");
-        root.classList.add("ui-hard-refresh-complete");
-        window.setTimeout(() => {
-          root.classList.remove("ui-hard-refresh-complete");
-        }, 320);
-      });
-    }, { once: true });
-  } catch {
-    // no-op
-  }
-})();
-`;
+import {
+  DARK_THEME_BACKGROUND,
+  EARLY_THEME_BOOT_SCRIPT,
+  EARLY_THEME_BOOT_STYLE,
+  LIGHT_THEME_BACKGROUND,
+  THEME_COOKIE_KEY,
+  type UiTheme,
+} from "@/features/global/constants/uiBootstrap";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -75,16 +33,28 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const cookieStore = await cookies();
+  const cookieTheme = cookieStore.get(THEME_COOKIE_KEY)?.value;
+  const initialTheme: UiTheme = cookieTheme === "dark" ? "dark" : "light";
+  const initialBackground = initialTheme === "dark" ? DARK_THEME_BACKGROUND : LIGHT_THEME_BACKGROUND;
+
   return (
-    <html lang="en" data-theme="light" className={`${inter.variable} h-full antialiased`} suppressHydrationWarning>
+    <html
+      lang="en"
+      data-theme={initialTheme}
+      className={`${inter.variable} h-full antialiased`}
+      style={{ colorScheme: initialTheme, backgroundColor: initialBackground }}
+      suppressHydrationWarning
+    >
       <head>
-        <script dangerouslySetInnerHTML={{ __html: themeBootScript }} />
-        <script dangerouslySetInnerHTML={{ __html: hardRefreshResetScript }} />
+        <style dangerouslySetInnerHTML={{ __html: EARLY_THEME_BOOT_STYLE }} />
+        <Script id="early-theme-boot" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: EARLY_THEME_BOOT_SCRIPT }} />
+        <Script src="/scripts/ui-bootstrap.js" strategy="beforeInteractive" />
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"

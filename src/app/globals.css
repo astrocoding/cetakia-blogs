@@ -15,19 +15,6 @@ body {
   font-family: var(--font-sans);
 }
 
-html.ui-hard-refresh body {
-  opacity: 0;
-}
-
-html.ui-hard-refresh-complete body {
-  animation: ui-hard-refresh-fade-in 260ms ease-out both;
-}
-
-@keyframes ui-hard-refresh-fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+html {
+  background: var(--background);
 }

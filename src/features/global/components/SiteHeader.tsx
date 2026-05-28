@@ -6,6 +6,7 @@ import Link from "next/link";
 import type { NavLink, SiteData } from "@/features/blogs/types/blog.type";
 import { InformationBar } from "@/features/global/components/InformationBar";
 import { ThemeLogo } from "@/features/global/components/ThemeLogo";
+import { THEME_COOKIE_KEY, THEME_STORAGE_KEY } from "@/features/global/constants/uiBootstrap";
 
 type SiteHeaderProps = {
   site: SiteData;
@@ -20,7 +21,6 @@ export function SiteHeader({
   startNowHref,
   drawerId = "public-nav-drawer",
 }: SiteHeaderProps) {
-  const themeStorageKey = "bp_theme_v2";
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   const primaryLinks = navLinks ?? site.primaryNavigation;
@@ -42,7 +42,8 @@ export function SiteHeader({
     const next = rootTheme === "dark" ? "light" : "dark";
     document.documentElement.style.colorScheme = next;
     document.documentElement.setAttribute("data-theme", next);
-    localStorage.setItem(themeStorageKey, next);
+    localStorage.setItem(THEME_STORAGE_KEY, next);
+    document.cookie = `${THEME_COOKIE_KEY}=${next}; path=/; max-age=31536000; samesite=lax`;
     window.dispatchEvent(new CustomEvent("bp-theme-change", { detail: { theme: next } }));
   };
 
