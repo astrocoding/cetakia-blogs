@@ -45,14 +45,20 @@
     },
     "footer": {
       "description": "A professional ERP platform for printing businesses that need clarity, speed, and scalable control.",
+      "socialLinks": [
+        { "label": "LinkedIn", "href": "https://www.linkedin.com", "icon": "bi-linkedin" },
+        { "label": "YouTube", "href": "https://www.youtube.com", "icon": "bi-youtube" },
+        { "label": "Facebook", "href": "https://www.facebook.com", "icon": "bi-facebook" },
+        { "label": "Threads", "href": "https://www.threads.net", "icon": "bi-threads" }
+      ],
       "columns": [
         {
           "title": "Product",
           "links": [
-            { "label": "Features", "href": "#" },
-            { "label": "Workflow", "href": "#" },
-            { "label": "Outcomes", "href": "#" },
-            { "label": "Pricing", "href": "#" }
+            { "label": "Features", "href": "/#features" },
+            { "label": "Workflow", "href": "/#workflow" },
+            { "label": "Outcomes", "href": "/#outcomes" },
+            { "label": "Pricing", "href": "/#pricing" }
           ]
         },
         {

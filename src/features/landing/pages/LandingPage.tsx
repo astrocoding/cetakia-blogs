@@ -433,7 +433,7 @@ export function LandingPage({ site }: LandingPageProps) {
         </section>
       </main>
 
-      <SiteFooter site={site} sectionLinksOverride={sectionLinks} />
+      <SiteFooter site={site} />
     </div>
   );
 }
