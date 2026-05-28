@@ -3,12 +3,18 @@ import { ThemeLogo } from "@/features/global/components/ThemeLogo";
 
 type SiteFooterProps = {
   site: SiteData;
-  sectionLinksOverride?: Array<{ label: string; href: string }>;
 };
 
-export function SiteFooter({ site, sectionLinksOverride }: SiteFooterProps) {
+export function SiteFooter({ site }: SiteFooterProps) {
   const [productColumn, platformColumn, getStartedColumn] = site.footer.columns;
-  const productLinks = sectionLinksOverride ?? productColumn.links ?? [];
+  const productLinks = productColumn.links ?? [];
+  const socialLinks = site.footer.socialLinks ?? [];
+  const copyrightText = site.footer.bottom.copyright;
+  const brandText = "Cetakia";
+  const brandStartIndex = copyrightText.indexOf(brandText);
+  const hasBrandMention = brandStartIndex >= 0;
+  const copyrightPrefix = hasBrandMention ? copyrightText.slice(0, brandStartIndex) : copyrightText;
+  const copyrightSuffix = hasBrandMention ? copyrightText.slice(brandStartIndex + brandText.length) : "";
   const logoLight = site.brand.logoLight ?? site.brand.logo;
   const logoDark = site.brand.logoDark ?? site.brand.logo;
 
@@ -26,6 +32,23 @@ export function SiteFooter({ site, sectionLinksOverride }: SiteFooterProps) {
               height={80}
             />
             <p className="blog-site-footer__text blog-site-footer__text--full">{site.footer.description}</p>
+            {socialLinks.length > 0 ? (
+              <div className="blog-site-footer__social" aria-label="Social media links">
+                {socialLinks.map((link) => (
+                  <a
+                    key={`footer-social-${link.label}`}
+                    href={link.href}
+                    className="blog-site-footer__social-link"
+                    aria-label={link.label}
+                    title={link.label}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i className={`bi ${link.icon ?? "bi-link-45deg"}`} aria-hidden="true" />
+                  </a>
+                ))}
+              </div>
+            ) : null}
           </section>
 
           <section className="blog-site-footer__col blog-site-footer__col--product">
@@ -69,7 +92,15 @@ export function SiteFooter({ site, sectionLinksOverride }: SiteFooterProps) {
 
       <div className="blog-container">
         <div className="blog-site-footer__bottom flex w-full flex-col items-center gap-2 border-t border-[var(--ui-border-soft)] py-4 text-center text-sm md:flex-row md:items-center md:justify-between md:text-left">
-          <span className="blog-site-footer__muted">{site.footer.bottom.copyright}</span>
+          <span className="blog-site-footer__muted">
+            {copyrightPrefix}
+            {hasBrandMention ? (
+              <a href="https://cetakia.com" className="blog-site-footer__brand-link">
+                {brandText}
+              </a>
+            ) : null}
+            {copyrightSuffix}
+          </span>
           <div className="flex items-center justify-center gap-4 md:justify-end">
             {site.footer.bottom.links.map((link) => (
               <a key={`footer-bottom-${link.label}`} href={link.href} className="blog-site-footer__link">

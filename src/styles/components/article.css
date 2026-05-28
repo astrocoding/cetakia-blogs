@@ -392,7 +392,6 @@
   grid-template-columns: 4.2rem minmax(0, 1fr);
   padding: 0.2rem 0;
   text-decoration: none;
-  transition: transform 160ms ease;
 }
 
 .blog-mini-card:hover {
@@ -417,7 +416,6 @@
   font-size: 0.92rem;
   font-weight: 700;
   line-height: 1.3;
-  transition: color 160ms ease;
 }
 
 .blog-mini-card:hover .blog-mini-card__title-link {
@@ -518,13 +516,5 @@
   .blog-article-header__pixel--two {
     right: -0.5rem;
     top: 40%;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .blog-article-header,
-  .blog-article-header * {
-    animation: none;
-    transition: none;
   }
 }

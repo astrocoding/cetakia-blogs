@@ -29,26 +29,6 @@
   padding: clamp(2.6rem, 5vw, 5rem) 0 clamp(2.2rem, 4vw, 4.4rem);
 }
 
-.lp-hero-intro > * {
-  animation: lpRevealUp 0.62s ease both;
-}
-
-.lp-hero-intro > *:nth-child(2) {
-  animation-delay: 0.08s;
-}
-
-.lp-hero-intro > *:nth-child(3) {
-  animation-delay: 0.14s;
-}
-
-.lp-hero-intro > *:nth-child(4) {
-  animation-delay: 0.2s;
-}
-
-.lp-hero-intro > *:nth-child(5) {
-  animation-delay: 0.26s;
-}
-
 .lp-chip {
   align-items: center;
   background: color-mix(in srgb, var(--ui-surface-card) 78%, transparent);
@@ -74,7 +54,6 @@
   min-height: 2.8rem;
   padding: 0.52rem 1.05rem;
   text-decoration: none;
-  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
 .lp-btn:hover {
@@ -122,10 +101,6 @@
   padding: 1rem;
   position: relative;
   z-index: 2;
-}
-
-.lp-hero-card--floating {
-  animation: lpFloat 4.8s ease-in-out infinite;
 }
 
 .lp-status {
@@ -191,38 +166,6 @@
   z-index: 1;
 }
 
-@keyframes lpRevealUp {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes lpFloat {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
-}
-
-@keyframes lpRevealUpAlt {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .lp-section {
   padding: clamp(2.8rem, 6vw, 5.1rem) 0;
 }
@@ -254,11 +197,6 @@
   border-radius: 1rem;
   height: 100%;
   padding: 1rem;
-}
-
-.lp-feature-card,
-.lp-price-card {
-  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
 }
 
 .lp-feature-card:hover,
@@ -344,7 +282,6 @@
   min-height: clamp(8rem, 16vw, 10rem);
   opacity: 0;
   transform: translateY(8px);
-  transition: opacity 0.48s ease, transform 0.48s ease;
 }
 
 .lp-quote-body.is-visible {
@@ -463,7 +400,6 @@
   gap: 0.45rem;
   min-height: 2.2rem;
   padding: 0.42rem 0.84rem;
-  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 .lp-billing-btn span {
@@ -491,36 +427,6 @@
   gap: 0.9rem;
   padding: 1rem;
   position: relative;
-}
-
-.lp-price-card--reveal {
-  animation-duration: 0.56s;
-  animation-fill-mode: both;
-  animation-timing-function: ease;
-}
-
-.lp-pricing-grid--annual .lp-price-card--reveal {
-  animation-name: lpRevealUp;
-}
-
-.lp-pricing-grid--monthly .lp-price-card--reveal {
-  animation-name: lpRevealUpAlt;
-}
-
-.lp-pricing-grid .lp-price-card--reveal:nth-child(2) {
-  animation-delay: 0.05s;
-}
-
-.lp-pricing-grid .lp-price-card--reveal:nth-child(3) {
-  animation-delay: 0.1s;
-}
-
-.lp-pricing-grid .lp-price-card--reveal:nth-child(4) {
-  animation-delay: 0.15s;
-}
-
-.lp-pricing-grid .lp-price-card--reveal:nth-child(5) {
-  animation-delay: 0.2s;
 }
 
 .lp-price-card--recommended {
@@ -643,17 +549,4 @@
     font-size: 1.03rem;
   }
 
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .lp-feature-card,
-  .lp-price-card,
-  .lp-btn,
-  .lp-quote-body,
-  .lp-hero-intro > *,
-  .lp-hero-card--floating,
-  .lp-price-card--reveal {
-    animation: none;
-    transition: none;
-  }
 }

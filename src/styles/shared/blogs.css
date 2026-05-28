@@ -291,7 +291,6 @@
   display: block;
   height: auto;
   transform: scale(1);
-  transition: transform 280ms ease;
   width: 100%;
 }
 
@@ -574,7 +573,6 @@
 
   .bp-post-grid-wrap::after {
     opacity: 1;
-    transition: opacity 180ms ease;
   }
 
   .bp-post-grid-wrap::before,
