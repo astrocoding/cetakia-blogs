@@ -32,7 +32,7 @@
         { "label": "Blog", "href": "/blogs" },
         { "label": "Docs", "href": "#" },
         { "label": "Support", "href": "#" },
-        { "label": "Contact Us", "href": "#" }
+        { "label": "Contact Us", "href": "/contact-us" }
       ]
     },
     "headerActions": {

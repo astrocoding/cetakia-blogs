@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { Accordion } from "@/features/global/components/Accordion";
 import { SiteFooter } from "@/features/global/components/SiteFooter";
 import { SiteHeader } from "@/features/global/components/SiteHeader";
@@ -184,12 +185,12 @@ export function LandingPage({ site }: LandingPageProps) {
                 </p>
 
                 <div className="mt-7 flex flex-wrap gap-3">
-                  <a href="/#pricing" className="lp-btn lp-btn--solid">
+                  <Link href="/#pricing" className="lp-btn lp-btn--solid">
                     Start with Cetakia <i className="bi bi-arrow-up-right" />
-                  </a>
-                  <a href="/#features" className="lp-btn lp-btn--outline">
+                  </Link>
+                  <Link href="/#features" className="lp-btn lp-btn--outline">
                     Explore Platform
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="mt-8">
@@ -402,12 +403,7 @@ export function LandingPage({ site }: LandingPageProps) {
                 <p className="mt-4 max-w-2xl text-white/80">Start building a faster, cleaner, and more predictable operation with Cetakia.</p>
               </div>
               <div className="flex flex-wrap gap-3">
-                <a
-                  href="https://wa.me/6281200000000?text=Halo%20tim%20Cetakia,%20saya%20ingin%20konsultasi%20paket%20langganan%20atau%20demo."
-                  className="lp-btn lp-btn--light"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href="/contact-us" className="lp-btn lp-btn--light">
                   Book a Demo
                 </a>
                 <a href="#" className="lp-btn lp-btn--contrast">
