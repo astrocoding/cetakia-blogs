@@ -24,13 +24,13 @@
   --ui-color-primary-soft: #e9f6fe;
   --ui-color-primary-soft-active: #d9eefb;
   --ui-color-primary-ring: rgb(35 154 232 / 0.34);
-  --ui-info-bar-bg: var(--ui-color-accent-active);
-  --ui-info-bar-text: #fff;
-  --ui-info-bar-text-hover: var(--ui-color-primary-soft-active);
-  --ui-solid-button-bg: var(--ui-color-accent-active);
+  --ui-info-bar-bg: #99d3ff;
+  --ui-info-bar-text: #0a2958;
+  --ui-info-bar-text-hover: #0a2650;
+  --ui-solid-button-bg: #99d3ff;
   --ui-solid-button-bg-hover: var(--ui-color-accent-hover);
-  --ui-solid-button-text: #fff;
-  --ui-solid-button-text-hover: #fff;
+  --ui-solid-button-text: #0a2958;
+  --ui-solid-button-text-hover: #0a2650;
 
   --ui-color-secondary: #6b7280;
   --ui-color-secondary-hover: #4b5563;
