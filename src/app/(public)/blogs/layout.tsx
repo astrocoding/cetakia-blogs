@@ -1,5 +1,3 @@
-import "@/styles/shared/blogs.css";
-
 type BlogsLayoutProps = {
   children: React.ReactNode;
 };

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import "@/styles/shared/blogs.css";
 
 import { BlogExplorerPage } from "@/features/blogs/pages/BlogExplorerPage";
 import { getBlogListingPageData, getSiteData } from "@/features/blogs/services/blog.service";

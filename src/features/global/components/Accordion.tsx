@@ -26,33 +26,19 @@ export function Accordion({ items, className }: AccordionProps) {
         const contentId = `accordion-content-${item.id}`;
 
         return (
-          <section key={item.id} className={joinClasses("c-accordion__item", isOpen ? "is-open" : undefined)} data-accordion-item>
-            <button
-              type="button"
-              className="c-accordion__summary"
-              aria-expanded={isOpen}
-              aria-controls={contentId}
-              data-accordion-trigger
-            >
+          <details key={item.id} className="c-accordion__item" open={isOpen}>
+            <summary className="c-accordion__summary" aria-controls={contentId}>
               <span className="c-accordion__summary-text">
                 {item.iconClassName ? <UiIcon name={item.iconClassName} /> : null}
                 {item.title}
               </span>
               <UiIcon name="bi-chevron-down" className="c-accordion__chevron" />
-            </button>
+            </summary>
 
-            <div
-              id={contentId}
-              className="c-accordion__content"
-              aria-hidden={!isOpen}
-              data-accordion-content
-              style={{ maxHeight: isOpen ? "none" : "0px" }}
-            >
-              <div className="c-accordion__content-inner" data-accordion-inner>
-                {item.content}
-              </div>
+            <div id={contentId} className="c-accordion__content">
+              <div className="c-accordion__content-inner">{item.content}</div>
             </div>
-          </section>
+          </details>
         );
       })}
     </div>

@@ -56,7 +56,7 @@ export default async function RootLayout({
       <head>
         <style dangerouslySetInnerHTML={{ __html: EARLY_THEME_BOOT_STYLE }} />
         <Script id="early-theme-boot" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: EARLY_THEME_BOOT_SCRIPT }} />
-        <Script src="/scripts/ui-scripts.js" strategy="afterInteractive" />
+        <Script src="/scripts/ui-scripts.js" strategy="lazyOnload" />
       </head>
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
         {children}

@@ -194,27 +194,6 @@
   transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
 }
 
-.c-accordion__summary {
-  transition: color 180ms ease;
-}
-
-.c-accordion__content {
-  transition: max-height 260ms ease;
-}
-
-.c-accordion__content-inner {
-  opacity: 0;
-  transition: opacity 190ms ease, padding-bottom 220ms ease;
-}
-
-.c-accordion__item.is-open .c-accordion__content-inner {
-  opacity: 1;
-}
-
-.c-accordion__chevron {
-  transition: transform 220ms ease, color 180ms ease;
-}
-
 .blog-mini-card {
   transition: transform 160ms ease;
 }
@@ -247,10 +226,6 @@
   .ct-layout__form,
   .ct-layout__cards,
   .ct-map,
-  .c-accordion__summary,
-  .c-accordion__content,
-  .c-accordion__content-inner,
-  .c-accordion__chevron,
   .blog-float,
   .blog-article-header,
   .blog-article-header *,

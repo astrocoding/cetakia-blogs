@@ -1,6 +1,6 @@
 import type { SiteData } from "@/features/blogs/types/blog.type";
+import { SocialLinksRow } from "@/features/global/components/SocialLinksRow";
 import { ThemeLogo } from "@/features/global/components/ThemeLogo";
-import { UiIcon } from "@/features/global/components/UiIcon";
 
 type SiteFooterProps = {
   site: SiteData;
@@ -33,23 +33,11 @@ export function SiteFooter({ site }: SiteFooterProps) {
               height={80}
             />
             <p className="blog-site-footer__text blog-site-footer__text--full">{site.footer.description}</p>
-            {socialLinks.length > 0 ? (
-              <div className="blog-site-footer__social" aria-label="Social media links">
-                {socialLinks.map((link) => (
-                  <a
-                    key={`footer-social-${link.label}`}
-                    href={link.href}
-                    className="blog-site-footer__social-link"
-                    aria-label={link.label}
-                    title={link.label}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <UiIcon name={link.icon ?? "bi-link-45deg"} />
-                  </a>
-                ))}
-              </div>
-            ) : null}
+            <SocialLinksRow
+              links={socialLinks}
+              className="blog-site-footer__social"
+              linkClassName="blog-site-footer__social-link"
+            />
           </section>
 
           <section className="blog-site-footer__col blog-site-footer__col--product">
