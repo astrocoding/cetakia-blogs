@@ -25,10 +25,10 @@
 
 .nf-btn {
   align-items: center;
-  background: var(--ui-color-primary);
-  border: 1px solid var(--ui-color-primary);
+  background: var(--ui-solid-button-bg);
+  border: 1px solid var(--ui-solid-button-bg);
   border-radius: 0.85rem;
-  color: #ffffff;
+  color: var(--ui-solid-button-text);
   display: inline-flex;
   font-size: 0.96rem;
   font-weight: 700;
@@ -40,8 +40,9 @@
 }
 
 .nf-btn:hover {
-  background: var(--ui-color-primary-hover);
-  border-color: var(--ui-color-primary-hover);
+  background: var(--ui-solid-button-bg-hover);
+  border-color: var(--ui-solid-button-bg-hover);
+  color: var(--ui-solid-button-text-hover);
 }
 
 .nf-btn:focus-visible {

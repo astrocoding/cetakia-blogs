@@ -61,14 +61,15 @@
 }
 
 .lp-btn--solid {
-  background: var(--ui-color-primary);
-  border: 1px solid var(--ui-color-primary);
-  color: #fff;
+  background: var(--ui-solid-button-bg);
+  border: 1px solid var(--ui-solid-button-bg);
+  color: var(--ui-solid-button-text);
 }
 
 .lp-btn--solid:hover {
-  background: var(--ui-color-primary-hover);
-  border-color: var(--ui-color-primary-hover);
+  background: var(--ui-solid-button-bg-hover);
+  border-color: var(--ui-solid-button-bg-hover);
+  color: var(--ui-solid-button-text-hover);
 }
 
 .lp-btn--outline {
