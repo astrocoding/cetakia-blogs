@@ -50,7 +50,6 @@ export type SiteData = {
   mobileDrawerNavigation: NavLink[];
   informationBar?: InformationBarData;
   headerActions: {
-    login: NavLink;
     startNow: NavLink;
     themeToggleIcons: {
       light: string;

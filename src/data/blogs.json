@@ -36,7 +36,6 @@
       ]
     },
     "headerActions": {
-      "login": { "label": "Log In", "href": "https://cetakia.com/login" },
       "startNow": { "label": "Start Now", "href": "https://cetakia.com/register" },
       "themeToggleIcons": {
         "light": "bi-moon-stars",
