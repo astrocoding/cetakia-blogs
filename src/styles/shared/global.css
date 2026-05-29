@@ -79,6 +79,36 @@ html {
   width: 100%;
 }
 
+.bp-pill-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.42rem;
+}
+
+.bp-pill {
+  background: var(--ui-surface-card);
+  border: 1px solid color-mix(in srgb, var(--ui-border-subtle) 80%, transparent);
+  border-radius: 999px;
+  color: var(--blog-content-text-color);
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  min-height: 2rem;
+  padding: 0.36rem 0.75rem;
+}
+
+.bp-pill.is-active,
+.bp-pill:hover {
+  border-color: color-mix(in srgb, var(--ui-color-primary) 48%, transparent);
+  color: var(--blog-link-color);
+}
+
+.bp-pill--tag {
+  background: var(--blog-badge-bg);
+  border-color: var(--blog-badge-border);
+  color: var(--blog-badge-text);
+}
+
 @media (max-width: 1279px) {
   :root {
     --blog-info-bar-sticky-height: 36px;
