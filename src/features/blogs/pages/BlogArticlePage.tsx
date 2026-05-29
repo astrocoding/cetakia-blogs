@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import "@/styles/components/article.css";
 
 import { BlogArticleInteractions } from "@/features/blogs/components/BlogArticleInteractions";
 import { BlogArticleRecommendationsSidebar } from "@/features/blogs/components/article/BlogArticleRecommendationsSidebar";
