@@ -91,10 +91,8 @@
 }
 
 .blog-site-nav {
-  background: color-mix(in srgb, var(--ui-surface-page) 88%, transparent);
+  background: var(--ui-surface-page);
   border-bottom-color: var(--ui-border-subtle);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   box-shadow: none;
   margin: 0;
   top: var(--blog-info-bar-sticky-height);
@@ -253,8 +251,8 @@
 }
 
 .blog-nav-mobile {
-  background: color-mix(in srgb, var(--ui-surface-page) 96%, transparent);
-  border-bottom: 1px solid color-mix(in srgb, var(--ui-border-subtle) 90%, transparent);
+  background: var(--ui-surface-page);
+  border-bottom: 1px solid var(--ui-border-subtle);
   inset: var(--blog-sticky-stack-height) 0 auto 0;
   max-height: calc(100dvh - var(--blog-sticky-stack-height));
   opacity: 0;
