@@ -1,20 +1,63 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import { BlogArticleInteractions } from "@/features/blogs/components/BlogArticleInteractions";
 import { BlogArticleRecommendationsSidebar } from "@/features/blogs/components/article/BlogArticleRecommendationsSidebar";
+import { BlogArticleAuthorCard } from "@/features/blogs/components/article/BlogArticleAuthorCard";
 import { BlogArticleTocSidebar } from "@/features/blogs/components/article/BlogArticleTocSidebar";
 import { BlogHero } from "@/features/blogs/components/BlogHero";
-import type { BlogDetailPageData, SiteData } from "@/features/blogs/types/blog.type";
+import type { BlogDetailPageData, NavLink, SiteData } from "@/features/blogs/types/blog.type";
 import { SiteFooter } from "@/features/global/components/SiteFooter";
 import { SiteHeader } from "@/features/global/components/SiteHeader";
 
 type BlogArticlePageProps = {
   site: SiteData;
   data: BlogDetailPageData;
+  articlePath: string;
 };
 
-export function BlogArticlePage({ site, data }: BlogArticlePageProps) {
+function getOptimizedArticleImageSrc(src: string): string {
+  if (!src.includes("images.unsplash.com") || src.includes("h=")) {
+    return src;
+  }
+
+  const separator = src.includes("?") ? "&" : "?";
+  return `${src}${separator}h=675`;
+}
+
+export function BlogArticlePage({ site, data, articlePath }: BlogArticlePageProps) {
+  const authorBio = "SEO and digital operations writer focusing on practical strategies to help printing businesses improve visibility, workflow quality, and sustainable growth.";
+  const authorAvatar = "https://placehold.co/400x400/png?text=ZA";
+  const encodedTitle = encodeURIComponent(data.hero.title);
+  const absoluteArticleUrl = (() => {
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://cetakia-blogs.vercel.app";
+    const base = siteUrl.endsWith("/") ? siteUrl.slice(0, -1) : siteUrl;
+    const path = articlePath.startsWith("/") ? articlePath : `/${articlePath}`;
+    return `${base}${path}`;
+  })();
+  const encodedUrl = encodeURIComponent(absoluteArticleUrl);
+  const shareLinks: NavLink[] = [
+    {
+      label: "Share to X",
+      href: `https://x.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`,
+      icon: "bi-twitter-x",
+    },
+    {
+      label: "Share to Facebook",
+      href: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`,
+      icon: "bi-facebook",
+    },
+    {
+      label: "Share to LinkedIn",
+      href: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`,
+      icon: "bi-linkedin",
+    },
+    {
+      label: "Share to Threads",
+      href: `https://www.threads.net/intent/post?text=${encodedTitle}%20${encodedUrl}`,
+      icon: "bi-threads",
+    },
+  ];
+
   return (
     <div className="bg-[var(--ui-surface-page)] text-[var(--ui-text-primary)]">
       <SiteHeader site={site} />
@@ -37,7 +80,11 @@ export function BlogArticlePage({ site, data }: BlogArticlePageProps) {
       />
 
       <main className="blog-layout" id="main-content">
-        <BlogArticleTocSidebar tableOfContents={data.tableOfContents} categoryBadges={data.categoryBadges} />
+        <BlogArticleTocSidebar
+          tableOfContents={data.tableOfContents}
+          categoryBadges={data.categoryBadges}
+          shareLinks={shareLinks}
+        />
 
         <article className="blog-article-main" data-article-scroll aria-label="Article content">
           <div className="blog-article-content">
@@ -51,7 +98,14 @@ export function BlogArticlePage({ site, data }: BlogArticlePageProps) {
               if (block.type === "figure") {
                 return (
                   <figure key={`figure-${index}-${block.image}`} className="blog-article-figure">
-                    <Image src={block.image} alt={block.alt} width={980} height={639} />
+                    <Image
+                      src={getOptimizedArticleImageSrc(block.image)}
+                      alt={block.alt}
+                      width={980}
+                      height={639}
+                      quality={72}
+                      sizes="(max-width: 767px) 92vw, (max-width: 1023px) 88vw, 62vw"
+                    />
                     <figcaption>{block.caption}</figcaption>
                   </figure>
                 );
@@ -81,6 +135,13 @@ export function BlogArticlePage({ site, data }: BlogArticlePageProps) {
                 ))}
               </ul>
             </section>
+
+            <BlogArticleAuthorCard
+              authorName={data.hero.author}
+              description={authorBio}
+              avatarSrc={authorAvatar}
+              socialLinks={site.footer.socialLinks ?? []}
+            />
           </div>
         </article>
 
@@ -91,7 +152,6 @@ export function BlogArticlePage({ site, data }: BlogArticlePageProps) {
       </main>
 
       <SiteFooter site={site} />
-      <BlogArticleInteractions />
     </div>
   );
 }
