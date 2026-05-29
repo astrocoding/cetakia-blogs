@@ -8,7 +8,7 @@ type BlogPostCardProps = {
   article: BlogArticleCard;
   href?: string;
   priority?: boolean;
-  fetchPriority?: "high" | "low" | "auto";
+  fetchPriority?: "high" | "low";
 };
 
 function getOptimizedCardImageSrc(src: string): string {
