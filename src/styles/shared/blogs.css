@@ -90,68 +90,6 @@
   padding: 0;
 }
 
-.bp-search-modal {
-  background: var(--ui-surface-card);
-  border: 1px solid color-mix(in srgb, var(--ui-border-subtle) 86%, transparent);
-  border-radius: 0.9rem;
-  box-shadow: 0 28px 48px -34px rgb(15 23 42 / 0.45);
-  left: 0;
-  margin-top: 0.56rem;
-  max-height: min(24rem, 60vh);
-  overflow: auto;
-  padding: 0.74rem;
-  position: absolute;
-  right: 0;
-  z-index: 40;
-}
-
-.bp-search-modal__head {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 0.45rem;
-}
-
-.bp-search-modal__head h2 {
-  color: var(--blog-content-title-color);
-  font-size: 0.95rem;
-  font-weight: 700;
-  margin: 0;
-}
-
-.bp-search-modal__close {
-  background: transparent;
-  border: 0;
-  color: var(--blog-meta-color);
-  cursor: pointer;
-  font-size: 0.9rem;
-  padding: 0.25rem;
-}
-
-.bp-search-modal__list {
-  display: grid;
-  gap: 0.4rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.bp-search-modal__list li {
-  background: color-mix(in srgb, var(--ui-surface-soft) 56%, transparent);
-  border: 1px solid color-mix(in srgb, var(--ui-border-subtle) 70%, transparent);
-  border-radius: 0.58rem;
-  color: var(--blog-content-title-color);
-  font-size: 0.9rem;
-  line-height: 1.45;
-  padding: 0.58rem 0.62rem;
-}
-
-.bp-search-modal__empty {
-  color: var(--blog-meta-color);
-  font-size: 0.88rem;
-  margin: 0.5rem 0 0;
-}
-
 .bp-filter-grid {
   display: grid;
   gap: 0.8rem;
@@ -287,7 +225,6 @@
 }
 
 .bp-post-card__image-wrap img {
-  aspect-ratio: 16 / 9;
   display: block;
   height: auto;
   transform: scale(1);
@@ -545,10 +482,6 @@
   .bp-page {
     padding-top: 1rem;
   }
-
-  .bp-search-modal {
-    max-height: min(20rem, 54vh);
-  }
 }
 
 @media (max-width: 767px) {
@@ -576,7 +509,6 @@
     opacity: 1;
   }
 
-  .bp-post-grid-wrap::before,
   .bp-post-grid-wrap::after {
     background:
       radial-gradient(
@@ -601,32 +533,6 @@
     position: absolute;
     width: 3.1rem;
     z-index: 2;
-  }
-
-  .bp-post-grid-wrap::before {
-    background:
-      radial-gradient(
-        120% 100% at 0% 50%,
-        color-mix(in srgb, var(--ui-surface-page) 22%, transparent) 0%,
-        color-mix(in srgb, var(--ui-surface-page) 8%, transparent) 60%,
-        transparent 100%
-      ),
-      linear-gradient(
-        to right,
-        color-mix(in srgb, var(--ui-surface-page) 96%, transparent) 0%,
-        color-mix(in srgb, var(--ui-surface-page) 74%, transparent) 28%,
-        color-mix(in srgb, var(--ui-surface-page) 32%, transparent) 62%,
-        color-mix(in srgb, var(--ui-surface-page) 10%, transparent) 88%,
-        transparent 100%
-      );
-    inset: -1px auto -1px -1px;
-  }
-
-  .bp-post-grid-wrap.is-at-start::before,
-  .bp-post-grid-wrap.is-at-end::after,
-  .bp-post-grid-wrap.is-not-scrollable::before,
-  .bp-post-grid-wrap.is-not-scrollable::after {
-    opacity: 0;
   }
 
   .bp-post-card {

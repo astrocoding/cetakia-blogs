@@ -9,11 +9,27 @@ type BlogPostCardProps = {
   href?: string;
 };
 
+function getOptimizedCardImageSrc(src: string): string {
+  if (!src.includes("images.unsplash.com") || src.includes("h=")) {
+    return src;
+  }
+
+  const separator = src.includes("?") ? "&" : "?";
+  return `${src}${separator}h=675`;
+}
+
 export function BlogPostCard({ article, href = "#" }: BlogPostCardProps) {
   return (
     <article className="bp-post-card">
       <Link href={href} className="bp-post-card__image-wrap">
-        <Image src={article.image} alt={article.alt} width={1200} height={675} />
+        <Image
+          src={getOptimizedCardImageSrc(article.image)}
+          alt={article.alt}
+          width={1200}
+          height={675}
+          quality={72}
+          sizes="(max-width: 767px) 82vw, (max-width: 1199px) 46vw, 260px"
+        />
         <span className="bp-post-card__badge">{article.category}</span>
       </Link>
       <div className="bp-post-card__body">
