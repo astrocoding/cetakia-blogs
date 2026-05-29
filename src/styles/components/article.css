@@ -1,3 +1,5 @@
+@import "./author.css";
+
 .ba-shell {
   overflow-x: clip;
 }
@@ -485,6 +487,11 @@
   width: 100%;
 }
 
+.blog-article-video__poster:focus-visible {
+  outline: 2px solid var(--ui-color-primary);
+  outline-offset: -2px;
+}
+
 .blog-article-video__poster img {
   display: block;
   height: 100%;
@@ -529,6 +536,7 @@
 .blog-article-video figcaption {
   color: var(--blog-video-caption-color);
   font-size: 0.92rem;
+  font-weight: 500;
   padding: 0.65rem 0.9rem 0.8rem;
 }
 
@@ -672,6 +680,11 @@
 .blog-sidebar--right {
   content-visibility: auto;
   contain-intrinsic-size: auto 800px;
+}
+
+.blog-site-footer {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 560px;
 }
 
 @media (max-width: 1279px) {
