@@ -42,8 +42,8 @@ export function BlogPostCard({ article, href = "#" }: BlogPostCardProps) {
         <p className="bp-post-card__meta">
           {article.date} &bull; {article.readTime}
         </p>
-        <Link href={href} className="bp-read-more">
-          Read more <UiIcon name="bi-arrow-right" />
+        <Link href={href} className="bp-read-more" aria-label={`Read more about ${article.title}`}>
+          Read more <span className="sr-only">about {article.title}</span> <UiIcon name="bi-arrow-right" />
         </Link>
       </div>
     </article>
