@@ -1,39 +1,25 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import Link from "next/link";
 import "@/styles/shared/landing_page.css";
 import { Accordion } from "@/features/global/components/Accordion";
 import { SiteFooter } from "@/features/global/components/SiteFooter";
 import { SiteHeader } from "@/features/global/components/SiteHeader";
 import { UiIcon } from "@/features/global/components/UiIcon";
+import {
+  LandingOutcomesSection,
+  type LandingMetric,
+  type LandingTestimonial,
+} from "@/features/landing/components/LandingOutcomesSection";
+import {
+  LandingPricingSection,
+  type LandingPricingPlan,
+} from "@/features/landing/components/LandingPricingSection";
 import type { SiteData } from "@/features/blogs/types/blog.type";
 
 type LandingPageProps = {
   site: SiteData;
 };
 
-type BillingCycle = "annual" | "monthly";
-
-type Testimonial = {
-  quote: string;
-  name: string;
-  role: string;
-};
-
-type PricingPlan = {
-  name: string;
-  description: string;
-  annualPrice: string;
-  monthlyPrice: string;
-  suffix: string;
-  ctaLabel: string;
-  ctaVariant: "solid" | "outline";
-  recommended?: boolean;
-  features: string[];
-};
-
-const testimonials: Testimonial[] = [
+const testimonials: LandingTestimonial[] = [
   {
     quote: "Cetakia streamlined our quotation-to-invoice cycle and reduced follow-up bottlenecks between teams.",
     name: "Rina Hartono",
@@ -51,7 +37,7 @@ const testimonials: Testimonial[] = [
   },
 ];
 
-const pricingPlans: PricingPlan[] = [
+const pricingPlans: LandingPricingPlan[] = [
   {
     name: "Free Starter",
     description: "Ideal for early-stage teams validating core workflows.",
@@ -142,32 +128,14 @@ const faqItems = [
   },
 ];
 
-const QUOTE_INTERVAL_MS = 10000;
-const QUOTE_FADE_MS = 260;
+const outcomeMetrics: LandingMetric[] = [
+  { value: "99.9%", label: "Data Availability" },
+  { value: "3x", label: "Faster Job Coordination" },
+  { value: "40%", label: "Lower Manual Rework" },
+  { value: "24/7", label: "Real-time Visibility" },
+];
 
 export function LandingPage({ site }: LandingPageProps) {
-  const [billing, setBilling] = useState<BillingCycle>("annual");
-  const [activeQuoteIndex, setActiveQuoteIndex] = useState(0);
-  const [isQuoteVisible, setIsQuoteVisible] = useState(true);
-  const quote = testimonials[activeQuoteIndex];
-
-  useEffect(() => {
-    let timeoutId = 0;
-    const intervalId = window.setInterval(() => {
-      setIsQuoteVisible(false);
-
-      timeoutId = window.setTimeout(() => {
-        setActiveQuoteIndex((prev) => (prev + 1) % testimonials.length);
-        setIsQuoteVisible(true);
-      }, QUOTE_FADE_MS);
-    }, QUOTE_INTERVAL_MS);
-
-    return () => {
-      window.clearInterval(intervalId);
-      if (timeoutId) window.clearTimeout(timeoutId);
-    };
-  }, []);
-
   return (
     <div className="lp-page bg-[var(--ui-surface-page)] text-[var(--ui-text-primary)] antialiased">
       <SiteHeader site={site} navLinks={sectionLinks} startNowHref="/#pricing" drawerId="landing-nav-drawer" />
@@ -320,30 +288,7 @@ export function LandingPage({ site }: LandingPageProps) {
               <p>Hear how sales, production, delivery, and finance teams gain faster coordination with one connected platform.</p>
             </header>
 
-            <article className="lp-quote-card text-center">
-              <UiIcon name="bi-quote" className="lp-quote-icon" />
-              <div className={`lp-quote-body${isQuoteVisible ? " is-visible" : ""}`} data-quote-body>
-                <p>“{quote.quote}”</p>
-                <div className="grid gap-1">
-                  <strong>{quote.name}</strong>
-                  <span>{quote.role}</span>
-                </div>
-              </div>
-            </article>
-
-            <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-              {[
-                ["99.9%", "Data Availability"],
-                ["3x", "Faster Job Coordination"],
-                ["40%", "Lower Manual Rework"],
-                ["24/7", "Real-time Visibility"],
-              ].map(([value, label]) => (
-                <article key={label} className="lp-metric-card">
-                  <h3>{value}</h3>
-                  <p>{label}</p>
-                </article>
-              ))}
-            </div>
+            <LandingOutcomesSection testimonials={testimonials} metrics={outcomeMetrics} />
           </div>
         </section>
 
@@ -355,46 +300,7 @@ export function LandingPage({ site }: LandingPageProps) {
               <p>Start with essential workflows, then scale into deeper automation and governance as complexity grows.</p>
             </header>
 
-            <div className="mx-auto mb-6 flex w-fit items-center gap-1 rounded-full border border-[var(--ui-border-subtle)] bg-[var(--ui-surface-card)] p-1" role="group" aria-label="Billing cycle">
-              <button
-                type="button"
-                className={`lp-billing-btn${billing === "annual" ? " is-active" : ""}`}
-                aria-pressed={billing === "annual"}
-                onClick={() => setBilling("annual")}
-              >
-                Bill Annually <span>Save 20%</span>
-              </button>
-              <button
-                type="button"
-                className={`lp-billing-btn${billing === "monthly" ? " is-active" : ""}`}
-                aria-pressed={billing === "monthly"}
-                onClick={() => setBilling("monthly")}
-              >
-                Bill Monthly
-              </button>
-            </div>
-
-            <div className={`lp-pricing-grid grid gap-4 sm:grid-cols-2 xl:grid-cols-5 lp-pricing-grid--${billing}`}>
-              {pricingPlans.map((plan) => (
-                <article key={plan.name} className={`lp-price-card lp-price-card--reveal${plan.recommended ? " lp-price-card--recommended" : ""}`}>
-                  {plan.recommended ? <span className="lp-recommend">Recommend</span> : null}
-                  <h3>{plan.name}</h3>
-                  <p>{plan.description}</p>
-                  <div className="lp-price-row">
-                    <strong>{billing === "annual" ? plan.annualPrice : plan.monthlyPrice}</strong>
-                    <span>{plan.suffix}</span>
-                  </div>
-                  <ul>
-                    {plan.features.map((feature) => (
-                      <li key={feature}>{feature}</li>
-                    ))}
-                  </ul>
-                  <a href="#" className={`lp-btn ${plan.ctaVariant === "solid" ? "lp-btn--solid" : "lp-btn--outline"} w-full justify-center`}>
-                    {plan.ctaLabel}
-                  </a>
-                </article>
-              ))}
-            </div>
+            <LandingPricingSection plans={pricingPlans} />
           </div>
         </section>
 
