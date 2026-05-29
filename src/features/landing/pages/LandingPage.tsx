@@ -1,5 +1,6 @@
 import Link from "next/link";
 import "@/styles/shared/landing_page.css";
+import "@/styles/components/accordion.css";
 import { Accordion } from "@/features/global/components/Accordion";
 import { SiteFooter } from "@/features/global/components/SiteFooter";
 import { SiteHeader } from "@/features/global/components/SiteHeader";

@@ -173,8 +173,6 @@ export type BlogDetailContentBlock =
       subject: {
         name: string;
         role: string;
-        linkLabel?: string;
-        linkHref?: string;
       };
     }
   | { type: "readAlso"; label: string; title: string; href: string };
