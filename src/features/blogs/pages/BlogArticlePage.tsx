@@ -4,6 +4,7 @@ import Image from "next/image";
 import { BlogArticleRecommendationsSidebar } from "@/features/blogs/components/article/BlogArticleRecommendationsSidebar";
 import { BlogArticleAuthorCard } from "@/features/blogs/components/article/BlogArticleAuthorCard";
 import { BlogArticleTocSidebar } from "@/features/blogs/components/article/BlogArticleTocSidebar";
+import { BlogArticleVideoEmbed } from "@/features/blogs/components/article/BlogArticleVideoEmbed";
 import { BlogHero } from "@/features/blogs/components/BlogHero";
 import type { BlogDetailPageData, NavLink, SiteData } from "@/features/blogs/types/blog.type";
 import { SiteFooter } from "@/features/global/components/SiteFooter";
@@ -22,28 +23,6 @@ function getOptimizedArticleImageSrc(src: string): string {
 
   const separator = src.includes("?") ? "&" : "?";
   return `${src}${separator}h=675`;
-}
-
-function getYouTubeEmbedUrl(url: string): string | null {
-  try {
-    const parsed = new URL(url);
-    let videoId = "";
-
-    if (parsed.hostname.includes("youtu.be")) {
-      videoId = parsed.pathname.replace(/^\/+/, "").split("/")[0] ?? "";
-    } else if (parsed.hostname.includes("youtube.com")) {
-      videoId = parsed.searchParams.get("v") ?? "";
-      if (!videoId && parsed.pathname.startsWith("/embed/")) {
-        videoId = parsed.pathname.replace("/embed/", "").split("/")[0] ?? "";
-      }
-    }
-
-    if (!videoId) return null;
-
-    return `https://www.youtube-nocookie.com/embed/${videoId}?rel=0&modestbranding=1`;
-  } catch {
-    return null;
-  }
 }
 
 export function BlogArticlePage({ site, data, articlePath }: BlogArticlePageProps) {
@@ -195,21 +174,9 @@ export function BlogArticlePage({ site, data, articlePath }: BlogArticlePageProp
               }
 
               if (block.type === "youtube") {
-                const embedUrl = getYouTubeEmbedUrl(block.url);
-                if (!embedUrl) return null;
-
                 return (
                   <figure key={`youtube-${index}-${block.url}`} className="blog-article-video">
-                    <div className="blog-article-video__frame">
-                      <iframe
-                        src={embedUrl}
-                        title={block.title}
-                        loading="lazy"
-                        referrerPolicy="strict-origin-when-cross-origin"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowFullScreen
-                      />
-                    </div>
+                    <BlogArticleVideoEmbed url={block.url} title={block.title} />
                     {block.caption ? <figcaption>{block.caption}</figcaption> : null}
                   </figure>
                 );

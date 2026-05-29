@@ -1,4 +1,5 @@
 import "@/styles/components/article.css";
+import "@/styles/components/author.css";
 
 type BlogArticleLayoutProps = {
   children: React.ReactNode;
