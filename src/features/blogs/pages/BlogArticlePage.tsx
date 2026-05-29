@@ -81,7 +81,7 @@ export function BlogArticlePage({ site, data, articlePath }: BlogArticlePageProp
   ];
 
   return (
-    <div className="bg-[var(--ui-surface-page)] text-[var(--ui-text-primary)]">
+    <div className="ba-shell bg-[var(--ui-surface-page)] text-[var(--ui-text-primary)]">
       <SiteHeader site={site} />
 
       <BlogHero
@@ -136,6 +136,44 @@ export function BlogArticlePage({ site, data, articlePath }: BlogArticlePageProp
                         ))}
                       </ul>
                     )}
+                  </section>
+                );
+              }
+
+              if (block.type === "table") {
+                const tableKey = `table-${index}-${block.columns.join("-")}`;
+
+                return (
+                  <section key={tableKey} className="blog-article-rich-table" aria-label={block.title ?? "Data table"}>
+                    {block.title ? <h4 className="blog-article-rich-table__title">{block.title}</h4> : null}
+                    <div
+                      className="blog-article-rich-table__wrap"
+                      role="region"
+                      aria-label={block.title ?? "Scrollable data table"}
+                      tabIndex={0}
+                    >
+                      <table>
+                        {block.caption ? <caption>{block.caption}</caption> : null}
+                        <thead>
+                          <tr>
+                            {block.columns.map((column) => (
+                              <th key={`${tableKey}-head-${column}`} scope="col">
+                                {column}
+                              </th>
+                            ))}
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {block.rows.map((row, rowIndex) => (
+                            <tr key={`${tableKey}-row-${rowIndex}`}>
+                              {row.map((cell, cellIndex) => (
+                                <td key={`${tableKey}-cell-${rowIndex}-${cellIndex}`}>{cell}</td>
+                              ))}
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
                   </section>
                 );
               }

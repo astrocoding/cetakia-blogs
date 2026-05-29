@@ -158,6 +158,13 @@ export type BlogDetailContentBlock =
       title?: string;
       items: string[];
     }
+  | {
+      type: "table";
+      title?: string;
+      caption?: string;
+      columns: string[];
+      rows: string[][];
+    }
   | { type: "figure"; image: string; alt: string; caption: string }
   | { type: "youtube"; url: string; title: string; caption?: string }
   | {

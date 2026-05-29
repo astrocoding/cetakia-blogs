@@ -21,7 +21,7 @@ export function BlogExplorerPage({ site, data }: BlogExplorerPageProps) {
   ]);
 
   return (
-    <div className="bg-[var(--ui-surface-page)] text-[var(--ui-text-primary)]">
+    <div className="bp-shell bg-[var(--ui-surface-page)] text-[var(--ui-text-primary)]">
       <SiteHeader site={site} />
       <BlogHero title={data.hero.title} subtitle={data.hero.subtitle} />
 

@@ -551,6 +551,18 @@
           ]
         },
         {
+          "type": "table",
+          "title": "Contoh matriks KPI operasional mingguan:",
+          "caption": "Ringkasan indikator utama yang umum dipantau tim produksi dan manajemen.",
+          "columns": ["KPI", "Target", "Aktual", "Status"],
+          "rows": [
+            ["On-time delivery", ">= 95%", "96.4%", "On Track"],
+            ["Defect rate", "<= 2%", "1.7%", "On Track"],
+            ["Lead time produksi", "<= 3 hari", "3.4 hari", "Perlu Aksi"],
+            ["Akurasi stok", ">= 98%", "97.6%", "Monitor"]
+          ]
+        },
+        {
           "type": "quote",
           "text": "Cetakia telah mengadopsi ERP untuk meningkatkan efisiensi operasional dan mempercepat pengambilan keputusan berbasis data.",
           "subject": {

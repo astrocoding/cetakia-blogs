@@ -143,6 +143,10 @@
   --blog-video-bg: #f3f7fc;
   --blog-video-border: #cdd8e5;
   --blog-video-caption-color: #5f7395;
+  --blog-table-border: #cdd8e5;
+  --blog-table-head-bg: #eaf2fb;
+  --blog-table-stripe-bg: #f6f9fd;
+  --blog-table-caption-color: #5f7395;
   --blog-read-also-bg: #edf5ff;
   --blog-mini-card-bg: #f8fbff;
   --blog-mini-card-border: #d8e2ef;
@@ -248,6 +252,10 @@
   --blog-video-bg: #0f2038;
   --blog-video-border: #2a3f5c;
   --blog-video-caption-color: #9ab2ce;
+  --blog-table-border: #2a3f5c;
+  --blog-table-head-bg: #132a46;
+  --blog-table-stripe-bg: #11243d;
+  --blog-table-caption-color: #9ab2ce;
   --blog-read-also-bg: #10283f;
   --blog-mini-card-bg: #12253e;
   --blog-mini-card-border: #2a3f5c;
@@ -342,6 +350,10 @@
     --blog-video-bg: #0f2038;
     --blog-video-border: #2a3f5c;
     --blog-video-caption-color: #9ab2ce;
+    --blog-table-border: #2a3f5c;
+    --blog-table-head-bg: #132a46;
+    --blog-table-stripe-bg: #11243d;
+    --blog-table-caption-color: #9ab2ce;
     --blog-read-also-bg: #10283f;
     --blog-mini-card-bg: #12253e;
     --blog-mini-card-border: #2a3f5c;
