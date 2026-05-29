@@ -1,5 +1,8 @@
 .blog-site-footer__logo {
-  display: block;
+  display: inline-grid;
+  margin-bottom: 0.2rem;
+  max-width: 100%;
+  width: clamp(138px, 19vw, 178px);
 }
 
 .blog-site-footer__inner {
@@ -21,6 +24,18 @@
 .blog-site-footer__text--full {
   width: 100%;
   max-width: none;
+}
+
+@media (max-width: 1023px) {
+  .blog-site-footer__logo {
+    width: clamp(132px, 24vw, 168px);
+  }
+}
+
+@media (max-width: 767px) {
+  .blog-site-footer__logo {
+    width: clamp(128px, 42vw, 156px);
+  }
 }
 
 .blog-site-footer__title {

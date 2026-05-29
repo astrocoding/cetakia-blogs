@@ -28,7 +28,7 @@ export function SiteFooter({ site }: SiteFooterProps) {
               lightSrc={logoLight}
               darkSrc={logoDark}
               alt={site.brand.logoAlt}
-              className="blog-site-footer__logo h-15 w-auto object-contain md:h-20"
+              className="blog-site-footer__logo"
               width={220}
               height={80}
             />
