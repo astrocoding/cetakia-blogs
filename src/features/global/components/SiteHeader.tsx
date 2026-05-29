@@ -57,9 +57,6 @@ export function SiteHeader({
 
             <div className="blog-site-nav__actions justify-self-end">
               <div className="blog-site-nav__cta-group hidden items-center lg:flex">
-                <a href={site.headerActions.login.href} className="blog-site-nav__cta blog-site-nav__cta--ghost inline-flex items-center justify-center">
-                  {site.headerActions.login.label}
-                </a>
                 <a
                   href={normalizeHeaderHref(startNowHref ?? site.headerActions.startNow.href)}
                   className="blog-site-nav__cta blog-site-nav__cta--solid inline-flex items-center justify-center"
@@ -124,13 +121,6 @@ export function SiteHeader({
             </nav>
 
             <div className="blog-nav-mobile__actions">
-              <a
-                href={site.headerActions.login.href}
-                className="blog-site-nav__cta blog-site-nav__cta--ghost inline-flex items-center justify-center"
-                data-nav-close
-              >
-                {site.headerActions.login.label}
-              </a>
               <a
                 href={normalizeHeaderHref(startNowHref ?? site.headerActions.startNow.href)}
                 className="blog-site-nav__cta blog-site-nav__cta--solid inline-flex items-center justify-center"
