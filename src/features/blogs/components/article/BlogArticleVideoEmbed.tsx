@@ -6,6 +6,7 @@ import { useMemo, useState } from "react";
 type BlogArticleVideoEmbedProps = {
   url: string;
   title: string;
+  describedById?: string;
 };
 
 function getYouTubeVideoId(url: string): string | null {
@@ -31,7 +32,7 @@ function getYouTubeVideoId(url: string): string | null {
   }
 }
 
-export function BlogArticleVideoEmbed({ url, title }: BlogArticleVideoEmbedProps) {
+export function BlogArticleVideoEmbed({ url, title, describedById }: BlogArticleVideoEmbedProps) {
   const [isPlaying, setIsPlaying] = useState(false);
 
   const videoId = useMemo(() => getYouTubeVideoId(url), [url]);
@@ -51,6 +52,7 @@ export function BlogArticleVideoEmbed({ url, title }: BlogArticleVideoEmbedProps
         <iframe
           src={embedUrl}
           title={title}
+          aria-describedby={describedById}
           loading="lazy"
           referrerPolicy="strict-origin-when-cross-origin"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -62,6 +64,7 @@ export function BlogArticleVideoEmbed({ url, title }: BlogArticleVideoEmbedProps
           className="blog-article-video__poster"
           onClick={() => setIsPlaying(true)}
           aria-label={`Play video: ${title}`}
+          aria-describedby={describedById}
         >
           <Image
             src={posterUrl}

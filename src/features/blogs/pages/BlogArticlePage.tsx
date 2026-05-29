@@ -174,10 +174,11 @@ export function BlogArticlePage({ site, data, articlePath }: BlogArticlePageProp
               }
 
               if (block.type === "youtube") {
+                const captionId = block.caption ? `blog-video-caption-${index}` : undefined;
                 return (
                   <figure key={`youtube-${index}-${block.url}`} className="blog-article-video">
-                    <BlogArticleVideoEmbed url={block.url} title={block.title} />
-                    {block.caption ? <figcaption>{block.caption}</figcaption> : null}
+                    <BlogArticleVideoEmbed url={block.url} title={block.title} describedById={captionId} />
+                    {block.caption ? <figcaption id={captionId}>{block.caption}</figcaption> : null}
                   </figure>
                 );
               }
