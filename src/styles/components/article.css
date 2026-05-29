@@ -565,17 +565,6 @@
   font-weight: 700;
 }
 
-.blog-article-quote__subject a {
-  color: color-mix(in srgb, var(--ui-color-slate-500) 65%, var(--ui-color-accent-active) 35%);
-  text-decoration: underline;
-  text-decoration-thickness: 1.5px;
-  text-underline-offset: 0.12em;
-}
-
-.blog-article-quote__subject a:hover {
-  color: var(--ui-color-accent-active);
-}
-
 .blog-article-list {
   list-style: none;
   margin: 0;

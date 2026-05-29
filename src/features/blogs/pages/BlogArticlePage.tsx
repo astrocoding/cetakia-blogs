@@ -231,12 +231,7 @@ export function BlogArticlePage({ site, data, articlePath }: BlogArticlePageProp
                   <blockquote key={`quote-${index}-${textSeed}`} className="blog-article-quote">
                     <p className="blog-article-quote__text">&ldquo;{block.text}&rdquo;</p>
                     <footer className="blog-article-quote__subject">
-                      <strong>{block.subject.name}</strong> {block.subject.role}{" "}
-                      {block.subject.linkLabel && block.subject.linkHref ? (
-                        <a href={block.subject.linkHref} target="_blank" rel="noopener noreferrer">
-                          {block.subject.linkLabel}
-                        </a>
-                      ) : null}
+                      <strong>{block.subject.name}</strong> {block.subject.role}
                     </footer>
                   </blockquote>
                 );

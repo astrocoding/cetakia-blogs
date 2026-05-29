@@ -59,6 +59,7 @@
 .blog-info-bar__link {
   color: var(--ui-info-bar-text);
   display: inline-flex;
+  font-weight: 600;
   line-height: 1.15;
   position: relative;
   text-decoration: none;
