@@ -157,15 +157,15 @@
 }
 
 .blog-site-nav__cta--ghost {
-  border: 1px solid var(--ui-color-primary);
-  color: var(--ui-color-primary);
+  border: 1px solid var(--ui-color-primary-active);
+  color: var(--ui-color-primary-active);
   min-width: 0;
   width: 5.5rem;
 }
 
 .blog-site-nav__cta--ghost:hover {
-  border-color: var(--ui-color-primary-hover);
-  color: var(--ui-color-primary-hover);
+  border-color: color-mix(in srgb, var(--ui-color-primary-active) 86%, #000 14%);
+  color: color-mix(in srgb, var(--ui-color-primary-active) 86%, #000 14%);
 }
 
 .blog-site-nav__cta--solid {

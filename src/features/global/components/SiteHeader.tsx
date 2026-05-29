@@ -1,6 +1,3 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import Link from "next/link";
 
 import type { NavLink, SiteData } from "@/features/blogs/types/blog.type";
@@ -21,21 +18,11 @@ export function SiteHeader({
   startNowHref,
   drawerId = "public-nav-drawer",
 }: SiteHeaderProps) {
-  const [drawerOpen, setDrawerOpen] = useState(false);
-
   const primaryLinks = navLinks ?? site.primaryNavigation;
   const logoLight = site.brand.logoLight ?? site.brand.logo;
   const logoDark = site.brand.logoDark ?? site.brand.logo;
   const lightThemeIcon = site.headerActions.themeToggleIcons.light;
   const darkThemeIcon = site.headerActions.themeToggleIcons.dark;
-
-  useEffect(() => {
-    const onEscape = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setDrawerOpen(false);
-    };
-    window.addEventListener("keydown", onEscape);
-    return () => window.removeEventListener("keydown", onEscape);
-  }, []);
 
   const toIconName = (icon: string) => (icon.startsWith("bi ") ? icon.slice(3) : icon);
   const lightThemeIconName = toIconName(lightThemeIcon);
@@ -103,11 +90,11 @@ export function SiteHeader({
 
               <button
                 type="button"
-                className={`blog-site-nav__hamburger inline-flex lg:hidden${drawerOpen ? " is-open" : ""}`}
-                aria-label={drawerOpen ? "Close navigation menu" : "Open navigation menu"}
+                className="blog-site-nav__hamburger inline-flex lg:hidden"
+                aria-label="Open navigation menu"
                 aria-controls={drawerId}
-                aria-expanded={drawerOpen}
-                onClick={() => setDrawerOpen((open) => !open)}
+                aria-expanded="false"
+                data-nav-toggle
               >
                 <span className="blog-site-nav__hamburger-lines" aria-hidden="true">
                   <span />
@@ -120,7 +107,7 @@ export function SiteHeader({
         </div>
       </header>
 
-      <div className={`blog-nav-mobile lg:hidden${drawerOpen ? " is-open" : ""}`} id={drawerId} aria-hidden={!drawerOpen}>
+      <div className="blog-nav-mobile lg:hidden" id={drawerId} aria-hidden="true" data-nav-mobile>
         <div className="blog-container">
           <div className="blog-nav-mobile__inner">
             <nav className="blog-nav-mobile__menu" aria-label="Mobile and tablet navigation">
@@ -129,7 +116,7 @@ export function SiteHeader({
                   key={`mobile-${link.label}-${link.href}`}
                   href={normalizeHeaderHref(link.href)}
                   className="blog-nav-mobile__link"
-                  onClick={() => setDrawerOpen(false)}
+                  data-nav-close
                 >
                   {link.label}
                 </a>
@@ -140,14 +127,14 @@ export function SiteHeader({
               <a
                 href={site.headerActions.login.href}
                 className="blog-site-nav__cta blog-site-nav__cta--ghost inline-flex items-center justify-center"
-                onClick={() => setDrawerOpen(false)}
+                data-nav-close
               >
                 {site.headerActions.login.label}
               </a>
               <a
                 href={normalizeHeaderHref(startNowHref ?? site.headerActions.startNow.href)}
                 className="blog-site-nav__cta blog-site-nav__cta--solid inline-flex items-center justify-center"
-                onClick={() => setDrawerOpen(false)}
+                data-nav-close
               >
                 {site.headerActions.startNow.label}
               </a>
