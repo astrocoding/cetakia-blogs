@@ -24,6 +24,28 @@ function getOptimizedArticleImageSrc(src: string): string {
   return `${src}${separator}h=675`;
 }
 
+function getYouTubeEmbedUrl(url: string): string | null {
+  try {
+    const parsed = new URL(url);
+    let videoId = "";
+
+    if (parsed.hostname.includes("youtu.be")) {
+      videoId = parsed.pathname.replace(/^\/+/, "").split("/")[0] ?? "";
+    } else if (parsed.hostname.includes("youtube.com")) {
+      videoId = parsed.searchParams.get("v") ?? "";
+      if (!videoId && parsed.pathname.startsWith("/embed/")) {
+        videoId = parsed.pathname.replace("/embed/", "").split("/")[0] ?? "";
+      }
+    }
+
+    if (!videoId) return null;
+
+    return `https://www.youtube-nocookie.com/embed/${videoId}?rel=0&modestbranding=1`;
+  } catch {
+    return null;
+  }
+}
+
 export function BlogArticlePage({ site, data, articlePath }: BlogArticlePageProps) {
   const authorBio = "SEO and digital operations writer focusing on practical strategies to help printing businesses improve visibility, workflow quality, and sustainable growth.";
   const authorAvatar = "https://placehold.co/400x400/png?text=ZA";
@@ -59,7 +81,7 @@ export function BlogArticlePage({ site, data, articlePath }: BlogArticlePageProp
   ];
 
   return (
-    <div className="bg-[var(--ui-surface-page)] text-[var(--ui-text-primary)]">
+    <div className="ba-shell bg-[var(--ui-surface-page)] text-[var(--ui-text-primary)]">
       <SiteHeader site={site} />
 
       <BlogHero
@@ -95,6 +117,67 @@ export function BlogArticlePage({ site, data, articlePath }: BlogArticlePageProp
               if (block.type === "h2") return <h2 key={block.id} id={block.id}>{block.text}</h2>;
               if (block.type === "h3") return <h3 key={block.id} id={block.id}>{block.text}</h3>;
 
+              if (block.type === "list") {
+                const listKey = `list-${index}-${block.variant}-${block.items.length}`;
+
+                return (
+                  <section key={listKey} className="blog-article-rich-list" aria-label={block.title ?? `${block.variant} list`}>
+                    {block.title ? <h4 className="blog-article-rich-list__title">{block.title}</h4> : null}
+                    {block.variant === "ordered" ? (
+                      <ol className="blog-article-rich-list__items blog-article-rich-list__items--ordered">
+                        {block.items.map((item) => (
+                          <li key={`${listKey}-${item}`}>{item}</li>
+                        ))}
+                      </ol>
+                    ) : (
+                      <ul className="blog-article-rich-list__items blog-article-rich-list__items--unordered">
+                        {block.items.map((item) => (
+                          <li key={`${listKey}-${item}`}>{item}</li>
+                        ))}
+                      </ul>
+                    )}
+                  </section>
+                );
+              }
+
+              if (block.type === "table") {
+                const tableKey = `table-${index}-${block.columns.join("-")}`;
+
+                return (
+                  <section key={tableKey} className="blog-article-rich-table" aria-label={block.title ?? "Data table"}>
+                    {block.title ? <h4 className="blog-article-rich-table__title">{block.title}</h4> : null}
+                    <div
+                      className="blog-article-rich-table__wrap"
+                      role="region"
+                      aria-label={block.title ?? "Scrollable data table"}
+                      tabIndex={0}
+                    >
+                      <table>
+                        {block.caption ? <caption>{block.caption}</caption> : null}
+                        <thead>
+                          <tr>
+                            {block.columns.map((column) => (
+                              <th key={`${tableKey}-head-${column}`} scope="col">
+                                {column}
+                              </th>
+                            ))}
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {block.rows.map((row, rowIndex) => (
+                            <tr key={`${tableKey}-row-${rowIndex}`}>
+                              {row.map((cell, cellIndex) => (
+                                <td key={`${tableKey}-cell-${rowIndex}-${cellIndex}`}>{cell}</td>
+                              ))}
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </section>
+                );
+              }
+
               if (block.type === "figure") {
                 return (
                   <figure key={`figure-${index}-${block.image}`} className="blog-article-figure">
@@ -111,6 +194,27 @@ export function BlogArticlePage({ site, data, articlePath }: BlogArticlePageProp
                 );
               }
 
+              if (block.type === "youtube") {
+                const embedUrl = getYouTubeEmbedUrl(block.url);
+                if (!embedUrl) return null;
+
+                return (
+                  <figure key={`youtube-${index}-${block.url}`} className="blog-article-video">
+                    <div className="blog-article-video__frame">
+                      <iframe
+                        src={embedUrl}
+                        title={block.title}
+                        loading="lazy"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                      />
+                    </div>
+                    {block.caption ? <figcaption>{block.caption}</figcaption> : null}
+                  </figure>
+                );
+              }
+
               if (block.type === "readAlso") {
                 return (
                   <section key={`readalso-${index}-${block.href}`} className="blog-read-also" aria-label="Related reading">
@@ -119,6 +223,22 @@ export function BlogArticlePage({ site, data, articlePath }: BlogArticlePageProp
                     </p>
                     <Link href={block.href}>{block.title}</Link>
                   </section>
+                );
+              }
+
+              if (block.type === "quote") {
+                return (
+                  <blockquote key={`quote-${index}-${textSeed}`} className="blog-article-quote">
+                    <p className="blog-article-quote__text">&ldquo;{block.text}&rdquo;</p>
+                    <footer className="blog-article-quote__subject">
+                      <strong>{block.subject.name}</strong> {block.subject.role}{" "}
+                      {block.subject.linkLabel && block.subject.linkHref ? (
+                        <a href={block.subject.linkHref} target="_blank" rel="noopener noreferrer">
+                          {block.subject.linkLabel}
+                        </a>
+                      ) : null}
+                    </footer>
+                  </blockquote>
                 );
               }
 

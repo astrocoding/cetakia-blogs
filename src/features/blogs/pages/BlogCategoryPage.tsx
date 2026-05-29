@@ -14,7 +14,7 @@ type BlogCategoryPageProps = {
 
 export function BlogCategoryPage({ site, data, cards }: BlogCategoryPageProps) {
   return (
-    <div className="bg-[var(--ui-surface-page)] text-[var(--ui-text-primary)]">
+    <div className="bp-shell bg-[var(--ui-surface-page)] text-[var(--ui-text-primary)]">
       <SiteHeader site={site} />
       <BlogHero
         title={data.hero.title}

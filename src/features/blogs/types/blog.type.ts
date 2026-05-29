@@ -152,7 +152,31 @@ export type TocNode = {
 export type BlogDetailContentBlock =
   | { type: "intro" | "p"; text: string }
   | { type: "h2" | "h3"; id: string; text: string }
+  | {
+      type: "list";
+      variant: "ordered" | "unordered";
+      title?: string;
+      items: string[];
+    }
+  | {
+      type: "table";
+      title?: string;
+      caption?: string;
+      columns: string[];
+      rows: string[][];
+    }
   | { type: "figure"; image: string; alt: string; caption: string }
+  | { type: "youtube"; url: string; title: string; caption?: string }
+  | {
+      type: "quote";
+      text: string;
+      subject: {
+        name: string;
+        role: string;
+        linkLabel?: string;
+        linkHref?: string;
+      };
+    }
   | { type: "readAlso"; label: string; title: string; href: string };
 
 export type BlogDetailPageData = {
