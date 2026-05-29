@@ -46,8 +46,14 @@ export function BlogCategoryPage({ site, data, cards }: BlogCategoryPageProps) {
             </div>
 
             <div className="bp-post-grid">
-              {cards.map((article) => (
-                <BlogPostCard key={article.title} article={article} href="/blogs/erp-pengertian-fungsi-dan-manfaatnya-dalam-bisnis-percetakan" />
+              {cards.map((article, index) => (
+                <BlogPostCard
+                  key={article.title}
+                  article={article}
+                  href="/blogs/erp-pengertian-fungsi-dan-manfaatnya-dalam-bisnis-percetakan"
+                  priority={index === 0}
+                  fetchPriority={index === 0 ? "high" : "auto"}
+                />
               ))}
             </div>
           </section>

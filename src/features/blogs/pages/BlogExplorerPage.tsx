@@ -59,11 +59,13 @@ export function BlogExplorerPage({ site, data }: BlogExplorerPageProps) {
               </div>
 
               <BlogPostScroller>
-                {section.articles.map((article) => (
+                {section.articles.map((article, articleIndex) => (
                   <BlogPostCard
                     key={`${section.id}-${article.title}`}
                     article={article}
                     href="/blogs/erp-pengertian-fungsi-dan-manfaatnya-dalam-bisnis-percetakan"
+                    priority={section.id === data.sections[0]?.id && articleIndex < 2}
+                    fetchPriority={section.id === data.sections[0]?.id && articleIndex < 2 ? "high" : "auto"}
                   />
                 ))}
               </BlogPostScroller>

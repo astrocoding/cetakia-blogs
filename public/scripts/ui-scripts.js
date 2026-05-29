@@ -115,6 +115,86 @@
   }
 
   try {
+    const NAV_TOGGLE_SELECTOR = "[data-nav-toggle]";
+    const NAV_MOBILE_SELECTOR = "[data-nav-mobile]";
+    const NAV_CLOSE_SELECTOR = "[data-nav-close]";
+    const NAV_BIND_ATTR = "data-bp-mobile-nav-bound";
+
+    const closeMobileNav = () => {
+      document.querySelectorAll(NAV_TOGGLE_SELECTOR).forEach((toggle) => {
+        if (!(toggle instanceof HTMLElement)) return;
+        toggle.classList.remove("is-open");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Open navigation menu");
+      });
+
+      document.querySelectorAll(NAV_MOBILE_SELECTOR).forEach((panel) => {
+        if (!(panel instanceof HTMLElement)) return;
+        panel.classList.remove("is-open");
+        panel.setAttribute("aria-hidden", "true");
+      });
+    };
+
+    const toggleMobileNav = (toggleButton) => {
+      const panelId = toggleButton.getAttribute("aria-controls");
+      if (!panelId) return;
+      const panel = document.getElementById(panelId);
+      if (!(panel instanceof HTMLElement)) return;
+
+      const shouldOpen = !panel.classList.contains("is-open");
+      if (!shouldOpen) {
+        closeMobileNav();
+        return;
+      }
+
+      closeMobileNav();
+      panel.classList.add("is-open");
+      panel.setAttribute("aria-hidden", "false");
+      toggleButton.classList.add("is-open");
+      toggleButton.setAttribute("aria-expanded", "true");
+      toggleButton.setAttribute("aria-label", "Close navigation menu");
+    };
+
+    const bindMobileNavHandler = () => {
+      if (document.documentElement.hasAttribute(NAV_BIND_ATTR)) return;
+
+      document.addEventListener(
+        "click",
+        (event) => {
+          const target = event.target;
+          if (!(target instanceof Element)) return;
+
+          const toggleButton = target.closest(NAV_TOGGLE_SELECTOR);
+          if (toggleButton instanceof HTMLElement) {
+            event.preventDefault();
+            toggleMobileNav(toggleButton);
+            return;
+          }
+
+          const closeTrigger = target.closest(NAV_CLOSE_SELECTOR);
+          if (closeTrigger) {
+            closeMobileNav();
+          }
+        },
+        true,
+      );
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          closeMobileNav();
+        }
+      });
+
+      document.documentElement.setAttribute(NAV_BIND_ATTR, "1");
+    };
+
+    bindMobileNavHandler();
+    window.addEventListener("pageshow", bindMobileNavHandler);
+  } catch {
+    // no-op
+  }
+
+  try {
     const ACCORDION_ITEM_SELECTOR = "[data-accordion-item]";
     const ACCORDION_TRIGGER_SELECTOR = "[data-accordion-trigger]";
     const ACCORDION_CONTENT_SELECTOR = "[data-accordion-content]";

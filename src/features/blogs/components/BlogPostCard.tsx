@@ -7,6 +7,8 @@ import { UiIcon } from "@/features/global/components/UiIcon";
 type BlogPostCardProps = {
   article: BlogArticleCard;
   href?: string;
+  priority?: boolean;
+  fetchPriority?: "high" | "low" | "auto";
 };
 
 function getOptimizedCardImageSrc(src: string): string {
@@ -18,7 +20,7 @@ function getOptimizedCardImageSrc(src: string): string {
   return `${src}${separator}h=675`;
 }
 
-export function BlogPostCard({ article, href = "#" }: BlogPostCardProps) {
+export function BlogPostCard({ article, href = "#", priority = false, fetchPriority }: BlogPostCardProps) {
   return (
     <article className="bp-post-card">
       <Link href={href} className="bp-post-card__image-wrap">
@@ -29,6 +31,9 @@ export function BlogPostCard({ article, href = "#" }: BlogPostCardProps) {
           height={675}
           quality={72}
           sizes="(max-width: 767px) 82vw, (max-width: 1199px) 46vw, 260px"
+          priority={priority}
+          fetchPriority={fetchPriority}
+          loading={priority ? "eager" : undefined}
         />
         <span className="bp-post-card__badge">{article.category}</span>
       </Link>
