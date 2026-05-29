@@ -12,12 +12,12 @@ type ThemeLogoProps = {
 
 export function ThemeLogo({ lightSrc, darkSrc, alt, width, height, className, priority = false }: ThemeLogoProps) {
   return (
-    <span className="theme-logo" aria-label={alt}>
-      <span className="theme-logo__slot theme-logo__slot--light" aria-hidden="true">
-        <Image src={lightSrc} alt="" width={width} height={height} className={`${className ?? ""} theme-logo__asset`} priority={priority} />
+    <span className={`theme-logo${className ? ` ${className}` : ""}`}>
+      <span className="theme-logo__slot theme-logo__slot--light">
+        <Image src={lightSrc} alt={alt} width={width} height={height} className="theme-logo__asset" priority={priority} />
       </span>
       <span className="theme-logo__slot theme-logo__slot--dark" aria-hidden="true">
-        <Image src={darkSrc} alt="" width={width} height={height} className={`${className ?? ""} theme-logo__asset`} priority={priority} />
+        <Image src={darkSrc} alt="" width={width} height={height} className="theme-logo__asset" priority={priority} />
       </span>
     </span>
   );

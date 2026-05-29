@@ -46,7 +46,7 @@
 }
 
 .blog-info-bar__announcement:hover .blog-info-bar__announcement-cta {
-  color: #ffffff;
+  color: #fff;
 }
 
 .blog-info-bar__menu {
@@ -57,7 +57,7 @@
 }
 
 .blog-info-bar__link {
-  color: #e7f6ff;
+  color: #fff;
   display: inline-flex;
   line-height: 1.15;
   position: relative;
@@ -77,7 +77,7 @@
 }
 
 .blog-info-bar__link:hover {
-  color: #ffffff;
+  color: #e7f6ff;
 }
 
 .blog-info-bar__link:hover::after {
@@ -85,7 +85,9 @@
 }
 
 .blog-site-nav__logo {
-  display: block;
+  display: inline-grid;
+  line-height: 0;
+  vertical-align: middle;
 }
 
 .blog-site-nav {
@@ -168,14 +170,14 @@
 
 .blog-site-nav__cta--solid {
   background: var(--ui-color-primary);
-  color: #eff7ff;
+  color: #fff;
   min-width: 0;
   width: 6.9rem;
 }
 
 .blog-site-nav__cta--solid:hover {
   background: var(--ui-color-primary-hover);
-  color: #06173f;
+  color: #eff7ff;
 }
 
 .blog-site-nav__theme {

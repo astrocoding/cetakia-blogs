@@ -63,7 +63,7 @@
 .lp-btn--solid {
   background: var(--ui-color-primary);
   border: 1px solid var(--ui-color-primary);
-  color: #ffffff;
+  color: #fff;
 }
 
 .lp-btn--solid:hover {

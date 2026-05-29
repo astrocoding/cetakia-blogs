@@ -354,10 +354,11 @@ export function LandingPage({ site }: LandingPageProps) {
               <p>Start with essential workflows, then scale into deeper automation and governance as complexity grows.</p>
             </header>
 
-            <div className="mx-auto mb-6 flex w-fit items-center gap-1 rounded-full border border-[var(--ui-border-subtle)] bg-[var(--ui-surface-card)] p-1" role="tablist" aria-label="Billing cycle">
+            <div className="mx-auto mb-6 flex w-fit items-center gap-1 rounded-full border border-[var(--ui-border-subtle)] bg-[var(--ui-surface-card)] p-1" role="group" aria-label="Billing cycle">
               <button
                 type="button"
                 className={`lp-billing-btn${billing === "annual" ? " is-active" : ""}`}
+                aria-pressed={billing === "annual"}
                 onClick={() => setBilling("annual")}
               >
                 Bill Annually <span>Save 20%</span>
@@ -365,6 +366,7 @@ export function LandingPage({ site }: LandingPageProps) {
               <button
                 type="button"
                 className={`lp-billing-btn${billing === "monthly" ? " is-active" : ""}`}
+                aria-pressed={billing === "monthly"}
                 onClick={() => setBilling("monthly")}
               >
                 Bill Monthly

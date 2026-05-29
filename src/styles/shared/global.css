@@ -33,11 +33,16 @@ html {
 
 .theme-logo {
   display: inline-grid;
+  line-height: 0;
+  vertical-align: middle;
 }
 
 .theme-logo__asset {
   display: block;
   grid-area: 1 / 1;
+  height: auto;
+  max-width: 100%;
+  width: auto;
 }
 
 .theme-logo__slot {
