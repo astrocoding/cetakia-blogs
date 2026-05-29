@@ -1,5 +1,4 @@
 import "@/styles/shared/blogs.css";
-import "@/styles/components/article.css";
 
 type BlogsLayoutProps = {
   children: React.ReactNode;

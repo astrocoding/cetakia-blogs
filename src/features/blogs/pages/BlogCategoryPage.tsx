@@ -52,7 +52,7 @@ export function BlogCategoryPage({ site, data, cards }: BlogCategoryPageProps) {
                   article={article}
                   href="/blogs/erp-pengertian-fungsi-dan-manfaatnya-dalam-bisnis-percetakan"
                   priority={index === 0}
-                  fetchPriority={index === 0 ? "high" : "auto"}
+                  fetchPriority={index === 0 ? "high" : undefined}
                 />
               ))}
             </div>
