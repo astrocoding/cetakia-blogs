@@ -1,4 +1,5 @@
 import { NotFoundActions } from "@/features/not-found/components/NotFoundActions";
+import "@/styles/components/not_found.css";
 
 export function NotFoundPage() {
   return (

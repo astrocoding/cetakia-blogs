@@ -1,4 +1,5 @@
 import type { SiteData } from "@/features/blogs/types/blog.type";
+import "@/styles/components/contact.css";
 import { SiteFooter } from "@/features/global/components/SiteFooter";
 import { SiteHeader } from "@/features/global/components/SiteHeader";
 import { ContactInfoCard } from "@/features/contact/components/ContactInfoCard";
