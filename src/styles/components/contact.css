@@ -123,10 +123,10 @@
 
 .ct-form__submit {
   align-items: center;
-  background: var(--ui-color-primary);
-  border: 1px solid var(--ui-color-primary);
+  background: var(--ui-solid-button-bg);
+  border: 1px solid var(--ui-solid-button-bg);
   border-radius: 0.8rem;
-  color: #ffffff;
+  color: var(--ui-solid-button-text);
   cursor: pointer;
   display: inline-flex;
   font-size: 1.05rem;
@@ -139,8 +139,9 @@
 }
 
 .ct-form__submit:hover {
-  background: var(--ui-color-primary-hover);
-  border-color: var(--ui-color-primary-hover);
+  background: var(--ui-solid-button-bg-hover);
+  border-color: var(--ui-solid-button-bg-hover);
+  color: var(--ui-solid-button-text-hover);
 }
 
 .ct-form__submit:focus-visible {

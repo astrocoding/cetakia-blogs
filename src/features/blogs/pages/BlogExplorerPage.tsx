@@ -14,8 +14,14 @@ type BlogExplorerPageProps = {
 };
 
 export function BlogExplorerPage({ site, data }: BlogExplorerPageProps) {
+  const lcpCandidateAlts = new Set<string>([
+    "Latest post article cover two",
+    "ERP update article cover",
+    "Product update article cover",
+  ]);
+
   return (
-    <div className="bg-[var(--ui-surface-page)] text-[var(--ui-text-primary)]">
+    <div className="bp-shell bg-[var(--ui-surface-page)] text-[var(--ui-text-primary)]">
       <SiteHeader site={site} />
       <BlogHero title={data.hero.title} subtitle={data.hero.subtitle} />
 
@@ -47,7 +53,7 @@ export function BlogExplorerPage({ site, data }: BlogExplorerPageProps) {
             </article>
           </section>
 
-          {data.sections.map((section) => (
+          {data.sections.map((section, sectionIndex) => (
             <section key={section.id} className="bp-post-section" aria-labelledby={`${section.id}-heading`}>
               <div className={`bp-section-head${section.centerTitle ? " bp-section-head--center" : ""}`}>
                 <h2 id={`${section.id}-heading`}>{section.title}</h2>
@@ -59,13 +65,21 @@ export function BlogExplorerPage({ site, data }: BlogExplorerPageProps) {
               </div>
 
               <BlogPostScroller>
-                {section.articles.map((article) => (
+                {section.articles.map((article, articleIndex) => {
+                  const shouldPrioritize =
+                    (sectionIndex === 0 && articleIndex < 2) ||
+                    lcpCandidateAlts.has(article.alt);
+
+                  return (
                   <BlogPostCard
                     key={`${section.id}-${article.title}`}
                     article={article}
                     href="/blogs/erp-pengertian-fungsi-dan-manfaatnya-dalam-bisnis-percetakan"
+                    priority={shouldPrioritize}
+                    fetchPriority={shouldPrioritize ? "high" : undefined}
                   />
-                ))}
+                  );
+                })}
               </BlogPostScroller>
             </section>
           ))}
