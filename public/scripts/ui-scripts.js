@@ -115,63 +115,48 @@
   }
 
   try {
-    const ACCORDION_ITEM_SELECTOR = "[data-accordion-item]";
-    const ACCORDION_TRIGGER_SELECTOR = "[data-accordion-trigger]";
-    const ACCORDION_CONTENT_SELECTOR = "[data-accordion-content]";
-    const ACCORDION_INNER_SELECTOR = "[data-accordion-inner]";
-    const ACCORDION_IGNORE_SELECTOR = "a, button, input, textarea, select, label";
-    const ACCORDION_BIND_ATTR = "data-bp-accordion-bound";
+    const NAV_TOGGLE_SELECTOR = "[data-nav-toggle]";
+    const NAV_MOBILE_SELECTOR = "[data-nav-mobile]";
+    const NAV_CLOSE_SELECTOR = "[data-nav-close]";
+    const NAV_BIND_ATTR = "data-bp-mobile-nav-bound";
 
-    const setAccordionState = (item, nextOpen, animate = true) => {
-      const trigger = item.querySelector(ACCORDION_TRIGGER_SELECTOR);
-      const content = item.querySelector(ACCORDION_CONTENT_SELECTOR);
-      const inner = item.querySelector(ACCORDION_INNER_SELECTOR);
-      if (!trigger || !content || !inner) return;
+    const closeMobileNav = () => {
+      document.querySelectorAll(NAV_TOGGLE_SELECTOR).forEach((toggle) => {
+        if (!(toggle instanceof HTMLElement)) return;
+        toggle.classList.remove("is-open");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Open navigation menu");
+      });
 
-      const contentHeight = inner.scrollHeight;
-      trigger.setAttribute("aria-expanded", nextOpen ? "true" : "false");
-      content.setAttribute("aria-hidden", nextOpen ? "false" : "true");
-
-      if (nextOpen) {
-        item.classList.add("is-open");
-        if (!animate) {
-          content.style.maxHeight = "none";
-          return;
-        }
-
-        content.style.maxHeight = "0px";
-        requestAnimationFrame(() => {
-          content.style.maxHeight = `${inner.scrollHeight}px`;
-        });
-        return;
-      }
-
-      const startHeight = content.getBoundingClientRect().height || contentHeight;
-      content.style.maxHeight = `${startHeight}px`;
-      item.classList.remove("is-open");
-
-      if (!animate) {
-        content.style.maxHeight = "0px";
-        return;
-      }
-
-      requestAnimationFrame(() => {
-        content.style.maxHeight = "0px";
+      document.querySelectorAll(NAV_MOBILE_SELECTOR).forEach((panel) => {
+        if (!(panel instanceof HTMLElement)) return;
+        panel.classList.remove("is-open");
+        panel.setAttribute("aria-hidden", "true");
       });
     };
 
-    const syncAccordionHeights = () => {
-      const items = document.querySelectorAll(ACCORDION_ITEM_SELECTOR);
-      items.forEach((item) => {
-        if (!(item instanceof HTMLElement)) return;
-        const trigger = item.querySelector(ACCORDION_TRIGGER_SELECTOR);
-        const initialOpen = item.classList.contains("is-open") || trigger?.getAttribute("aria-expanded") === "true";
-        setAccordionState(item, initialOpen, false);
-      });
+    const toggleMobileNav = (toggleButton) => {
+      const panelId = toggleButton.getAttribute("aria-controls");
+      if (!panelId) return;
+      const panel = document.getElementById(panelId);
+      if (!(panel instanceof HTMLElement)) return;
+
+      const shouldOpen = !panel.classList.contains("is-open");
+      if (!shouldOpen) {
+        closeMobileNav();
+        return;
+      }
+
+      closeMobileNav();
+      panel.classList.add("is-open");
+      panel.setAttribute("aria-hidden", "false");
+      toggleButton.classList.add("is-open");
+      toggleButton.setAttribute("aria-expanded", "true");
+      toggleButton.setAttribute("aria-label", "Close navigation menu");
     };
 
-    const bindAccordionHandler = () => {
-      if (document.documentElement.hasAttribute(ACCORDION_BIND_ATTR)) return;
+    const bindMobileNavHandler = () => {
+      if (document.documentElement.hasAttribute(NAV_BIND_ATTR)) return;
 
       document.addEventListener(
         "click",
@@ -179,39 +164,34 @@
           const target = event.target;
           if (!(target instanceof Element)) return;
 
-          const trigger = target.closest(ACCORDION_TRIGGER_SELECTOR);
-          if (trigger) {
-            const item = trigger.closest(ACCORDION_ITEM_SELECTOR);
-            if (!(item instanceof HTMLElement)) return;
+          const toggleButton = target.closest(NAV_TOGGLE_SELECTOR);
+          if (toggleButton instanceof HTMLElement) {
             event.preventDefault();
-            const shouldOpen = !item.classList.contains("is-open");
-            setAccordionState(item, shouldOpen, true);
+            toggleMobileNav(toggleButton);
             return;
           }
 
-          const item = target.closest(ACCORDION_ITEM_SELECTOR);
-          if (!(item instanceof HTMLElement)) return;
-          if (target.closest(ACCORDION_IGNORE_SELECTOR)) return;
-          event.preventDefault();
-          const shouldOpen = !item.classList.contains("is-open");
-          setAccordionState(item, shouldOpen, true);
+          const closeTrigger = target.closest(NAV_CLOSE_SELECTOR);
+          if (closeTrigger) {
+            closeMobileNav();
+          }
         },
         true,
       );
 
-      window.addEventListener("resize", syncAccordionHeights);
-      document.documentElement.setAttribute(ACCORDION_BIND_ATTR, "1");
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          closeMobileNav();
+        }
+      });
+
+      document.documentElement.setAttribute(NAV_BIND_ATTR, "1");
     };
 
-    bindAccordionHandler();
-
-    window.addEventListener("pageshow", (event) => {
-      bindAccordionHandler();
-      if (event.persisted) {
-        syncAccordionHeights();
-      }
-    });
+    bindMobileNavHandler();
+    window.addEventListener("pageshow", bindMobileNavHandler);
   } catch {
     // no-op
   }
+
 })();

@@ -36,7 +36,6 @@
       ]
     },
     "headerActions": {
-      "login": { "label": "Log In", "href": "https://cetakia.com/login" },
       "startNow": { "label": "Start Now", "href": "https://cetakia.com/register" },
       "themeToggleIcons": {
         "light": "bi-moon-stars",
@@ -530,6 +529,52 @@
         {
           "type": "p",
           "text": "Ketika data penjualan, inventory, dan keuangan terhubung, setiap divisi memiliki satu sumber data yang sama. Hal ini mempermudah kolaborasi lintas tim dan membuat pelaporan menjadi lebih transparan."
+        },
+        {
+          "type": "list",
+          "variant": "unordered",
+          "title": "Contoh area operasional yang biasanya langsung terbantu oleh ERP:",
+          "items": [
+            "Sinkronisasi data order, stok, dan invoice secara real-time.",
+            "Notifikasi otomatis untuk approval pembelian dan jadwal produksi.",
+            "Monitoring progress pekerjaan lintas tim dari satu dashboard terpusat."
+          ]
+        },
+        {
+          "type": "list",
+          "variant": "ordered",
+          "title": "Urutan implementasi yang disarankan untuk fase awal:",
+          "items": [
+            "Petakan proses bisnis inti dan tentukan prioritas modul ERP.",
+            "Standarkan format data master (produk, vendor, pelanggan, akun).",
+            "Lakukan pilot project kecil, evaluasi, lalu skalakan bertahap ke seluruh tim."
+          ]
+        },
+        {
+          "type": "table",
+          "title": "Contoh matriks KPI operasional mingguan:",
+          "caption": "Ringkasan indikator utama yang umum dipantau tim produksi dan manajemen.",
+          "columns": ["KPI", "Target", "Aktual", "Status"],
+          "rows": [
+            ["On-time delivery", ">= 95%", "96.4%", "On Track"],
+            ["Defect rate", "<= 2%", "1.7%", "On Track"],
+            ["Lead time produksi", "<= 3 hari", "3.4 hari", "Perlu Aksi"],
+            ["Akurasi stok", ">= 98%", "97.6%", "Monitor"]
+          ]
+        },
+        {
+          "type": "quote",
+          "text": "Cetakia telah mengadopsi ERP untuk meningkatkan efisiensi operasional dan mempercepat pengambilan keputusan berbasis data.",
+          "subject": {
+            "name": "Zaenal Alfian",
+            "role": "CEO at Cetakia"
+          }
+        },
+        {
+          "type": "youtube",
+          "url": "https://youtu.be/wDchsz8nmbo",
+          "title": "Video overview ERP untuk printing business",
+          "caption": "Sampel video player YouTube untuk melengkapi pembahasan implementasi ERP."
         },
         {
           "type": "figure",

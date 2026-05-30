@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
     browserToTerminal: false,
   },
   images: {
+    qualities: [72, 75],
     remotePatterns: [
       {
         protocol: "https",
@@ -21,6 +22,10 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "www.ciptagrafika.com",
+      },
+      {
+        protocol: "https",
+        hostname: "i.ytimg.com",
       },
     ],
   },

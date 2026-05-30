@@ -14,10 +14,26 @@ export function ThemeLogo({ lightSrc, darkSrc, alt, width, height, className, pr
   return (
     <span className={`theme-logo${className ? ` ${className}` : ""}`}>
       <span className="theme-logo__slot theme-logo__slot--light">
-        <Image src={lightSrc} alt={alt} width={width} height={height} className="theme-logo__asset" priority={priority} />
+        <Image
+          src={lightSrc}
+          alt={alt}
+          width={width}
+          height={height}
+          className="theme-logo__asset"
+          priority={priority}
+          fetchPriority={priority ? "high" : undefined}
+        />
       </span>
       <span className="theme-logo__slot theme-logo__slot--dark" aria-hidden="true">
-        <Image src={darkSrc} alt="" width={width} height={height} className="theme-logo__asset" priority={priority} />
+        <Image
+          src={darkSrc}
+          alt=""
+          width={width}
+          height={height}
+          className="theme-logo__asset"
+          loading={priority ? "eager" : undefined}
+          fetchPriority={priority ? "low" : undefined}
+        />
       </span>
     </span>
   );
