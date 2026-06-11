@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 
 import type { NavLink, SiteData } from "@/features/blogs/types/blog.type";
@@ -10,6 +12,12 @@ type SiteHeaderProps = {
   navLinks?: NavLink[];
   startNowHref?: string;
   drawerId?: string;
+  languageToggle?: {
+    label: string;
+    ariaLabel: string;
+    icon: string;
+    onToggle: () => void;
+  };
 };
 
 export function SiteHeader({
@@ -17,6 +25,7 @@ export function SiteHeader({
   navLinks,
   startNowHref,
   drawerId = "public-nav-drawer",
+  languageToggle,
 }: SiteHeaderProps) {
   const primaryLinks = navLinks ?? site.primaryNavigation;
   const logoLight = site.brand.logoLight ?? site.brand.logo;
@@ -28,6 +37,7 @@ export function SiteHeader({
   const lightThemeIconName = toIconName(lightThemeIcon);
   const darkThemeIconName = toIconName(darkThemeIcon);
   const normalizeHeaderHref = (href: string) => (href.startsWith("#") ? `/${href}` : href);
+  const languageIconName = languageToggle ? toIconName(languageToggle.icon) : null;
 
   return (
     <>
@@ -75,6 +85,18 @@ export function SiteHeader({
                 <UiIcon name={darkThemeIconName} className="blog-site-nav__theme-icon blog-site-nav__theme-icon--dark" />
               </button>
 
+              {languageToggle ? (
+                <button
+                  type="button"
+                  className="blog-site-nav__theme blog-site-nav__language hidden lg:inline-flex"
+                  aria-label={languageToggle.ariaLabel}
+                  onClick={languageToggle.onToggle}
+                >
+                  {languageIconName ? <UiIcon name={languageIconName} className="blog-site-nav__language-icon" /> : null}
+                  <span className="blog-site-nav__language-label">{languageToggle.label}</span>
+                </button>
+              ) : null}
+
               <button
                 type="button"
                 className="blog-site-nav__theme inline-flex lg:hidden"
@@ -84,6 +106,18 @@ export function SiteHeader({
                 <UiIcon name={lightThemeIconName} className="blog-site-nav__theme-icon blog-site-nav__theme-icon--light" />
                 <UiIcon name={darkThemeIconName} className="blog-site-nav__theme-icon blog-site-nav__theme-icon--dark" />
               </button>
+
+              {languageToggle ? (
+                <button
+                  type="button"
+                  className="blog-site-nav__theme blog-site-nav__language inline-flex lg:hidden"
+                  aria-label={languageToggle.ariaLabel}
+                  onClick={languageToggle.onToggle}
+                >
+                  {languageIconName ? <UiIcon name={languageIconName} className="blog-site-nav__language-icon" /> : null}
+                  <span className="blog-site-nav__language-label">{languageToggle.label}</span>
+                </button>
+              ) : null}
 
               <button
                 type="button"

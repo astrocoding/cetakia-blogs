@@ -23,6 +23,24 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: page.seo.og?.title ?? page.seo.title,
     description: page.seo.description,
+    robots: page.seo.robots,
+    authors: page.seo.author ? [{ name: page.seo.author }] : undefined,
+    alternates: {
+      canonical: `/blogs/en/${slug}`,
+    },
+    openGraph: {
+      type: "article",
+      siteName: page.seo.og?.siteName,
+      title: page.seo.og?.title ?? page.seo.title,
+      description: page.seo.og?.description ?? page.seo.description,
+      url: `/blogs/en/${slug}`,
+      locale: "en_US",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: page.seo.twitter?.title ?? page.seo.og?.title ?? page.seo.title,
+      description: page.seo.twitter?.description ?? page.seo.description,
+    },
   };
 }
 
