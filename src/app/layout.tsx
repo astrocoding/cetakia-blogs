@@ -21,7 +21,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://cetakia-blogs.vercel.app"),
+  metadataBase: new URL("https://cetakia.com"),
   title: "Cetakia",
   description: "Cetakia is a leading provider of ERP for printing solutions in Indonesia.",
   icons: {

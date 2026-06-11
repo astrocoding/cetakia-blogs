@@ -30,7 +30,7 @@ export function BlogArticlePage({ site, data, articlePath }: BlogArticlePageProp
   const authorAvatar = "https://placehold.co/400x400/png?text=ZA";
   const encodedTitle = encodeURIComponent(data.hero.title);
   const absoluteArticleUrl = (() => {
-    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://cetakia-blogs.vercel.app";
+    const siteUrl = "https://cetakia.com";
     const base = siteUrl.endsWith("/") ? siteUrl.slice(0, -1) : siteUrl;
     const path = articlePath.startsWith("/") ? articlePath : `/${articlePath}`;
     return `${base}${path}`;
