@@ -47,6 +47,7 @@
       "socialLinks": [
         { "label": "LinkedIn", "href": "https://www.linkedin.com", "icon": "bi-linkedin" },
         { "label": "YouTube", "href": "https://www.youtube.com", "icon": "bi-youtube" },
+        { "label": "Instagram", "href": "https://www.instagram.com", "icon": "bi-instagram" },
         { "label": "Facebook", "href": "https://www.facebook.com", "icon": "bi-facebook" },
         { "label": "Threads", "href": "https://www.threads.net", "icon": "bi-threads" }
       ],
@@ -73,7 +74,7 @@
           "title": "Get Started",
           "links": [
             { "label": "sales@cetakia.com", "href": "mailto:sales@cetakia.com" },
-            { "label": "+62 812 0000 0000", "href": "tel:+6281200000000" }
+            { "label": "+62 889-8617-9658", "href": "tel:+6288986179658" }
           ]
         }
       ],
@@ -427,13 +428,13 @@
         "robots": "index, follow",
         "author": "Zaenal Alfian",
         "themeColor": "#239ae8",
-        "canonical": "https://example.com/blogs/agentic-cloud-reinventing-the-cloud-with-ai-agents",
+        "canonical": "https://cetakia.com/blogs/agentic-cloud-reinventing-the-cloud-with-ai-agents",
         "og": {
           "type": "article",
           "siteName": "Cetakia Blogs",
           "title": "Agentic Cloud: Reinventing the Cloud with AI Agents",
           "description": "Explore how AI agents are transforming cloud education and cloud strategy in modern organizations.",
-          "url": "https://example.com/blogs/agentic-cloud-reinventing-the-cloud-with-ai-agents",
+          "url": "https://cetakia.com/blogs/agentic-cloud-reinventing-the-cloud-with-ai-agents",
           "locale": "en_US"
         },
         "twitter": {

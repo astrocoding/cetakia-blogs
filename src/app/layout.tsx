@@ -21,7 +21,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://cetakia-blogs.vercel.app"),
+  metadataBase: new URL("https://cetakia.com"),
   title: "Cetakia",
   description: "Cetakia is a leading provider of ERP for printing solutions in Indonesia.",
   icons: {
@@ -41,7 +41,7 @@ export default async function RootLayout({
 }>) {
   const cookieStore = await cookies();
   const cookieTheme = cookieStore.get(THEME_COOKIE_KEY)?.value;
-  const initialTheme: UiTheme = cookieTheme === "dark" ? "dark" : "light";
+  const initialTheme: UiTheme = cookieTheme === "light" ? "light" : "dark";
   const initialBackground = initialTheme === "dark" ? DARK_THEME_BACKGROUND : LIGHT_THEME_BACKGROUND;
 
   return (

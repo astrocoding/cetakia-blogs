@@ -470,6 +470,10 @@
   margin: 0;
 }
 
+.lp-price-card__cta {
+  margin-top: 0.1rem;
+}
+
 .lp-price-row {
   align-items: flex-end;
   border-bottom: 1px solid color-mix(in srgb, var(--ui-border-subtle) 72%, transparent);

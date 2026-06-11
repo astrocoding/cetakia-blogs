@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     browserToTerminal: false,
   },
   images: {
-    qualities: [72, 75],
+    qualities: [68, 72, 75],
     remotePatterns: [
       {
         protocol: "https",
