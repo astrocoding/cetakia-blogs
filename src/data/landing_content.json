@@ -1,5 +1,16 @@
 {
   "defaultLocale": "id",
+  "header": {
+    "startNowLabel": "Start Now",
+    "navLinks": [
+      { "label": "Features", "href": "/#features" },
+      { "label": "Workflow", "href": "/#workflow" },
+      { "label": "Outcomes", "href": "/#outcomes" },
+      { "label": "Pricing", "href": "/#pricing" },
+      { "label": "Contact", "href": "/#contact" },
+      { "label": "FAQ", "href": "/#faq" }
+    ]
+  },
   "footer": {
     "columns": [
       {
@@ -33,19 +44,10 @@
   "locales": {
     "id": {
       "header": {
-        "startNowLabel": "Start Now",
         "languageToggleLabel": "ID",
         "languageToggleAriaLabel": "Ubah bahasa ke English",
         "languageToggleIcon": "bi-translate"
       },
-      "navLinks": [
-        { "label": "Features", "href": "/#features" },
-        { "label": "Workflow", "href": "/#workflow" },
-        { "label": "Outcomes", "href": "/#outcomes" },
-        { "label": "Pricing", "href": "/#pricing" },
-        { "label": "Contact", "href": "/#contact" },
-        { "label": "FAQ", "href": "/#faq" }
-      ],
       "informationBar": {
         "announcement": {
           "text": "Inside Cetakia: New AI-assisted estimation workflow for printing teams",
@@ -311,19 +313,10 @@
     },
     "en": {
       "header": {
-        "startNowLabel": "Start Now",
         "languageToggleLabel": "EN",
         "languageToggleAriaLabel": "Change language to Bahasa Indonesia",
         "languageToggleIcon": "bi-translate"
       },
-      "navLinks": [
-        { "label": "Features", "href": "/#features" },
-        { "label": "Workflow", "href": "/#workflow" },
-        { "label": "Outcomes", "href": "/#outcomes" },
-        { "label": "Pricing", "href": "/#pricing" },
-        { "label": "Contact", "href": "/#contact" },
-        { "label": "FAQ", "href": "/#faq" }
-      ],
       "informationBar": {
         "announcement": {
           "text": "Inside Cetakia: New AI-assisted estimation workflow for printing teams",

@@ -51,12 +51,10 @@ export type LandingFaqItem = {
 
 export type LandingPageContent = {
   header: {
-    startNowLabel: string;
     languageToggleLabel: string;
     languageToggleAriaLabel: string;
     languageToggleIcon: string;
   };
-  navLinks: LandingLocalizedLink[];
   informationBar: InformationBarData;
   footer: {
     description: string;
@@ -136,6 +134,10 @@ export type LandingPageContent = {
 
 export type LandingContentRoot = {
   defaultLocale: LandingLocale;
+  header: {
+    startNowLabel: string;
+    navLinks: LandingLocalizedLink[];
+  };
   footer: {
     columns: FooterColumn[];
     copyright: string;

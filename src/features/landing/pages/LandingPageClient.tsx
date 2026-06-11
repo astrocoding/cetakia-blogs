@@ -27,8 +27,8 @@ function isLandingLocale(value: string | null): value is LandingLocale {
 function buildLocalizedSite(site: SiteData, contentRoot: LandingContentRoot, content: LandingPageContent): SiteData {
   return {
     ...site,
-    primaryNavigation: content.navLinks,
-    mobileDrawerNavigation: content.navLinks.map((link) => ({
+    primaryNavigation: contentRoot.header.navLinks,
+    mobileDrawerNavigation: contentRoot.header.navLinks.map((link) => ({
       ...link,
       icon: link.icon ?? "bi-chevron-right",
     })),
@@ -37,7 +37,7 @@ function buildLocalizedSite(site: SiteData, contentRoot: LandingContentRoot, con
       ...site.headerActions,
       startNow: {
         ...site.headerActions.startNow,
-        label: content.header.startNowLabel,
+        label: contentRoot.header.startNowLabel,
       },
     },
     footer: {
@@ -90,7 +90,7 @@ export function LandingPageClient({ site, contentRoot }: LandingPageClientProps)
     <div className="lp-page bg-[var(--ui-surface-page)] text-[var(--ui-text-primary)] antialiased">
       <SiteHeader
         site={localizedSite}
-        navLinks={content.navLinks}
+        navLinks={contentRoot.header.navLinks}
         startNowHref="/#pricing"
         drawerId="landing-nav-drawer"
         languageToggle={{
