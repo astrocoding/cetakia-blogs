@@ -36,7 +36,7 @@
       if (current === "dark" || current === "light") return current;
       const stored = window.localStorage.getItem(THEME_STORAGE_KEY);
       if (stored === "dark" || stored === "light") return stored;
-      return "light";
+      return "dark";
     };
 
     const applyTheme = (nextTheme) => {

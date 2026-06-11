@@ -566,7 +566,10 @@
 
 @media (max-width: 767px) {
   .bp-shell .blog-article-header {
-    background-image: none;
+    background-image:
+      linear-gradient(var(--blog-grid-line-color) 1px, transparent 1px),
+      linear-gradient(90deg, var(--blog-grid-line-color) 1px, transparent 1px);
+    background-size: 72px 72px;
     padding: 2.3rem 1rem 2.7rem;
   }
 
