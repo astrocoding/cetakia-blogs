@@ -28,8 +28,8 @@ const contactCards = [
   {
     iconClassName: "bi-telephone-fill",
     title: "Phone",
-    value: "+62 749 530 742",
-    href: "tel:+62749530742",
+    value: "+62 889-8617-9658",
+    href: "tel:+6288986179658",
     iconTone: "teal" as const,
   },
   {

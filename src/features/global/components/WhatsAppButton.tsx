@@ -1,7 +1,7 @@
 import { UiIcon } from "@/features/global/components/UiIcon";
 
 const WHATSAPP_HREF =
-  "https://wa.me/6281200000000?text=Halo%20tim%20Cetakia,%20saya%20ingin%20konsultasi%20paket%20langganan%20atau%20demo.";
+  "https://wa.me/6288986179658?text=Halo%20tim%20Cetakia,%20saya%20ingin%20konsultasi%20paket%20langganan%20atau%20demo.";
 
 export function WhatsAppButton() {
   return (
