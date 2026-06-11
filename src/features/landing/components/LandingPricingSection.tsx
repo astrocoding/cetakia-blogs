@@ -50,6 +50,9 @@ export function LandingPricingSection({ plans, billingCopy }: LandingPricingSect
             {plan.recommended ? <span className="lp-recommend">{billingCopy.recommendedLabel}</span> : null}
             <h3>{plan.name}</h3>
             <p>{plan.description}</p>
+            <a href="#" className={`lp-price-card__cta lp-btn ${plan.ctaVariant === "solid" ? "lp-btn--solid" : "lp-btn--outline"} w-full justify-center`}>
+              {plan.ctaLabel}
+            </a>
             <div className="lp-price-row">
               <strong>{billing === "annual" ? plan.annualPrice : plan.monthlyPrice}</strong>
               <span>{plan.suffix}</span>
@@ -59,9 +62,6 @@ export function LandingPricingSection({ plans, billingCopy }: LandingPricingSect
                 <li key={feature}>{feature}</li>
               ))}
             </ul>
-            <a href="#" className={`lp-btn ${plan.ctaVariant === "solid" ? "lp-btn--solid" : "lp-btn--outline"} w-full justify-center`}>
-              {plan.ctaLabel}
-            </a>
           </article>
         ))}
       </div>

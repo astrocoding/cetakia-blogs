@@ -24,7 +24,7 @@ function isLandingLocale(value: string | null): value is LandingLocale {
   return value === "id" || value === "en";
 }
 
-function buildLocalizedSite(site: SiteData, content: LandingPageContent): SiteData {
+function buildLocalizedSite(site: SiteData, contentRoot: LandingContentRoot, content: LandingPageContent): SiteData {
   return {
     ...site,
     primaryNavigation: content.navLinks,
@@ -43,10 +43,10 @@ function buildLocalizedSite(site: SiteData, content: LandingPageContent): SiteDa
     footer: {
       ...site.footer,
       description: content.footer.description,
-      columns: content.footer.columns,
+      columns: contentRoot.footer.columns,
       bottom: {
-        copyright: content.footer.copyright,
-        links: content.footer.bottomLinks,
+        copyright: contentRoot.footer.copyright,
+        links: contentRoot.footer.bottomLinks,
       },
     },
   };
@@ -73,7 +73,7 @@ export function LandingPageClient({ site, contentRoot }: LandingPageClientProps)
     () => fallbackLocale,
   );
   const content = contentRoot.locales[locale] ?? contentRoot.locales[fallbackLocale];
-  const localizedSite = buildLocalizedSite(site, content);
+  const localizedSite = buildLocalizedSite(site, contentRoot, content);
 
   useEffect(() => {
     document.documentElement.lang = locale;

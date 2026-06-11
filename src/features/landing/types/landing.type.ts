@@ -60,9 +60,6 @@ export type LandingPageContent = {
   informationBar: InformationBarData;
   footer: {
     description: string;
-    columns: FooterColumn[];
-    copyright: string;
-    bottomLinks: NavLink[];
   };
   hero: {
     eyebrow: string;
@@ -139,5 +136,10 @@ export type LandingPageContent = {
 
 export type LandingContentRoot = {
   defaultLocale: LandingLocale;
+  footer: {
+    columns: FooterColumn[];
+    copyright: string;
+    bottomLinks: NavLink[];
+  };
   locales: Record<LandingLocale, LandingPageContent>;
 };

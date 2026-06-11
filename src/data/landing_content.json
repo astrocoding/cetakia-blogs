@@ -1,5 +1,35 @@
 {
   "defaultLocale": "id",
+  "footer": {
+    "columns": [
+      {
+        "title": "Product",
+        "links": [
+          { "label": "Features", "href": "/#features" },
+          { "label": "Workflow", "href": "/#workflow" },
+          { "label": "Outcomes", "href": "/#outcomes" },
+          { "label": "Pricing", "href": "/#pricing" }
+        ]
+      },
+      {
+        "title": "Platform Areas",
+        "items": ["Sales and Delivery", "Production Jobs", "Purchasing and Vendors", "Accounting and Reports"]
+      },
+      {
+        "title": "Get Started",
+        "links": [
+          { "label": "sales@cetakia.com", "href": "mailto:sales@cetakia.com" },
+          { "label": "+62 889-8617-9658", "href": "tel:+6288986179658" }
+        ]
+      }
+    ],
+    "copyright": "© 2026 Cetakia. All rights reserved.",
+    "bottomLinks": [
+      { "label": "Privacy", "href": "#" },
+      { "label": "Terms", "href": "#" },
+      { "label": "Support", "href": "#" }
+    ]
+  },
   "locales": {
     "id": {
       "header": {
@@ -29,40 +59,7 @@
         ]
       },
       "footer": {
-        "description": "Platform ERP profesional untuk bisnis percetakan yang membutuhkan kejelasan, kecepatan, dan kontrol operasional yang skalabel.",
-        "columns": [
-          {
-            "title": "Produk",
-            "links": [
-              { "label": "Fitur", "href": "/#features" },
-              { "label": "Alur Kerja", "href": "/#workflow" },
-              { "label": "Hasil", "href": "/#outcomes" },
-              { "label": "Harga", "href": "/#pricing" }
-            ]
-          },
-          {
-            "title": "Area Platform",
-            "items": [
-              "Penjualan dan Pengiriman",
-              "Pekerjaan Produksi",
-              "Pembelian dan Vendor",
-              "Akuntansi dan Laporan"
-            ]
-          },
-          {
-            "title": "Mulai",
-            "links": [
-              { "label": "sales@cetakia.com", "href": "mailto:sales@cetakia.com" },
-              { "label": "+62 889-8617-9658", "href": "tel:+6288986179658" }
-            ]
-          }
-        ],
-        "copyright": "© 2026 Cetakia. All rights reserved.",
-        "bottomLinks": [
-          { "label": "Privasi", "href": "#" },
-          { "label": "Ketentuan", "href": "#" },
-          { "label": "Dukungan", "href": "#" }
-        ]
+        "description": "Platform ERP profesional untuk bisnis percetakan yang membutuhkan kejelasan, kecepatan, dan kontrol operasional yang skalabel."
       },
       "hero": {
         "eyebrow": "Sistem untuk Percetakan",
@@ -340,35 +337,7 @@
         ]
       },
       "footer": {
-        "description": "A professional ERP platform for printing businesses that need clarity, speed, and scalable control.",
-        "columns": [
-          {
-            "title": "Product",
-            "links": [
-              { "label": "Features", "href": "/#features" },
-              { "label": "Workflow", "href": "/#workflow" },
-              { "label": "Outcomes", "href": "/#outcomes" },
-              { "label": "Pricing", "href": "/#pricing" }
-            ]
-          },
-          {
-            "title": "Platform Areas",
-            "items": ["Sales and Delivery", "Production Jobs", "Purchasing and Vendors", "Accounting and Reports"]
-          },
-          {
-            "title": "Get Started",
-            "links": [
-              { "label": "sales@cetakia.com", "href": "mailto:sales@cetakia.com" },
-              { "label": "+62 889-8617-9658", "href": "tel:+6288986179658" }
-            ]
-          }
-        ],
-        "copyright": "© 2026 Cetakia. All rights reserved.",
-        "bottomLinks": [
-          { "label": "Privacy", "href": "#" },
-          { "label": "Terms", "href": "#" },
-          { "label": "Support", "href": "#" }
-        ]
+        "description": "A professional ERP platform for printing businesses that need clarity, speed, and scalable control."
       },
       "hero": {
         "eyebrow": "System for Printing",
