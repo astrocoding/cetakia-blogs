@@ -4,9 +4,9 @@ import { LandingPage } from "@/features/landing/pages/LandingPage";
 import { getSiteData } from "@/features/blogs/services/blog.service";
 
 export const metadata: Metadata = {
-  title: "Cetakia Landing Page | One Stop Printing System Solution",
+  title: "Cetakia - Solusi Sistem Percetakan Terpadu",
   description:
-    "Cetakia unifies sales, production, inventory, accounting, and reporting for printing businesses in one connected platform.",
+    "Cetakia menyatukan pemasaran, penjualan, produksi, inventaris, akuntansi, dan pelaporan untuk bisnis percetakan dalam satu platform terintegrasi.",
 };
 
 export default function HomePage() {

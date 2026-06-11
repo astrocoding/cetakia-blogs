@@ -1,0 +1,622 @@
+{
+  "defaultLocale": "id",
+  "locales": {
+    "id": {
+      "header": {
+        "startNowLabel": "Start Now",
+        "languageToggleLabel": "ID",
+        "languageToggleAriaLabel": "Ubah bahasa ke English",
+        "languageToggleIcon": "bi-translate"
+      },
+      "navLinks": [
+        { "label": "Features", "href": "/#features" },
+        { "label": "Workflow", "href": "/#workflow" },
+        { "label": "Outcomes", "href": "/#outcomes" },
+        { "label": "Pricing", "href": "/#pricing" },
+        { "label": "Contact", "href": "/#contact" },
+        { "label": "FAQ", "href": "/#faq" }
+      ],
+      "informationBar": {
+        "announcement": {
+          "text": "Inside Cetakia: New AI-assisted estimation workflow for printing teams",
+          "href": "#"
+        },
+        "links": [
+          { "label": "Blog", "href": "/blogs" },
+          { "label": "Dokumentasi", "href": "#" },
+          { "label": "Dukungan", "href": "#" },
+          { "label": "Hubungi Kami", "href": "/contact-us" }
+        ]
+      },
+      "footer": {
+        "description": "Platform ERP profesional untuk bisnis percetakan yang membutuhkan kejelasan, kecepatan, dan kontrol operasional yang skalabel.",
+        "columns": [
+          {
+            "title": "Produk",
+            "links": [
+              { "label": "Fitur", "href": "/#features" },
+              { "label": "Alur Kerja", "href": "/#workflow" },
+              { "label": "Hasil", "href": "/#outcomes" },
+              { "label": "Harga", "href": "/#pricing" }
+            ]
+          },
+          {
+            "title": "Area Platform",
+            "items": [
+              "Penjualan dan Pengiriman",
+              "Pekerjaan Produksi",
+              "Pembelian dan Vendor",
+              "Akuntansi dan Laporan"
+            ]
+          },
+          {
+            "title": "Mulai",
+            "links": [
+              { "label": "sales@cetakia.com", "href": "mailto:sales@cetakia.com" },
+              { "label": "+62 889-8617-9658", "href": "tel:+6288986179658" }
+            ]
+          }
+        ],
+        "copyright": "© 2026 Cetakia. All rights reserved.",
+        "bottomLinks": [
+          { "label": "Privasi", "href": "#" },
+          { "label": "Ketentuan", "href": "#" },
+          { "label": "Dukungan", "href": "#" }
+        ]
+      },
+      "hero": {
+        "eyebrow": "Sistem untuk Percetakan",
+        "titlePrefix": "Solusi",
+        "titleHighlight": "Sistem Percetakan",
+        "titleSuffix": "Terpadu.",
+        "description": "Cetakia menyatukan pemasaran, penjualan, produksi, inventaris, akuntansi, dan pelaporan ke dalam satu sistem operasional terintegrasi yang dibangun untuk efisiensi, kecepatan, konsistensi, dan pertumbuhan.",
+        "primaryCta": { "label": "Mulai Trial Gratis", "href": "/#pricing" },
+        "secondaryCta": { "label": "Jelajahi Platform", "href": "/#features" },
+        "trustedLabel": "Dipercaya tim yang mengelola:",
+        "trustedItems": ["Penjualan", "Pembelian", "Produksi", "Inventaris", "Laporan Keuangan"],
+        "snapshot": {
+          "title": "Ringkasan Operasional Harian",
+          "status": "Live",
+          "kpis": [
+            { "label": "Pekerjaan Aktif", "value": "128" },
+            { "label": "Siap Dikirim", "value": "34" },
+            { "label": "Menunggu Persetujuan", "value": "12" },
+            { "label": "Penerimaan Hari Ini", "value": "Rp97Jt" }
+          ],
+          "flowItems": [
+            { "icon": "bi-check-circle-fill", "label": "Penawaran Disetujui" },
+            { "icon": "bi-arrow-repeat", "label": "Produksi Berjalan" },
+            { "icon": "bi-truck", "label": "Pengiriman Terjadwal" }
+          ]
+        }
+      },
+      "features": {
+        "eyebrow": "Fitur Utama",
+        "title": "Dibangun untuk bisnis percetakan end-to-end",
+        "description": "Setiap tim bekerja di atas fondasi data yang sama, mulai dari perencanaan komersial hingga output produksi dan keuangan.",
+        "items": [
+          {
+            "icon": "bi-currency-dollar",
+            "title": "Penjualan ke Kas",
+            "description": "Kelola penawaran, sales order, invoice, dan penerimaan pelanggan dalam satu alur yang andal."
+          },
+          {
+            "icon": "bi-truck",
+            "title": "Koordinasi Pengiriman",
+            "description": "Kontrol jadwal pengiriman, progres dispatch, dan bukti pengiriman dengan akuntabilitas yang jelas."
+          },
+          {
+            "icon": "bi-cart-check",
+            "title": "Kontrol Pembelian",
+            "description": "Kelola permintaan pembelian, purchase order, dan transaksi vendor dengan visibilitas penuh."
+          },
+          {
+            "icon": "bi-briefcase",
+            "title": "Pekerjaan Produksi",
+            "description": "Jalankan pekerjaan in-house, antar divisi, dan outsourcing dengan pelacakan status yang presisi."
+          },
+          {
+            "icon": "bi-database",
+            "title": "Integritas Master Data",
+            "description": "Jaga data pelanggan, produk, komponen, satuan, dan vendor tetap selaras untuk operasi yang bersih dan akurat."
+          },
+          {
+            "icon": "bi-file-earmark-bar-graph",
+            "title": "Kesiapan Akuntansi",
+            "description": "Susun chart of accounts dan pantau posisi keuangan dengan rekam transaksi yang mudah ditelusuri."
+          },
+          {
+            "icon": "bi-bar-chart-line",
+            "title": "Laporan Eksekutif",
+            "description": "Akses insight penjualan, penerimaan, inventaris, dan profitabilitas untuk mendukung keputusan strategis."
+          },
+          {
+            "icon": "bi-cpu",
+            "title": "Lapisan Intelijen",
+            "description": "Manfaatkan Expert System dan Business Intelligence untuk perencanaan yang lebih cerdas dan pertumbuhan performa."
+          }
+        ]
+      },
+      "workflow": {
+        "eyebrow": "Alur Operasional",
+        "title": "Hubungkan setiap tahap tanpa silo operasional",
+        "description": "Cetakia membantu tim mengeksekusi pekerjaan secara efisien dengan transisi yang jelas antara komersial, produksi, pengiriman, dan penutupan keuangan.",
+        "steps": [
+          {
+            "step": "01",
+            "title": "Tangkap Permintaan",
+            "description": "Buat penawaran dan ubah menjadi sales order dengan jejak data yang lengkap."
+          },
+          {
+            "step": "02",
+            "title": "Rencanakan dan Produksi",
+            "description": "Arahkan pekerjaan ke in-house, divisi, atau outsourcing dengan tata kelola status."
+          },
+          {
+            "step": "03",
+            "title": "Kirim dengan Kontrol",
+            "description": "Koordinasikan jadwal pengiriman dan jaga kualitas komunikasi pelanggan."
+          },
+          {
+            "step": "04",
+            "title": "Tutup Siklus Keuangan",
+            "description": "Terbitkan invoice, pantau penerimaan, dan tampilkan insight bisnis secara real-time."
+          }
+        ]
+      },
+      "outcomes": {
+        "eyebrow": "Testimoni",
+        "title": "Hasil nyata dari tim yang menjalankan Cetakia setiap hari",
+        "description": "Dengarkan bagaimana tim penjualan, produksi, pengiriman, dan keuangan memperoleh koordinasi lebih cepat melalui satu platform terhubung.",
+        "testimonials": [
+          {
+            "quote": "Cetakia merapikan siklus penawaran hingga invoice dan mengurangi hambatan follow-up antar tim.",
+            "name": "Rina Hartono",
+            "role": "Head of Sales Operations"
+          },
+          {
+            "quote": "Kami kini memantau pekerjaan in-house, divisi, dan outsourcing dari satu dashboard tanpa kehilangan kontrol.",
+            "name": "Arief Nugraha",
+            "role": "Production Planning Manager"
+          },
+          {
+            "quote": "Koordinasi pengiriman menjadi lebih cepat karena semua orang memakai referensi status dan jadwal yang sama.",
+            "name": "Maya Prasetyo",
+            "role": "Logistics & Fulfillment Lead"
+          }
+        ],
+        "metrics": [
+          { "value": "99,9%", "label": "Ketersediaan Data" },
+          { "value": "3x", "label": "Koordinasi Pekerjaan Lebih Cepat" },
+          { "value": "40%", "label": "Rework Manual Lebih Rendah" },
+          { "value": "24/7", "label": "Visibilitas Real-time" }
+        ]
+      },
+      "pricing": {
+        "eyebrow": "Paket Harga",
+        "title": "Paket fleksibel untuk setiap tahap bisnis Anda",
+        "description": "Mulai dari workflow esensial, lalu tingkatkan ke otomasi dan tata kelola yang lebih dalam seiring bertambahnya kompleksitas.",
+        "billing": {
+          "ariaLabel": "Siklus penagihan",
+          "annualLabel": "Bayar Tahunan",
+          "annualBadge": "Hemat 20%",
+          "monthlyLabel": "Bayar Bulanan",
+          "recommendedLabel": "Rekomendasi"
+        },
+        "plans": [
+          {
+            "name": "Free Starter",
+            "description": "Ideal untuk tim tahap awal yang memvalidasi workflow inti.",
+            "annualPrice": "0K",
+            "monthlyPrice": "0K",
+            "suffix": "/bln.",
+            "ctaLabel": "Mulai Gratis",
+            "ctaVariant": "outline",
+            "features": ["1 workspace perusahaan", "Penawaran dan pelacakan order dasar", "Hingga 3 pengguna aktif"]
+          },
+          {
+            "name": "Basic",
+            "description": "Untuk operasi kecil yang membutuhkan kontrol proses lebih rapi.",
+            "annualPrice": "255K",
+            "monthlyPrice": "300K",
+            "suffix": "/bln.",
+            "ctaLabel": "Pilih Basic",
+            "ctaVariant": "outline",
+            "features": ["Modul penjualan, pengiriman, dan pembelian", "Hingga 10 pengguna aktif", "Laporan yang dapat diekspor"]
+          },
+          {
+            "name": "Pro",
+            "description": "Untuk tim berkembang yang membutuhkan kecepatan, visibilitas, dan skala.",
+            "annualPrice": "520K",
+            "monthlyPrice": "650K",
+            "suffix": "/bln.",
+            "ctaLabel": "Mulai dengan Pro",
+            "ctaVariant": "solid",
+            "recommended": true,
+            "features": ["Orkestrasi workflow end-to-end", "Hingga 40 pengguna aktif", "Dukungan prioritas"]
+          },
+          {
+            "name": "Enterprise",
+            "description": "Untuk bisnis dengan kebutuhan tata kelola lanjutan.",
+            "annualPrice": "1200K",
+            "monthlyPrice": "1500K",
+            "suffix": "/bln.",
+            "ctaLabel": "Hubungi Sales",
+            "ctaVariant": "outline",
+            "features": ["Operasi multi-divisi", "Pengguna tanpa batas", "Dedicated success manager"]
+          },
+          {
+            "name": "Custom",
+            "description": "Disesuaikan untuk operasi kompleks dengan kebutuhan spesifik.",
+            "annualPrice": "Custom",
+            "monthlyPrice": "Custom",
+            "suffix": "paket",
+            "ctaLabel": "Minta Proposal",
+            "ctaVariant": "outline",
+            "features": ["Bundling modul khusus", "Opsi private deployment", "Konsultasi implementasi"]
+          }
+        ]
+      },
+      "contact": {
+        "eyebrow": "Siap Memulai",
+        "title": "Modernisasi sistem percetakan Anda dengan satu platform terpadu",
+        "description": "Mulai bangun operasi yang lebih cepat, bersih, dan mudah diprediksi bersama Cetakia.",
+        "primaryCta": { "label": "Jadwalkan Demo", "href": "/contact-us" },
+        "secondaryCta": { "label": "Mulai Trial Gratis", "href": "#" }
+      },
+      "faq": {
+        "eyebrow": "FAQ",
+        "title": "Pertanyaan yang sering diajukan",
+        "descriptionPrefix": "Butuh penjelasan yang disesuaikan? ",
+        "chatLabel": "Chat dengan tim kami",
+        "descriptionSuffix": ".",
+        "chatHref": "https://wa.me/6288986179658",
+        "items": [
+          {
+            "id": "faq-free-trial",
+            "iconClassName": "bi-emoji-smile",
+            "title": "Apakah tersedia free trial?",
+            "content": "Ya. Anda bisa mulai dari paket Free Starter, lalu upgrade saat tim membutuhkan lebih banyak pengguna dan laporan yang lebih dalam.",
+            "defaultOpen": true
+          },
+          {
+            "id": "faq-change-plan",
+            "iconClassName": "bi-sliders",
+            "title": "Apakah saya bisa mengubah paket nanti?",
+            "content": "Bisa. Anda dapat berpindah paket seiring pertumbuhan volume produksi, tanpa mengorbankan kontinuitas data."
+          },
+          {
+            "id": "faq-billing",
+            "iconClassName": "bi-receipt",
+            "title": "Bagaimana sistem tagihan dan pembatalan bekerja?",
+            "content": "Tagihan dapat dilakukan bulanan atau tahunan sesuai siklus yang dipilih. Pembatalan dapat diajukan sebelum siklus berikutnya dimulai."
+          },
+          {
+            "id": "faq-onboarding",
+            "iconClassName": "bi-person-gear",
+            "title": "Apakah tersedia dukungan onboarding dan implementasi?",
+            "content": "Ya. Tim kami dapat membantu setup, pemetaan proses, dan onboarding untuk workflow sales, produksi, gudang, dan finance."
+          },
+          {
+            "id": "faq-integration",
+            "iconClassName": "bi-cpu",
+            "title": "Apakah Cetakia bisa terintegrasi dengan tools yang sudah kami gunakan?",
+            "content": "Ya. Untuk skenario lanjutan, paket Enterprise dan Custom mendukung integrasi serta penyelarasan otomasi berdasarkan kebutuhan Anda."
+          },
+          {
+            "id": "faq-support",
+            "iconClassName": "bi-envelope-fill",
+            "title": "Bagaimana mekanisme dukungan bekerja?",
+            "content": "Tingkat dukungan bergantung pada paket Anda. Basic mencakup dukungan online, sedangkan Pro dan di atasnya mendapatkan bantuan prioritas yang lebih cepat."
+          }
+        ]
+      }
+    },
+    "en": {
+      "header": {
+        "startNowLabel": "Start Now",
+        "languageToggleLabel": "EN",
+        "languageToggleAriaLabel": "Change language to Bahasa Indonesia",
+        "languageToggleIcon": "bi-translate"
+      },
+      "navLinks": [
+        { "label": "Features", "href": "/#features" },
+        { "label": "Workflow", "href": "/#workflow" },
+        { "label": "Outcomes", "href": "/#outcomes" },
+        { "label": "Pricing", "href": "/#pricing" },
+        { "label": "Contact", "href": "/#contact" },
+        { "label": "FAQ", "href": "/#faq" }
+      ],
+      "informationBar": {
+        "announcement": {
+          "text": "Inside Cetakia: New AI-assisted estimation workflow for printing teams",
+          "href": "#"
+        },
+        "links": [
+          { "label": "Blog", "href": "/blogs" },
+          { "label": "Docs", "href": "#" },
+          { "label": "Support", "href": "#" },
+          { "label": "Contact Us", "href": "/contact-us" }
+        ]
+      },
+      "footer": {
+        "description": "A professional ERP platform for printing businesses that need clarity, speed, and scalable control.",
+        "columns": [
+          {
+            "title": "Product",
+            "links": [
+              { "label": "Features", "href": "/#features" },
+              { "label": "Workflow", "href": "/#workflow" },
+              { "label": "Outcomes", "href": "/#outcomes" },
+              { "label": "Pricing", "href": "/#pricing" }
+            ]
+          },
+          {
+            "title": "Platform Areas",
+            "items": ["Sales and Delivery", "Production Jobs", "Purchasing and Vendors", "Accounting and Reports"]
+          },
+          {
+            "title": "Get Started",
+            "links": [
+              { "label": "sales@cetakia.com", "href": "mailto:sales@cetakia.com" },
+              { "label": "+62 889-8617-9658", "href": "tel:+6288986179658" }
+            ]
+          }
+        ],
+        "copyright": "© 2026 Cetakia. All rights reserved.",
+        "bottomLinks": [
+          { "label": "Privacy", "href": "#" },
+          { "label": "Terms", "href": "#" },
+          { "label": "Support", "href": "#" }
+        ]
+      },
+      "hero": {
+        "eyebrow": "System for Printing",
+        "titlePrefix": "One Stop",
+        "titleHighlight": "Printing System",
+        "titleSuffix": "Solution.",
+        "description": "Cetakia unifies marketing, sales, production, inventory, accounting, and reporting into one integrated operating system built for efficiency, speed, consistency, and scalable business growth.",
+        "primaryCta": { "label": "Start Free Trial", "href": "/#pricing" },
+        "secondaryCta": { "label": "Explore Platform", "href": "/#features" },
+        "trustedLabel": "Trusted by teams managing:",
+        "trustedItems": ["Sales", "Purchases", "Production", "Inventory", "Financial Reports"],
+        "snapshot": {
+          "title": "Daily Operations Snapshot",
+          "status": "Live",
+          "kpis": [
+            { "label": "Active Jobs", "value": "128" },
+            { "label": "Ready to Deliver", "value": "34" },
+            { "label": "Pending Approval", "value": "12" },
+            { "label": "Receipts Today", "value": "IDR 97M" }
+          ],
+          "flowItems": [
+            { "icon": "bi-check-circle-fill", "label": "Quotation Approved" },
+            { "icon": "bi-arrow-repeat", "label": "Production Running" },
+            { "icon": "bi-truck", "label": "Delivery Scheduled" }
+          ]
+        }
+      },
+      "features": {
+        "eyebrow": "Core Features",
+        "title": "Built for end-to-end print business",
+        "description": "Every team works on the same data foundation, from commercial planning to production output and finance.",
+        "items": [
+          {
+            "icon": "bi-currency-dollar",
+            "title": "Sales to Cash",
+            "description": "Handle quotations, sales orders, invoices, and customer receipts in one reliable flow."
+          },
+          {
+            "icon": "bi-truck",
+            "title": "Delivery Coordination",
+            "description": "Control delivery schedules, dispatch progress, and proof of delivery with clear accountability."
+          },
+          {
+            "icon": "bi-cart-check",
+            "title": "Purchase Control",
+            "description": "Manage purchase requests, purchase orders, and vendor transactions with full visibility."
+          },
+          {
+            "icon": "bi-briefcase",
+            "title": "Production Jobs",
+            "description": "Run in-house, inter-division, and outsourcing jobs with status tracking and operational precision."
+          },
+          {
+            "icon": "bi-database",
+            "title": "Master Data Integrity",
+            "description": "Keep customers, products, components, units, and vendors aligned for clean and accurate operations."
+          },
+          {
+            "icon": "bi-file-earmark-bar-graph",
+            "title": "Accounting Readiness",
+            "description": "Structure chart of accounts and monitor financial positions with traceable transaction records."
+          },
+          {
+            "icon": "bi-bar-chart-line",
+            "title": "Executive Reporting",
+            "description": "Access sales, receipt, inventory, and profitability insights to support strategic decisions."
+          },
+          {
+            "icon": "bi-cpu",
+            "title": "Intelligence Layer",
+            "description": "Leverage Expert System and Business Intelligence for smarter planning and performance growth."
+          }
+        ]
+      },
+      "workflow": {
+        "eyebrow": "Operational Flow",
+        "title": "Keep every stage connected without operational silos",
+        "description": "Cetakia helps teams execute with flawless efficiency by creating clear transitions between commercial, production, delivery, and financial closure.",
+        "steps": [
+          {
+            "step": "01",
+            "title": "Capture Demand",
+            "description": "Generate quotation and convert to sales order with full traceability."
+          },
+          {
+            "step": "02",
+            "title": "Plan & Produce",
+            "description": "Route jobs across in-house, divisions, or outsourcing with status governance."
+          },
+          {
+            "step": "03",
+            "title": "Deliver with Control",
+            "description": "Coordinate delivery schedules and maintain customer communication quality."
+          },
+          {
+            "step": "04",
+            "title": "Close Financial Loop",
+            "description": "Issue invoices, monitor receipts, and expose business insights in real time."
+          }
+        ]
+      },
+      "outcomes": {
+        "eyebrow": "Testimonials",
+        "title": "Proven results from teams running Cetakia every day",
+        "description": "Hear how sales, production, delivery, and finance teams gain faster coordination with one connected platform.",
+        "testimonials": [
+          {
+            "quote": "Cetakia streamlined our quotation-to-invoice cycle and reduced follow-up bottlenecks between teams.",
+            "name": "Rina Hartono",
+            "role": "Head of Sales Operations"
+          },
+          {
+            "quote": "We now monitor in-house, division, and outsourcing jobs from one dashboard without losing control.",
+            "name": "Arief Nugraha",
+            "role": "Production Planning Manager"
+          },
+          {
+            "quote": "Delivery coordination is faster because everyone works on the same status and schedule reference.",
+            "name": "Maya Prasetyo",
+            "role": "Logistics & Fulfillment Lead"
+          }
+        ],
+        "metrics": [
+          { "value": "99.9%", "label": "Data Availability" },
+          { "value": "3x", "label": "Faster Job Coordination" },
+          { "value": "40%", "label": "Lower Manual Rework" },
+          { "value": "24/7", "label": "Real-time Visibility" }
+        ]
+      },
+      "pricing": {
+        "eyebrow": "Pricing Tiers",
+        "title": "Flexible plans to match every stage of your business",
+        "description": "Start with essential workflows, then scale into deeper automation and governance as complexity grows.",
+        "billing": {
+          "ariaLabel": "Billing cycle",
+          "annualLabel": "Bill Annually",
+          "annualBadge": "Save 20%",
+          "monthlyLabel": "Bill Monthly",
+          "recommendedLabel": "Recommend"
+        },
+        "plans": [
+          {
+            "name": "Free Starter",
+            "description": "Ideal for early-stage teams validating core workflows.",
+            "annualPrice": "0K",
+            "monthlyPrice": "0K",
+            "suffix": "/mo.",
+            "ctaLabel": "Start Free",
+            "ctaVariant": "outline",
+            "features": ["1 company workspace", "Quotation and basic order tracking", "Up to 3 active users"]
+          },
+          {
+            "name": "Basic",
+            "description": "For small operations that need tighter process control.",
+            "annualPrice": "255K",
+            "monthlyPrice": "300K",
+            "suffix": "/mo.",
+            "ctaLabel": "Choose Basic",
+            "ctaVariant": "outline",
+            "features": ["Sales, delivery, and purchase modules", "Up to 10 active users", "Exportable reports"]
+          },
+          {
+            "name": "Pro",
+            "description": "For growing teams requiring speed, visibility, and scale.",
+            "annualPrice": "520K",
+            "monthlyPrice": "650K",
+            "suffix": "/mo.",
+            "ctaLabel": "Start with Pro",
+            "ctaVariant": "solid",
+            "recommended": true,
+            "features": ["End-to-end workflow orchestration", "Up to 40 active users", "Priority support"]
+          },
+          {
+            "name": "Enterprise",
+            "description": "For business with advanced governance needs.",
+            "annualPrice": "1200K",
+            "monthlyPrice": "1500K",
+            "suffix": "/mo.",
+            "ctaLabel": "Contact Sales",
+            "ctaVariant": "outline",
+            "features": ["Multi-division operations", "Unlimited users", "Dedicated success manager"]
+          },
+          {
+            "name": "Custom",
+            "description": "Tailored for complex operations with specific requirements.",
+            "annualPrice": "Custom",
+            "monthlyPrice": "Custom",
+            "suffix": "plan",
+            "ctaLabel": "Request Proposal",
+            "ctaVariant": "outline",
+            "features": ["Custom module bundling", "Private deployment options", "Implementation consulting"]
+          }
+        ]
+      },
+      "contact": {
+        "eyebrow": "Ready to Start",
+        "title": "Modernize your printing system with one cohesive platform",
+        "description": "Start building a faster, cleaner, and more predictable operation with Cetakia.",
+        "primaryCta": { "label": "Book a Demo", "href": "/contact-us" },
+        "secondaryCta": { "label": "Start Free Trial", "href": "#" }
+      },
+      "faq": {
+        "eyebrow": "FAQ",
+        "title": "Frequently asked questions",
+        "descriptionPrefix": "Need a tailored explanation? ",
+        "chatLabel": "Chat with our team",
+        "descriptionSuffix": ".",
+        "chatHref": "https://wa.me/6288986179658",
+        "items": [
+          {
+            "id": "faq-free-trial",
+            "iconClassName": "bi-emoji-smile",
+            "title": "Is there a free trial available?",
+            "content": "Yes. You can start from the Free Starter plan, then upgrade when your team needs more users and deeper reporting.",
+            "defaultOpen": true
+          },
+          {
+            "id": "faq-change-plan",
+            "iconClassName": "bi-sliders",
+            "title": "Can I change my plan later?",
+            "content": "Absolutely. You can move between plans as your production volume grows, while keeping data continuity intact."
+          },
+          {
+            "id": "faq-billing",
+            "iconClassName": "bi-receipt",
+            "title": "How does billing and cancellation work?",
+            "content": "Billing can be monthly or annual based on your selected cycle. You can request cancellation before the next cycle starts."
+          },
+          {
+            "id": "faq-onboarding",
+            "iconClassName": "bi-person-gear",
+            "title": "Do you provide onboarding and implementation support?",
+            "content": "Yes. Our team can assist setup, process mapping, and onboarding for sales, production, warehouse, and finance workflows."
+          },
+          {
+            "id": "faq-integration",
+            "iconClassName": "bi-cpu",
+            "title": "Can Cetakia integrate with our existing tools?",
+            "content": "Yes. For advanced scenarios, the Enterprise and Custom plans support integration and automation alignment based on your requirements."
+          },
+          {
+            "id": "faq-support",
+            "iconClassName": "bi-envelope-fill",
+            "title": "How does support work?",
+            "content": "Support level depends on your plan. Basic includes online support, while Pro and above include faster priority assistance."
+          }
+        ]
+      }
+    }
+  }
+}

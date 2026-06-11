@@ -185,6 +185,23 @@
   color: var(--blog-link-color);
 }
 
+.blog-site-nav__language {
+  gap: 0.28rem;
+  min-width: 3.2rem;
+}
+
+.blog-site-nav__language-icon {
+  height: 1rem;
+  width: 1rem;
+}
+
+.blog-site-nav__language-label {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.035em;
+  line-height: 1;
+}
+
 .blog-site-nav__theme-icon--dark {
   display: none;
 }

@@ -2,17 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { UiIcon } from "@/features/global/components/UiIcon";
-
-export type LandingTestimonial = {
-  quote: string;
-  name: string;
-  role: string;
-};
-
-export type LandingMetric = {
-  value: string;
-  label: string;
-};
+import type { LandingMetric, LandingTestimonial } from "@/features/landing/types/landing.type";
 
 type LandingOutcomesSectionProps = {
   testimonials: LandingTestimonial[];
@@ -28,6 +18,8 @@ export function LandingOutcomesSection({ testimonials, metrics }: LandingOutcome
   const quote = testimonials[activeQuoteIndex];
 
   useEffect(() => {
+    if (testimonials.length <= 1) return;
+
     let timeoutId = 0;
     const intervalId = window.setInterval(() => {
       setIsQuoteVisible(false);
@@ -43,6 +35,8 @@ export function LandingOutcomesSection({ testimonials, metrics }: LandingOutcome
       if (timeoutId) window.clearTimeout(timeoutId);
     };
   }, [testimonials.length]);
+
+  if (!quote) return null;
 
   return (
     <>
