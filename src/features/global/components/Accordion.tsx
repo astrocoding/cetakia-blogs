@@ -28,11 +28,15 @@ export function Accordion({ items, className }: AccordionProps) {
         return (
           <details key={item.id} className="c-accordion__item" open={isOpen}>
             <summary className="c-accordion__summary" aria-controls={contentId}>
-              <span className="c-accordion__summary-text">
-                {item.iconClassName ? <UiIcon name={item.iconClassName} /> : null}
-                {item.title}
+              {item.iconClassName ? (
+                <span className="c-accordion__icon">
+                  <UiIcon name={item.iconClassName} />
+                </span>
+              ) : null}
+              <span className="c-accordion__title">{item.title}</span>
+              <span className="c-accordion__chevron-wrap">
+                <UiIcon name="bi-chevron-down" className="c-accordion__chevron" />
               </span>
-              <UiIcon name="bi-chevron-down" className="c-accordion__chevron" />
             </summary>
 
             <div id={contentId} className="c-accordion__content">

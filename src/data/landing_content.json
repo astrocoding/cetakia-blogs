@@ -296,13 +296,13 @@
           },
           {
             "id": "faq-integration",
-            "iconClassName": "bi-cpu",
+            "iconClassName": "bi-plug",
             "title": "Apakah Cetakia bisa terintegrasi dengan tools yang sudah kami gunakan?",
             "content": "Ya. Untuk skenario lanjutan, paket Enterprise dan Custom mendukung integrasi serta penyelarasan otomasi berdasarkan kebutuhan Anda."
           },
           {
             "id": "faq-support",
-            "iconClassName": "bi-envelope-fill",
+            "iconClassName": "bi-headset",
             "title": "Bagaimana mekanisme dukungan bekerja?",
             "content": "Tingkat dukungan bergantung pada paket Anda. Basic mencakup dukungan online, sedangkan Pro dan di atasnya mendapatkan bantuan prioritas yang lebih cepat."
           }
@@ -574,13 +574,13 @@
           },
           {
             "id": "faq-integration",
-            "iconClassName": "bi-cpu",
+            "iconClassName": "bi-plug",
             "title": "Can Cetakia integrate with our existing tools?",
             "content": "Yes. For advanced scenarios, the Enterprise and Custom plans support integration and automation alignment based on your requirements."
           },
           {
             "id": "faq-support",
-            "iconClassName": "bi-envelope-fill",
+            "iconClassName": "bi-headset",
             "title": "How does support work?",
             "content": "Support level depends on your plan. Basic includes online support, while Pro and above include faster priority assistance."
           }
