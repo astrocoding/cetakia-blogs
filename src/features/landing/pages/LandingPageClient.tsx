@@ -32,7 +32,7 @@ function buildLocalizedSite(site: SiteData, contentRoot: LandingContentRoot, con
       ...link,
       icon: link.icon ?? "bi-chevron-right",
     })),
-    informationBar: content.informationBar,
+    informationBar: contentRoot.informationBar,
     headerActions: {
       ...site.headerActions,
       startNow: {
