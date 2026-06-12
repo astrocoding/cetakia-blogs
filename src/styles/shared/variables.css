@@ -59,6 +59,12 @@
   --ui-color-danger-soft: #feecec;
   --ui-color-danger-soft-active: #ffd9d9;
   --ui-color-danger-ring: rgb(239 68 68 / 0.3);
+  --ui-map-button-bg: #ef4444;
+  --ui-map-button-bg-hover: #dc2626;
+  --ui-map-button-border: #ef4444;
+  --ui-map-button-border-hover: #dc2626;
+  --ui-map-button-text: #ffffff;
+  --ui-map-button-ring: rgb(239 68 68 / 0.28);
 
   /* Button foundations */
   --ui-btn-font-weight: 600;
@@ -205,6 +211,12 @@
   --ui-color-danger-soft: #351515;
   --ui-color-danger-soft-active: #451d1d;
   --ui-color-danger-ring: rgb(240 92 92 / 0.34);
+  --ui-map-button-bg: #c93f3f;
+  --ui-map-button-bg-hover: #e05252;
+  --ui-map-button-border: #d75454;
+  --ui-map-button-border-hover: #ec6a6a;
+  --ui-map-button-text: #fff7f7;
+  --ui-map-button-ring: rgb(224 82 82 / 0.34);
 
   --ui-btn-shadow-solid: none;
   --ui-btn-disabled-bg: #1e293b;
@@ -306,6 +318,12 @@
     --ui-color-danger-soft: #351515;
     --ui-color-danger-soft-active: #451d1d;
     --ui-color-danger-ring: rgb(240 92 92 / 0.34);
+    --ui-map-button-bg: #c93f3f;
+    --ui-map-button-bg-hover: #e05252;
+    --ui-map-button-border: #d75454;
+    --ui-map-button-border-hover: #ec6a6a;
+    --ui-map-button-text: #fff7f7;
+    --ui-map-button-ring: rgb(224 82 82 / 0.34);
 
     --ui-btn-shadow-solid: none;
     --ui-btn-disabled-bg: #1e293b;

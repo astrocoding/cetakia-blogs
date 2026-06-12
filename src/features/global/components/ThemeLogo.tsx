@@ -31,8 +31,8 @@ export function ThemeLogo({ lightSrc, darkSrc, alt, width, height, className, pr
           width={width}
           height={height}
           className="theme-logo__asset"
-          loading={priority ? "eager" : undefined}
-          fetchPriority={priority ? "low" : undefined}
+          priority={priority}
+          fetchPriority={priority ? "high" : undefined}
         />
       </span>
     </span>

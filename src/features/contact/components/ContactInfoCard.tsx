@@ -25,7 +25,7 @@ export function ContactInfoCard({
         </span>
 
         <div className="ct-contact-card__body">
-          <h3 className="gc-card__title">{title}</h3>
+          <p className="gc-card__title">{title}</p>
 
           {href ? (
             <a href={href} className="gc-card__meta">
