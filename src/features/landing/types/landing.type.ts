@@ -55,7 +55,6 @@ export type LandingPageContent = {
     languageToggleAriaLabel: string;
     languageToggleIcon: string;
   };
-  informationBar: InformationBarData;
   footer: {
     description: string;
   };
@@ -138,6 +137,7 @@ export type LandingContentRoot = {
     startNowLabel: string;
     navLinks: LandingLocalizedLink[];
   };
+  informationBar: InformationBarData;
   footer: {
     columns: FooterColumn[];
     copyright: string;
