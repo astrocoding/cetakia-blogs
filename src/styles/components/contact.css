@@ -168,6 +168,50 @@
   width: 100%;
 }
 
+.ct-map__placeholder {
+  align-items: flex-start;
+  background:
+    linear-gradient(color-mix(in srgb, var(--ui-surface-page) 28%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--ui-surface-page) 28%, transparent) 1px, transparent 1px),
+    radial-gradient(circle at 22% 26%, color-mix(in srgb, var(--ui-color-primary) 24%, transparent), transparent 24%),
+    radial-gradient(circle at 76% 64%, color-mix(in srgb, var(--ui-color-accent) 18%, transparent), transparent 28%),
+    color-mix(in srgb, var(--ui-surface-card) 88%, var(--ui-color-primary) 12%);
+  background-size: 4.5rem 4.5rem, 4.5rem 4.5rem, 100% 100%, 100% 100%, auto;
+  box-sizing: border-box;
+  display: flex;
+  height: clamp(18rem, 42vw, 27rem);
+  justify-content: flex-end;
+  padding: clamp(0.85rem, 2.2vw, 1.35rem);
+  width: 100%;
+}
+
+.ct-map__load {
+  align-items: center;
+  background: var(--ui-map-button-bg);
+  border: 1px solid var(--ui-map-button-border);
+  border-radius: 0.7rem;
+  color: var(--ui-map-button-text);
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 0.95rem;
+  font-weight: 800;
+  gap: 0.5rem;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.58rem 1rem;
+}
+
+.ct-map__load:hover {
+  background: var(--ui-map-button-bg-hover);
+  border-color: var(--ui-map-button-border-hover);
+  color: var(--ui-map-button-text);
+}
+
+.ct-map__load:focus-visible {
+  box-shadow: 0 0 0 3px var(--ui-map-button-ring);
+  outline: none;
+}
+
 .ct-map__overlay {
   background: color-mix(in srgb, var(--ui-surface-card) 95%, transparent);
   border: 1px solid color-mix(in srgb, var(--ui-border-subtle) 75%, transparent);
